@@ -1,0 +1,39 @@
+{
+    "modules": [],
+    "properties": {
+        "backendModules": [],
+        "description": "Display OpenImmo data on a website",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 9.5.0-9.5.99\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "skipGenerateDocumentationTemplate": true,
+            "sourceLanguage": "en",
+            "state": "stable",
+            "targetVersion": "9.5.0-9.5.99",
+            "version": "1.0.0"
+        },
+        "extensionKey": "openimmo",
+        "name": "openimmo",
+        "originalExtensionKey": "",
+        "originalVendorName": "",
+        "persons": [
+            {
+                "company": "ujamii GmbH",
+                "email": "mg@ujamii.com",
+                "name": "Michael",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [],
+        "vendorName": "Ujamii"
+    },
+    "wires": [],
+    "log": {
+        "last_modified": "2019-02-06 09:08",
+        "extension_builder_version": "9.10.0",
+        "be_user": " (1)"
+    }
+}

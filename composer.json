@@ -1,0 +1,33 @@
+{
+    "name": "ujamii/openimmo-typo3",
+    "description": "TYPO3 CMS extension for showing OpenImmo based data on a TYPO3 based website",
+    "type": "typo3-cms-extension",
+    "license": "GPL-3.0-only",
+    "authors": [
+        {
+            "name": "Michael Grundkötter",
+            "email": "mg@ujamii.com"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^9.5",
+        "ujamii/openimmo": "^0.1"
+    },
+    "require-dev": {
+        "friendsoftypo3/extension-builder": "^9.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ujamii\\OpenImmoTypo3\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ujamii\\OpenImmoTypo3\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "openimmo": "self.version",
+        "typo3-ter/openimmo": "self.version"
+    }
+}
