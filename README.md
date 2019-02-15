@@ -1,5 +1,7 @@
 # OpenImmo extension for TYPO3 CMS
 
+[![Packagist](https://img.shields.io/packagist/v/ujamii/openimmo-typo3.svg?colorB=green&style=flat)](https://packagist.org/packages/ujamii/openimmo-typo3)
+
 OpenImmo and the OpenImmo logo are registered trademarks of the [OpenImmo e.V.](http://www.openimmo.de)
 Neither is this package an official distribution nor am I associated with this organisation!
 
