@@ -28,6 +28,7 @@ class GenerateTypo3WrapperCommand extends Command
     protected $openImmoApiNamespace = 'Ujamii\OpenImmo\API';
     protected $typo3ModelNamespace = 'Ujamii\OpenImmoTypo3\Domain\Model';
     protected $typo3RepositoryNamespace = 'Ujamii\OpenImmoTypo3\Domain\Repository';
+    protected $sqlTablePrefix = 'tx_openimmotypo3_domain_model_';
 
     protected $apiClasses = [];
 
@@ -211,7 +212,7 @@ class GenerateTypo3WrapperCommand extends Command
      */
     protected function getSqlTableName(string $className)
     {
-        return 'tx_openimmo_domain_model_' . $this->getSqlName($className);
+        return $this->sqlTablePrefix . $this->getSqlName($className);
     }
 
     /**
@@ -323,7 +324,7 @@ return [
                 'items' => [
                     ['', 0],
                 ],
-                'foreign_table' => 'tx_openimmo_domain_model_aktion',
+                'foreign_table' => '".$sqlTableName."',
                 'foreign_table_where' => 'AND {#" . $sqlTableName . "}.{#pid}=###CURRENT_PID### AND {#" . $sqlTableName . "}.{#sys_language_uid} IN (-1,0)',
             ],
         ],

@@ -1,12 +1,12 @@
-CREATE TABLE tx_openimmo_domain_model_aktion (
+CREATE TABLE tx_openimmotypo3_domain_model_aktion (
 	aktionart text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_sqlsafe_alter (
+CREATE TABLE tx_openimmotypo3_domain_model_sqlsafe_alter (
 	alter_attr text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_anbieter (
+CREATE TABLE tx_openimmotypo3_domain_model_anbieter (
 	anbieternr text DEFAULT '' NOT NULL,
 	anhang int(11) unsigned DEFAULT '0' NOT NULL,
 	firma text DEFAULT '' NOT NULL,
@@ -20,19 +20,19 @@ CREATE TABLE tx_openimmo_domain_model_anbieter (
 	user_defined_simplefield int(11) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_angeschl_gastronomie (
+CREATE TABLE tx_openimmotypo3_domain_model_angeschl_gastronomie (
 	bar smallint(5) unsigned DEFAULT '0' NOT NULL,
 	hotelrestaurant smallint(5) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_anhaenge (
+CREATE TABLE tx_openimmotypo3_domain_model_anhaenge (
 	anhang int(11) unsigned DEFAULT '0' NOT NULL,
 	user_defined_anyfield int(11) unsigned DEFAULT '0' NOT NULL,
 	user_defined_extend int(11) unsigned DEFAULT '0' NOT NULL,
 	user_defined_simplefield int(11) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_anhang (
+CREATE TABLE tx_openimmotypo3_domain_model_anhang (
 	anhangtitel text DEFAULT '' NOT NULL,
 	sqlsafe_check int(11) unsigned DEFAULT '0' NOT NULL,
 	daten int(11) unsigned DEFAULT '0' NOT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE tx_openimmo_domain_model_anhang (
 	location text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_ausbaustufe (
+CREATE TABLE tx_openimmotypo3_domain_model_ausbaustufe (
 	ausbauhaus smallint(5) unsigned DEFAULT '0' NOT NULL,
 	bausatzhaus smallint(5) unsigned DEFAULT '0' NOT NULL,
 	schluesselfertigmitbodenplatte smallint(5) unsigned DEFAULT '0' NOT NULL,
@@ -49,11 +49,11 @@ CREATE TABLE tx_openimmo_domain_model_ausbaustufe (
 	schluesselfertigohnebodenplatte smallint(5) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_ausblick (
+CREATE TABLE tx_openimmotypo3_domain_model_ausblick (
 	blick text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_ausricht_balkon_terrasse (
+CREATE TABLE tx_openimmotypo3_domain_model_ausricht_balkon_terrasse (
 	nord smallint(5) unsigned DEFAULT '0' NOT NULL,
 	nordost smallint(5) unsigned DEFAULT '0' NOT NULL,
 	nordwest smallint(5) unsigned DEFAULT '0' NOT NULL,
@@ -64,11 +64,11 @@ CREATE TABLE tx_openimmo_domain_model_ausricht_balkon_terrasse (
 	west smallint(5) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_aussen_courtage (
+CREATE TABLE tx_openimmotypo3_domain_model_aussen_courtage (
 	mit_mwst smallint(5) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_ausstattung (
+CREATE TABLE tx_openimmotypo3_domain_model_ausstattung (
 	abstellraum smallint(5) unsigned DEFAULT '0' NOT NULL,
 	angeschl_gastronomie int(11) unsigned DEFAULT '0' NOT NULL,
 	ausbaustufe int(11) unsigned DEFAULT '0' NOT NULL,
@@ -128,7 +128,7 @@ CREATE TABLE tx_openimmo_domain_model_ausstattung (
 	wintergarten smallint(5) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_bad (
+CREATE TABLE tx_openimmotypo3_domain_model_bad (
 	bidet smallint(5) unsigned DEFAULT '0' NOT NULL,
 	dusche smallint(5) unsigned DEFAULT '0' NOT NULL,
 	fenster smallint(5) unsigned DEFAULT '0' NOT NULL,
@@ -136,17 +136,17 @@ CREATE TABLE tx_openimmo_domain_model_bad (
 	wanne smallint(5) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_bauweise (
+CREATE TABLE tx_openimmotypo3_domain_model_bauweise (
 	fertigteile smallint(5) unsigned DEFAULT '0' NOT NULL,
 	holz smallint(5) unsigned DEFAULT '0' NOT NULL,
 	massiv smallint(5) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_bebaubar_nach (
+CREATE TABLE tx_openimmotypo3_domain_model_bebaubar_nach (
 	bebaubar_attr text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_befeuerung (
+CREATE TABLE tx_openimmotypo3_domain_model_befeuerung (
 	alternativ smallint(5) unsigned DEFAULT '0' NOT NULL,
 	block smallint(5) unsigned DEFAULT '0' NOT NULL,
 	elektro smallint(5) unsigned DEFAULT '0' NOT NULL,
@@ -163,16 +163,16 @@ CREATE TABLE tx_openimmo_domain_model_befeuerung (
 	wasser_elektro smallint(5) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_betriebskostennetto (
+CREATE TABLE tx_openimmotypo3_domain_model_betriebskostennetto (
 	betriebskostenust double(11,2) DEFAULT '0.00' NOT NULL,
 	value double(11,2) DEFAULT '0.00' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_bewertung (
+CREATE TABLE tx_openimmotypo3_domain_model_bewertung (
 	feld text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_bieterverfahren (
+CREATE TABLE tx_openimmotypo3_domain_model_bieterverfahren (
 	beginn_angebotsphase datetime DEFAULT NULL,
 	beginn_bietzeit int(11) unsigned DEFAULT '0' NOT NULL,
 	besichtigungstermin datetime DEFAULT NULL,
@@ -185,7 +185,7 @@ CREATE TABLE tx_openimmo_domain_model_bieterverfahren (
 	user_defined_simplefield int(11) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_boden (
+CREATE TABLE tx_openimmotypo3_domain_model_boden (
 	dielen smallint(5) unsigned DEFAULT '0' NOT NULL,
 	doppelboden smallint(5) unsigned DEFAULT '0' NOT NULL,
 	estrich smallint(5) unsigned DEFAULT '0' NOT NULL,
@@ -202,21 +202,21 @@ CREATE TABLE tx_openimmo_domain_model_boden (
 	terrakotta smallint(5) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_breitband_zugang (
+CREATE TABLE tx_openimmotypo3_domain_model_breitband_zugang (
 	art text DEFAULT '' NOT NULL,
 	speed double(11,2) DEFAULT '0.00' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_buero_praxen (
+CREATE TABLE tx_openimmotypo3_domain_model_buero_praxen (
 	buero_typ text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_sqlsafe_check (
+CREATE TABLE tx_openimmotypo3_domain_model_sqlsafe_check (
 	ctype text DEFAULT '' NOT NULL,
 	value int(11) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_dachform (
+CREATE TABLE tx_openimmotypo3_domain_model_dachform (
 	flachdach smallint(5) unsigned DEFAULT '0' NOT NULL,
 	krueppelwalmdach smallint(5) unsigned DEFAULT '0' NOT NULL,
 	mansarddach smallint(5) unsigned DEFAULT '0' NOT NULL,
@@ -226,32 +226,32 @@ CREATE TABLE tx_openimmo_domain_model_dachform (
 	walmdach smallint(5) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_daten (
+CREATE TABLE tx_openimmotypo3_domain_model_daten (
 	anhanginhalt text DEFAULT '' NOT NULL,
 	pfad text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_distanzen (
+CREATE TABLE tx_openimmotypo3_domain_model_distanzen (
 	distanz_zu text DEFAULT '' NOT NULL,
 	value double(11,2) DEFAULT '0.00' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_distanzen_sport (
+CREATE TABLE tx_openimmotypo3_domain_model_distanzen_sport (
 	distanz_zu_sport text DEFAULT '' NOT NULL,
 	value double(11,2) DEFAULT '0.00' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_einzelhandel (
+CREATE TABLE tx_openimmotypo3_domain_model_einzelhandel (
 	handel_typ text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_email_sonstige (
+CREATE TABLE tx_openimmotypo3_domain_model_email_sonstige (
 	bemerkung text DEFAULT '' NOT NULL,
 	emailart text DEFAULT '' NOT NULL,
 	value text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_energiepass (
+CREATE TABLE tx_openimmotypo3_domain_model_energiepass (
 	ausstelldatum datetime DEFAULT NULL,
 	baujahr text DEFAULT '' NOT NULL,
 	endenergiebedarf text DEFAULT '' NOT NULL,
@@ -273,7 +273,7 @@ CREATE TABLE tx_openimmo_domain_model_energiepass (
 	wertklasse text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_energietyp (
+CREATE TABLE tx_openimmotypo3_domain_model_energietyp (
 	kfw40 smallint(5) unsigned DEFAULT '0' NOT NULL,
 	kfw55 smallint(5) unsigned DEFAULT '0' NOT NULL,
 	kfw60 smallint(5) unsigned DEFAULT '0' NOT NULL,
@@ -285,25 +285,25 @@ CREATE TABLE tx_openimmo_domain_model_energietyp (
 	passivhaus smallint(5) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_erschliessung (
+CREATE TABLE tx_openimmotypo3_domain_model_erschliessung (
 	erschl_attr text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_erschliessung_umfang (
+CREATE TABLE tx_openimmotypo3_domain_model_erschliessung_umfang (
 	erschl_attr text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_evbnetto (
+CREATE TABLE tx_openimmotypo3_domain_model_evbnetto (
 	evbust double(11,2) DEFAULT '0.00' NOT NULL,
 	value double(11,2) DEFAULT '0.00' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_fahrstuhl (
+CREATE TABLE tx_openimmotypo3_domain_model_fahrstuhl (
 	lasten smallint(5) unsigned DEFAULT '0' NOT NULL,
 	personen smallint(5) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_flaechen (
+CREATE TABLE tx_openimmotypo3_domain_model_flaechen (
 	anzahl_badezimmer double(11,2) DEFAULT '0.00' NOT NULL,
 	anzahl_balkone double(11,2) DEFAULT '0.00' NOT NULL,
 	anzahl_betten double(11,2) DEFAULT '0.00' NOT NULL,
@@ -355,13 +355,13 @@ CREATE TABLE tx_openimmo_domain_model_flaechen (
 	wohnflaeche double(11,2) DEFAULT '0.00' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_foto (
+CREATE TABLE tx_openimmotypo3_domain_model_foto (
 	daten int(11) unsigned DEFAULT '0' NOT NULL,
 	format text DEFAULT '' NOT NULL,
 	location text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_freitexte (
+CREATE TABLE tx_openimmotypo3_domain_model_freitexte (
 	ausstatt_beschr text DEFAULT '' NOT NULL,
 	dreizeiler text DEFAULT '' NOT NULL,
 	lage text DEFAULT '' NOT NULL,
@@ -374,15 +374,15 @@ CREATE TABLE tx_openimmo_domain_model_freitexte (
 	user_defined_simplefield int(11) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_freizeitimmobilie_gewerblich (
+CREATE TABLE tx_openimmotypo3_domain_model_freizeitimmobilie_gewerblich (
 	freizeit_typ text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_gastgewerbe (
+CREATE TABLE tx_openimmotypo3_domain_model_gastgewerbe (
 	gastgew_typ text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_geo (
+CREATE TABLE tx_openimmotypo3_domain_model_geo (
 	anzahl_etagen int(11) unsigned DEFAULT '0' NOT NULL,
 	bundesland text DEFAULT '' NOT NULL,
 	etage int(11) unsigned DEFAULT '0' NOT NULL,
@@ -409,53 +409,53 @@ CREATE TABLE tx_openimmo_domain_model_geo (
 	wohnungsnr text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_geokoordinaten (
+CREATE TABLE tx_openimmotypo3_domain_model_geokoordinaten (
 	breitengrad double(11,2) DEFAULT '0.00' NOT NULL,
 	laengengrad double(11,2) DEFAULT '0.00' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_gesamtbelastungnetto (
+CREATE TABLE tx_openimmotypo3_domain_model_gesamtbelastungnetto (
 	gesamtbelastungust double(11,2) DEFAULT '0.00' NOT NULL,
 	value double(11,2) DEFAULT '0.00' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_gesamtkostenprom2von (
+CREATE TABLE tx_openimmotypo3_domain_model_gesamtkostenprom2von (
 	gesamtkostenprom2bis double(11,2) DEFAULT '0.00' NOT NULL,
 	value double(11,2) DEFAULT '0.00' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_gesamtmietenetto (
+CREATE TABLE tx_openimmotypo3_domain_model_gesamtmietenetto (
 	gesamtmieteust double(11,2) DEFAULT '0.00' NOT NULL,
 	value double(11,2) DEFAULT '0.00' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_geschlecht (
+CREATE TABLE tx_openimmotypo3_domain_model_geschlecht (
 	geschl_attr text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_grundstueck (
+CREATE TABLE tx_openimmotypo3_domain_model_grundstueck (
 	grundst_typ text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_hallen_lager_prod (
+CREATE TABLE tx_openimmotypo3_domain_model_hallen_lager_prod (
 	hallen_typ text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_hauptmietzinsnetto (
+CREATE TABLE tx_openimmotypo3_domain_model_hauptmietzinsnetto (
 	hauptmietzinsust double(11,2) DEFAULT '0.00' NOT NULL,
 	value double(11,2) DEFAULT '0.00' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_haus (
+CREATE TABLE tx_openimmotypo3_domain_model_haus (
 	haustyp text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_heizkostennetto (
+CREATE TABLE tx_openimmotypo3_domain_model_heizkostennetto (
 	heizkostenust double(11,2) DEFAULT '0.00' NOT NULL,
 	value double(11,2) DEFAULT '0.00' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_heizungsart (
+CREATE TABLE tx_openimmotypo3_domain_model_heizungsart (
 	etage smallint(5) unsigned DEFAULT '0' NOT NULL,
 	fern smallint(5) unsigned DEFAULT '0' NOT NULL,
 	fussboden smallint(5) unsigned DEFAULT '0' NOT NULL,
@@ -463,7 +463,7 @@ CREATE TABLE tx_openimmo_domain_model_heizungsart (
 	zentral smallint(5) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_immobilie (
+CREATE TABLE tx_openimmotypo3_domain_model_immobilie (
 	anhaenge int(11) unsigned DEFAULT '0' NOT NULL,
 	ausstattung int(11) unsigned DEFAULT '0' NOT NULL,
 	bewertung int(11) unsigned DEFAULT '0' NOT NULL,
@@ -485,7 +485,7 @@ CREATE TABLE tx_openimmo_domain_model_immobilie (
 	zustand_angaben int(11) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_impressum_strukt (
+CREATE TABLE tx_openimmotypo3_domain_model_impressum_strukt (
 	berufsaufsichtsbehoerde text DEFAULT '' NOT NULL,
 	firmenanschrift text DEFAULT '' NOT NULL,
 	firmenname text DEFAULT '' NOT NULL,
@@ -498,7 +498,7 @@ CREATE TABLE tx_openimmo_domain_model_impressum_strukt (
 	weiteres text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_infrastruktur (
+CREATE TABLE tx_openimmotypo3_domain_model_infrastruktur (
 	ausblick int(11) unsigned DEFAULT '0' NOT NULL,
 	distanzen int(11) unsigned DEFAULT '0' NOT NULL,
 	distanzen_sport int(11) unsigned DEFAULT '0' NOT NULL,
@@ -508,21 +508,21 @@ CREATE TABLE tx_openimmo_domain_model_infrastruktur (
 	zulieferung smallint(5) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_innen_courtage (
+CREATE TABLE tx_openimmotypo3_domain_model_innen_courtage (
 	mit_mwst smallint(5) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_kaufpreis (
+CREATE TABLE tx_openimmotypo3_domain_model_kaufpreis (
 	auf_anfrage smallint(5) unsigned DEFAULT '0' NOT NULL,
 	value double(11,2) DEFAULT '0.00' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_kaufpreisnetto (
+CREATE TABLE tx_openimmotypo3_domain_model_kaufpreisnetto (
 	kaufpreisust double(11,2) DEFAULT '0.00' NOT NULL,
 	value double(11,2) DEFAULT '0.00' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_kontaktperson (
+CREATE TABLE tx_openimmotypo3_domain_model_kontaktperson (
 	adressfreigabe smallint(5) unsigned DEFAULT '0' NOT NULL,
 	anrede text DEFAULT '' NOT NULL,
 	anrede_brief text DEFAULT '' NOT NULL,
@@ -562,84 +562,84 @@ CREATE TABLE tx_openimmo_domain_model_kontaktperson (
 	zusatzfeld text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_kueche (
+CREATE TABLE tx_openimmotypo3_domain_model_kueche (
 	ebk smallint(5) unsigned DEFAULT '0' NOT NULL,
 	offen smallint(5) unsigned DEFAULT '0' NOT NULL,
 	pantry smallint(5) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_lage_gebiet (
+CREATE TABLE tx_openimmotypo3_domain_model_lage_gebiet (
 	gebiete text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_lage_im_bau (
+CREATE TABLE tx_openimmotypo3_domain_model_lage_im_bau (
 	hinten smallint(5) unsigned DEFAULT '0' NOT NULL,
 	links smallint(5) unsigned DEFAULT '0' NOT NULL,
 	rechts smallint(5) unsigned DEFAULT '0' NOT NULL,
 	vorne smallint(5) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_land (
+CREATE TABLE tx_openimmotypo3_domain_model_land (
 	iso_land text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_land_und_forstwirtschaft (
+CREATE TABLE tx_openimmotypo3_domain_model_land_und_forstwirtschaft (
 	land_typ text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_master (
+CREATE TABLE tx_openimmotypo3_domain_model_master (
 	visible smallint(5) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_max_mietdauer (
+CREATE TABLE tx_openimmotypo3_domain_model_max_mietdauer (
 	max_dauer text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_mieteinnahmen_ist (
+CREATE TABLE tx_openimmotypo3_domain_model_mieteinnahmen_ist (
 	periode text DEFAULT '' NOT NULL,
 	value double(11,2) DEFAULT '0.00' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_mieteinnahmen_soll (
+CREATE TABLE tx_openimmotypo3_domain_model_mieteinnahmen_soll (
 	periode text DEFAULT '' NOT NULL,
 	value double(11,2) DEFAULT '0.00' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_min_mietdauer (
+CREATE TABLE tx_openimmotypo3_domain_model_min_mietdauer (
 	min_dauer text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_moebliert (
+CREATE TABLE tx_openimmotypo3_domain_model_moebliert (
 	moeb text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_monatlichekostennetto (
+CREATE TABLE tx_openimmotypo3_domain_model_monatlichekostennetto (
 	monatlichekostenust double(11,2) DEFAULT '0.00' NOT NULL,
 	value double(11,2) DEFAULT '0.00' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_nebenkostenprom2von (
+CREATE TABLE tx_openimmotypo3_domain_model_nebenkostenprom2von (
 	nebenkostenprom2bis double(11,2) DEFAULT '0.00' NOT NULL,
 	value double(11,2) DEFAULT '0.00' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_nettomieteprom2von (
+CREATE TABLE tx_openimmotypo3_domain_model_nettomieteprom2von (
 	nettomieteprom2bis double(11,2) DEFAULT '0.00' NOT NULL,
 	value double(11,2) DEFAULT '0.00' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_nutzungsart (
+CREATE TABLE tx_openimmotypo3_domain_model_nutzungsart (
 	anlage smallint(5) unsigned DEFAULT '0' NOT NULL,
 	gewerbe smallint(5) unsigned DEFAULT '0' NOT NULL,
 	waz smallint(5) unsigned DEFAULT '0' NOT NULL,
 	wohnen smallint(5) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_objekt_text (
+CREATE TABLE tx_openimmotypo3_domain_model_objekt_text (
 	lang text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_objektart (
+CREATE TABLE tx_openimmotypo3_domain_model_objektart (
 	buero_praxen int(11) unsigned DEFAULT '0' NOT NULL,
 	einzelhandel int(11) unsigned DEFAULT '0' NOT NULL,
 	freizeitimmobilie_gewerblich int(11) unsigned DEFAULT '0' NOT NULL,
@@ -656,7 +656,7 @@ CREATE TABLE tx_openimmo_domain_model_objektart (
 	zinshaus_renditeobjekt int(11) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_objektkategorie (
+CREATE TABLE tx_openimmotypo3_domain_model_objektkategorie (
 	nutzungsart int(11) unsigned DEFAULT '0' NOT NULL,
 	objektart int(11) unsigned DEFAULT '0' NOT NULL,
 	user_defined_anyfield int(11) unsigned DEFAULT '0' NOT NULL,
@@ -665,22 +665,22 @@ CREATE TABLE tx_openimmo_domain_model_objektkategorie (
 	vermarktungsart int(11) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_openimmo (
+CREATE TABLE tx_openimmotypo3_domain_model_openimmo (
 	anbieter int(11) unsigned DEFAULT '0' NOT NULL,
 	uebertragung int(11) unsigned DEFAULT '0' NOT NULL,
 	user_defined_anyfield int(11) unsigned DEFAULT '0' NOT NULL,
 	user_defined_simplefield int(11) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_parken (
+CREATE TABLE tx_openimmotypo3_domain_model_parken (
 	parken_typ text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_preis_zeiteinheit (
+CREATE TABLE tx_openimmotypo3_domain_model_preis_zeiteinheit (
 	zeiteinheit text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_preise (
+CREATE TABLE tx_openimmotypo3_domain_model_preise (
 	abstand double(11,2) DEFAULT '0.00' NOT NULL,
 	aussen_courtage int(11) unsigned DEFAULT '0' NOT NULL,
 	betriebskostennetto int(11) unsigned DEFAULT '0' NOT NULL,
@@ -754,21 +754,21 @@ CREATE TABLE tx_openimmo_domain_model_preise (
 	zzg_mehrwertsteuer smallint(5) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_provision_teilen (
+CREATE TABLE tx_openimmotypo3_domain_model_provision_teilen (
 	wert text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_provisionnetto (
+CREATE TABLE tx_openimmotypo3_domain_model_provisionnetto (
 	provisionust double(11,2) DEFAULT '0.00' NOT NULL,
 	value double(11,2) DEFAULT '0.00' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_ruecklagenetto (
+CREATE TABLE tx_openimmotypo3_domain_model_ruecklagenetto (
 	ruecklageust double(11,2) DEFAULT '0.00' NOT NULL,
 	value double(11,2) DEFAULT '0.00' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_serviceleistungen (
+CREATE TABLE tx_openimmotypo3_domain_model_serviceleistungen (
 	betreutes_wohnen smallint(5) unsigned DEFAULT '0' NOT NULL,
 	catering smallint(5) unsigned DEFAULT '0' NOT NULL,
 	einkauf smallint(5) unsigned DEFAULT '0' NOT NULL,
@@ -776,27 +776,27 @@ CREATE TABLE tx_openimmo_domain_model_serviceleistungen (
 	wachdienst smallint(5) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_sicherheitstechnik (
+CREATE TABLE tx_openimmotypo3_domain_model_sicherheitstechnik (
 	alarmanlage smallint(5) unsigned DEFAULT '0' NOT NULL,
 	kamera smallint(5) unsigned DEFAULT '0' NOT NULL,
 	polizeiruf smallint(5) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_sonstige (
+CREATE TABLE tx_openimmotypo3_domain_model_sonstige (
 	sonstige_typ text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_sonstigekostennetto (
+CREATE TABLE tx_openimmotypo3_domain_model_sonstigekostennetto (
 	sonstigekostenust double(11,2) DEFAULT '0.00' NOT NULL,
 	value double(11,2) DEFAULT '0.00' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_sonstigemietenetto (
+CREATE TABLE tx_openimmotypo3_domain_model_sonstigemietenetto (
 	sonstigemieteust double(11,2) DEFAULT '0.00' NOT NULL,
 	value double(11,2) DEFAULT '0.00' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_stellplatzart (
+CREATE TABLE tx_openimmotypo3_domain_model_stellplatzart (
 	carport smallint(5) unsigned DEFAULT '0' NOT NULL,
 	duplex smallint(5) unsigned DEFAULT '0' NOT NULL,
 	freiplatz smallint(5) unsigned DEFAULT '0' NOT NULL,
@@ -805,59 +805,59 @@ CREATE TABLE tx_openimmo_domain_model_stellplatzart (
 	tiefgarage smallint(5) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_stp_carport (
+CREATE TABLE tx_openimmotypo3_domain_model_stp_carport (
 	anzahl int(11) unsigned DEFAULT '0' NOT NULL,
 	stellplatzkaufpreis double(11,2) DEFAULT '0.00' NOT NULL,
 	stellplatzmiete double(11,2) DEFAULT '0.00' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_stp_duplex (
+CREATE TABLE tx_openimmotypo3_domain_model_stp_duplex (
 	anzahl int(11) unsigned DEFAULT '0' NOT NULL,
 	stellplatzkaufpreis double(11,2) DEFAULT '0.00' NOT NULL,
 	stellplatzmiete double(11,2) DEFAULT '0.00' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_stp_freiplatz (
+CREATE TABLE tx_openimmotypo3_domain_model_stp_freiplatz (
 	anzahl int(11) unsigned DEFAULT '0' NOT NULL,
 	stellplatzkaufpreis double(11,2) DEFAULT '0.00' NOT NULL,
 	stellplatzmiete double(11,2) DEFAULT '0.00' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_stp_garage (
+CREATE TABLE tx_openimmotypo3_domain_model_stp_garage (
 	anzahl int(11) unsigned DEFAULT '0' NOT NULL,
 	stellplatzkaufpreis double(11,2) DEFAULT '0.00' NOT NULL,
 	stellplatzmiete double(11,2) DEFAULT '0.00' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_stp_parkhaus (
+CREATE TABLE tx_openimmotypo3_domain_model_stp_parkhaus (
 	anzahl int(11) unsigned DEFAULT '0' NOT NULL,
 	stellplatzkaufpreis double(11,2) DEFAULT '0.00' NOT NULL,
 	stellplatzmiete double(11,2) DEFAULT '0.00' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_stp_sonstige (
+CREATE TABLE tx_openimmotypo3_domain_model_stp_sonstige (
 	bemerkung text DEFAULT '' NOT NULL,
 	platzart text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_stp_tiefgarage (
+CREATE TABLE tx_openimmotypo3_domain_model_stp_tiefgarage (
 	anzahl int(11) unsigned DEFAULT '0' NOT NULL,
 	stellplatzkaufpreis double(11,2) DEFAULT '0.00' NOT NULL,
 	stellplatzmiete double(11,2) DEFAULT '0.00' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_summemietenetto (
+CREATE TABLE tx_openimmotypo3_domain_model_summemietenetto (
 	summemieteust double(11,2) DEFAULT '0.00' NOT NULL,
 	value double(11,2) DEFAULT '0.00' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_tel_sonstige (
+CREATE TABLE tx_openimmotypo3_domain_model_tel_sonstige (
 	bemerkung text DEFAULT '' NOT NULL,
 	telefonart text DEFAULT '' NOT NULL,
 	value text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_uebertragung (
+CREATE TABLE tx_openimmotypo3_domain_model_uebertragung (
 	art text DEFAULT '' NOT NULL,
 	modus text DEFAULT '' NOT NULL,
 	regi_id text DEFAULT '' NOT NULL,
@@ -869,30 +869,30 @@ CREATE TABLE tx_openimmo_domain_model_uebertragung (
 	version text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_unterkellert (
+CREATE TABLE tx_openimmotypo3_domain_model_unterkellert (
 	keller text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_user_defined_extend (
+CREATE TABLE tx_openimmotypo3_domain_model_user_defined_extend (
 	feld text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_user_defined_simplefield (
+CREATE TABLE tx_openimmotypo3_domain_model_user_defined_simplefield (
 	feldname text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_verkaufstatus (
+CREATE TABLE tx_openimmotypo3_domain_model_verkaufstatus (
 	stand text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_vermarktungsart (
+CREATE TABLE tx_openimmotypo3_domain_model_vermarktungsart (
 	erbpacht smallint(5) unsigned DEFAULT '0' NOT NULL,
 	kauf smallint(5) unsigned DEFAULT '0' NOT NULL,
 	leasing smallint(5) unsigned DEFAULT '0' NOT NULL,
 	miete_pacht smallint(5) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_versteigerung (
+CREATE TABLE tx_openimmotypo3_domain_model_versteigerung (
 	aktenzeichen text DEFAULT '' NOT NULL,
 	amtsgericht text DEFAULT '' NOT NULL,
 	verkehrswert double(11,2) DEFAULT '0.00' NOT NULL,
@@ -901,7 +901,7 @@ CREATE TABLE tx_openimmo_domain_model_versteigerung (
 	zwangsversteigerung smallint(5) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_verwaltung_objekt (
+CREATE TABLE tx_openimmotypo3_domain_model_verwaltung_objekt (
 	abdatum datetime DEFAULT NULL,
 	als_ferien smallint(5) unsigned DEFAULT '0' NOT NULL,
 	bisdatum datetime DEFAULT NULL,
@@ -928,7 +928,7 @@ CREATE TABLE tx_openimmo_domain_model_verwaltung_objekt (
 	zugang text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_verwaltung_techn (
+CREATE TABLE tx_openimmotypo3_domain_model_verwaltung_techn (
 	aktion int(11) unsigned DEFAULT '0' NOT NULL,
 	aktiv_bis datetime DEFAULT NULL,
 	aktiv_von datetime DEFAULT NULL,
@@ -948,11 +948,11 @@ CREATE TABLE tx_openimmo_domain_model_verwaltung_techn (
 	weitergabe_positiv text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_waehrung (
+CREATE TABLE tx_openimmotypo3_domain_model_waehrung (
 	iso_waehrung text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_weitere_adresse (
+CREATE TABLE tx_openimmotypo3_domain_model_weitere_adresse (
 	adressart text DEFAULT '' NOT NULL,
 	adressfreigabe smallint(5) unsigned DEFAULT '0' NOT NULL,
 	anrede text DEFAULT '' NOT NULL,
@@ -988,23 +988,23 @@ CREATE TABLE tx_openimmo_domain_model_weitere_adresse (
 	zusatzfeld text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_wohnung (
+CREATE TABLE tx_openimmotypo3_domain_model_wohnung (
 	wohnungtyp text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_zimmer (
+CREATE TABLE tx_openimmotypo3_domain_model_zimmer (
 	zimmertyp text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_zinshaus_renditeobjekt (
+CREATE TABLE tx_openimmotypo3_domain_model_zinshaus_renditeobjekt (
 	zins_typ text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_zustand (
+CREATE TABLE tx_openimmotypo3_domain_model_zustand (
 	zustand_art text DEFAULT '' NOT NULL
 );
 
-CREATE TABLE tx_openimmo_domain_model_zustand_angaben (
+CREATE TABLE tx_openimmotypo3_domain_model_zustand_angaben (
 	sqlsafe_alter int(11) unsigned DEFAULT '0' NOT NULL,
 	altlasten text DEFAULT '' NOT NULL,
 	baujahr text DEFAULT '' NOT NULL,

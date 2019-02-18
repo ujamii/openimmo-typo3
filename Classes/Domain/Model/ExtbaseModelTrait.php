@@ -51,6 +51,21 @@ trait ExtbaseModelTrait
     private $_cleanProperties = [];
 
     /**
+     * ExtbaseModelTrait constructor.
+     *
+     * @param object $parent
+     */
+    public function __construct($parent = null)
+    {
+        if ( ! is_null($parent)) {
+            foreach ($parent as $property => $value) {
+                $this->$property = $value;
+            }
+        }
+
+    }
+
+    /**
      * Getter for uid.
      *
      * @return int the uid or NULL if none set yet.
