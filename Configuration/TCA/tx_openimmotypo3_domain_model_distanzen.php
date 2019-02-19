@@ -2,6 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'Distanzen',
+        'hideTable' => 1,
         'label' => 'uid',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -16,14 +17,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'distanz_zu, value',
+        'searchFields' => 'distanz_zu, infrastruktur, value',
         'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/information/information-typo3-version.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, distanz_zu, value',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, distanz_zu, infrastruktur, value',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, distanz_zu, value, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, distanz_zu, infrastruktur, value, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -139,6 +140,13 @@ return [
                     ['Us_bahn', 'US_BAHN'],
                     ['Zentrum', 'ZENTRUM'],
                 ],
+            ],
+        ],
+        'infrastruktur' => [
+            'exclude' => true,
+            'label' => 'Infrastruktur',
+            'config' => [
+                'type' => 'passthrough',
             ],
         ],
         'value' => [

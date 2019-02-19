@@ -2,6 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'Serviceleistungen',
+        'hideTable' => 1,
         'label' => 'uid',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -16,14 +17,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'betreutes_wohnen, catering, einkauf, reinigung, wachdienst',
+        'searchFields' => 'ausstattung, betreutes_wohnen, catering, einkauf, reinigung, wachdienst',
         'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/information/information-typo3-version.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, betreutes_wohnen, catering, einkauf, reinigung, wachdienst',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, ausstattung, betreutes_wohnen, catering, einkauf, reinigung, wachdienst',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, betreutes_wohnen, catering, einkauf, reinigung, wachdienst, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, ausstattung, betreutes_wohnen, catering, einkauf, reinigung, wachdienst, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -113,6 +114,13 @@ return [
                 'behaviour' => [
                     'allowLanguageSynchronization' => true
                 ]
+            ],
+        ],
+        'ausstattung' => [
+            'exclude' => true,
+            'label' => 'Ausstattung',
+            'config' => [
+                'type' => 'passthrough',
             ],
         ],
         'betreutes_wohnen' => [

@@ -2,6 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'Ausblick',
+        'hideTable' => 1,
         'label' => 'uid',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -16,14 +17,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'blick',
+        'searchFields' => 'blick, infrastruktur',
         'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/information/information-typo3-version.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, blick',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, blick, infrastruktur',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, blick, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, blick, infrastruktur, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -129,6 +130,13 @@ return [
                     ['Meer', 'MEER'],
                     ['See', 'SEE'],
                 ],
+            ],
+        ],
+        'infrastruktur' => [
+            'exclude' => true,
+            'label' => 'Infrastruktur',
+            'config' => [
+                'type' => 'passthrough',
             ],
         ],
     ],

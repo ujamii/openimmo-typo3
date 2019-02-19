@@ -2,6 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'Nutzungsart',
+        'hideTable' => 1,
         'label' => 'uid',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -16,14 +17,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'anlage, gewerbe, waz, wohnen',
+        'searchFields' => 'anlage, gewerbe, objektkategorie, waz, wohnen',
         'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/information/information-typo3-version.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, anlage, gewerbe, waz, wohnen',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, anlage, gewerbe, objektkategorie, waz, wohnen',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, anlage, gewerbe, waz, wohnen, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, anlage, gewerbe, objektkategorie, waz, wohnen, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -129,6 +130,13 @@ return [
             'config' => [
                 'type' => 'check',
                 'default' => 0,
+            ],
+        ],
+        'objektkategorie' => [
+            'exclude' => true,
+            'label' => 'Objektkategorie',
+            'config' => [
+                'type' => 'passthrough',
             ],
         ],
         'waz' => [

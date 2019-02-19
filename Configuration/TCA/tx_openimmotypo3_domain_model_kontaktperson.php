@@ -2,6 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'Kontaktperson',
+        'hideTable' => 1,
         'label' => 'uid',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -16,14 +17,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'adressfreigabe, anrede, anrede_brief, email_direkt, email_feedback, email_privat, email_sonstige, email_zentrale, firma, foto, freitextfeld, hausnummer, immobilientreuhaenderid, land, name, ort, personennummer, plz, position, postfach, postf_ort, postf_plz, referenz_id, strasse, tel_durchw, tel_fax, tel_handy, tel_privat, tel_sonstige, tel_zentrale, titel, url, user_defined_anyfield, user_defined_extend, user_defined_simplefield, vorname, zusatzfeld',
+        'searchFields' => 'adressfreigabe, anrede, anrede_brief, email_direkt, email_feedback, email_privat, email_sonstige, email_zentrale, firma, foto, freitextfeld, hausnummer, immobilie, immobilientreuhaenderid, land, name, ort, personennummer, plz, position, postfach, postf_ort, postf_plz, referenz_id, strasse, tel_durchw, tel_fax, tel_handy, tel_privat, tel_sonstige, tel_zentrale, titel, url, user_defined_anyfield, user_defined_extend, user_defined_simplefield, vorname, zusatzfeld',
         'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/information/information-typo3-version.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, adressfreigabe, anrede, anrede_brief, email_direkt, email_feedback, email_privat, email_sonstige, email_zentrale, firma, foto, freitextfeld, hausnummer, immobilientreuhaenderid, land, name, ort, personennummer, plz, position, postfach, postf_ort, postf_plz, referenz_id, strasse, tel_durchw, tel_fax, tel_handy, tel_privat, tel_sonstige, tel_zentrale, titel, url, user_defined_anyfield, user_defined_extend, user_defined_simplefield, vorname, zusatzfeld',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, adressfreigabe, anrede, anrede_brief, email_direkt, email_feedback, email_privat, email_sonstige, email_zentrale, firma, foto, freitextfeld, hausnummer, immobilie, immobilientreuhaenderid, land, name, ort, personennummer, plz, position, postfach, postf_ort, postf_plz, referenz_id, strasse, tel_durchw, tel_fax, tel_handy, tel_privat, tel_sonstige, tel_zentrale, titel, url, user_defined_anyfield, user_defined_extend, user_defined_simplefield, vorname, zusatzfeld',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, adressfreigabe, anrede, anrede_brief, email_direkt, email_feedback, email_privat, email_sonstige, email_zentrale, firma, foto, freitextfeld, hausnummer, immobilientreuhaenderid, land, name, ort, personennummer, plz, position, postfach, postf_ort, postf_plz, referenz_id, strasse, tel_durchw, tel_fax, tel_handy, tel_privat, tel_sonstige, tel_zentrale, titel, url, user_defined_anyfield, user_defined_extend, user_defined_simplefield, vorname, zusatzfeld, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, adressfreigabe, anrede, anrede_brief, email_direkt, email_feedback, email_privat, email_sonstige, email_zentrale, firma, foto, freitextfeld, hausnummer, immobilie, immobilientreuhaenderid, land, name, ort, personennummer, plz, position, postfach, postf_ort, postf_plz, referenz_id, strasse, tel_durchw, tel_fax, tel_handy, tel_privat, tel_sonstige, tel_zentrale, titel, url, user_defined_anyfield, user_defined_extend, user_defined_simplefield, vorname, zusatzfeld, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -178,7 +179,8 @@ return [
             'label' => 'EmailSonstige',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_email_sonstige',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_emailsonstige',
+                'foreign_field' => 'kontaktperson',
                 'maxitems' => 9999,
                 'appearance' => [
                     'collapseAll' => 1,
@@ -243,6 +245,13 @@ return [
                 'cols' => 40,
                 'rows' => 15,
                 'eval' => 'trim',
+            ],
+        ],
+        'immobilie' => [
+            'exclude' => true,
+            'label' => 'Immobilie',
+            'config' => [
+                'type' => 'passthrough',
             ],
         ],
         'immobilientreuhaenderid' => [
@@ -416,7 +425,8 @@ return [
             'label' => 'TelSonstige',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_tel_sonstige',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_telsonstige',
+                'foreign_field' => 'kontaktperson',
                 'maxitems' => 9999,
                 'appearance' => [
                     'collapseAll' => 1,

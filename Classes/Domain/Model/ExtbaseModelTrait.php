@@ -2,6 +2,7 @@
 
 namespace Ujamii\OpenImmoTypo3\Domain\Model;
 
+use JMS\Serializer\Annotation as Serializer;
 use TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface;
 use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
 
@@ -15,26 +16,31 @@ trait ExtbaseModelTrait
 
     /**
      * @var int The uid of the record. The uid is only unique in the context of the database table.
+     * @Serializer\Exclude()
      */
     protected $uid;
 
     /**
      * @var int The uid of the localized record. Holds the uid of the record in default language (the translationOrigin).
+     * @Serializer\Exclude()
      */
     protected $_localizedUid;
 
     /**
      * @var int The uid of the language of the object. This is the uid of the language record in the table sys_language.
+     * @Serializer\Exclude()
      */
     protected $_languageUid;
 
     /**
      * @var int The uid of the versioned record.
+     * @Serializer\Exclude()
      */
     protected $_versionedUid;
 
     /**
      * @var int The id of the page the record is "stored".
+     * @Serializer\Exclude()
      */
     protected $pid;
 
@@ -42,28 +48,15 @@ trait ExtbaseModelTrait
      * TRUE if the object is a clone
      *
      * @var bool
+     * @Serializer\Exclude()
      */
     private $_isClone = false;
 
     /**
      * @var array An array holding the clean property values. Set right after reconstitution of the object
+     * @Serializer\Exclude()
      */
     private $_cleanProperties = [];
-
-    /**
-     * ExtbaseModelTrait constructor.
-     *
-     * @param object $parent
-     */
-    public function __construct($parent = null)
-    {
-        if ( ! is_null($parent)) {
-            foreach ($parent as $property => $value) {
-                $this->$property = $value;
-            }
-        }
-
-    }
 
     /**
      * Getter for uid.

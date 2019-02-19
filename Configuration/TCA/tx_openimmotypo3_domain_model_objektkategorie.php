@@ -2,6 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'Objektkategorie',
+        'hideTable' => 1,
         'label' => 'uid',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -16,14 +17,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'nutzungsart, objektart, user_defined_anyfield, user_defined_extend, user_defined_simplefield, vermarktungsart',
+        'searchFields' => 'immobilie, nutzungsart, objektart, user_defined_anyfield, user_defined_extend, user_defined_simplefield, vermarktungsart',
         'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/information/information-typo3-version.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, nutzungsart, objektart, user_defined_anyfield, user_defined_extend, user_defined_simplefield, vermarktungsart',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, immobilie, nutzungsart, objektart, user_defined_anyfield, user_defined_extend, user_defined_simplefield, vermarktungsart',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, nutzungsart, objektart, user_defined_anyfield, user_defined_extend, user_defined_simplefield, vermarktungsart, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, immobilie, nutzungsart, objektart, user_defined_anyfield, user_defined_extend, user_defined_simplefield, vermarktungsart, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -113,6 +114,13 @@ return [
                 'behaviour' => [
                     'allowLanguageSynchronization' => true
                 ]
+            ],
+        ],
+        'immobilie' => [
+            'exclude' => true,
+            'label' => 'Immobilie',
+            'config' => [
+                'type' => 'passthrough',
             ],
         ],
         'nutzungsart' => [

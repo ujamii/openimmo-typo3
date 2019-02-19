@@ -2,6 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'Infrastruktur',
+        'hideTable' => 1,
         'label' => 'uid',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -16,14 +17,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'ausblick, distanzen, distanzen_sport, user_defined_anyfield, user_defined_extend, user_defined_simplefield, zulieferung',
+        'searchFields' => 'ausblick, distanzen, distanzen_sport, immobilie, user_defined_anyfield, user_defined_extend, user_defined_simplefield, zulieferung',
         'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/information/information-typo3-version.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, ausblick, distanzen, distanzen_sport, user_defined_anyfield, user_defined_extend, user_defined_simplefield, zulieferung',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, ausblick, distanzen, distanzen_sport, immobilie, user_defined_anyfield, user_defined_extend, user_defined_simplefield, zulieferung',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, ausblick, distanzen, distanzen_sport, user_defined_anyfield, user_defined_extend, user_defined_simplefield, zulieferung, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, ausblick, distanzen, distanzen_sport, immobilie, user_defined_anyfield, user_defined_extend, user_defined_simplefield, zulieferung, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -137,6 +138,7 @@ return [
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_openimmotypo3_domain_model_distanzen',
+                'foreign_field' => 'infrastruktur',
                 'maxitems' => 9999,
                 'appearance' => [
                     'collapseAll' => 1,
@@ -152,7 +154,8 @@ return [
             'label' => 'DistanzenSport',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_distanzen_sport',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_distanzensport',
+                'foreign_field' => 'infrastruktur',
                 'maxitems' => 9999,
                 'appearance' => [
                     'collapseAll' => 1,
@@ -161,6 +164,13 @@ return [
                     'showPossibleLocalizationRecords' => 1,
                     'showAllLocalizationLink' => 1
                 ],
+            ],
+        ],
+        'immobilie' => [
+            'exclude' => true,
+            'label' => 'Immobilie',
+            'config' => [
+                'type' => 'passthrough',
             ],
         ],
         'user_defined_anyfield' => [

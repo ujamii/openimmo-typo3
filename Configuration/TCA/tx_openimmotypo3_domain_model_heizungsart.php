@@ -2,6 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'Heizungsart',
+        'hideTable' => 1,
         'label' => 'uid',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -16,14 +17,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'etage, fern, fussboden, ofen, zentral',
+        'searchFields' => 'ausstattung, etage, fern, fussboden, ofen, zentral',
         'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/information/information-typo3-version.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, etage, fern, fussboden, ofen, zentral',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, ausstattung, etage, fern, fussboden, ofen, zentral',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, etage, fern, fussboden, ofen, zentral, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, ausstattung, etage, fern, fussboden, ofen, zentral, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -113,6 +114,13 @@ return [
                 'behaviour' => [
                     'allowLanguageSynchronization' => true
                 ]
+            ],
+        ],
+        'ausstattung' => [
+            'exclude' => true,
+            'label' => 'Ausstattung',
+            'config' => [
+                'type' => 'passthrough',
             ],
         ],
         'etage' => [

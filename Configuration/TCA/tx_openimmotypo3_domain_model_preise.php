@@ -2,6 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'Preise',
+        'hideTable' => 1,
         'label' => 'uid',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -16,14 +17,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'abstand, aussen_courtage, betriebskostennetto, courtage_hinweis, erbpacht, erschliessungskosten, evbnetto, freitext_preis, gesamtbelastungbrutto, gesamtbelastungnetto, gesamtkostenprom2von, gesamtmietebrutto, gesamtmietenetto, geschaeftsguthaben, hauptmietzinsnetto, hausgeld, heizkosten, heizkosten_enthalten, heizkostennetto, innen_courtage, kaltmiete, kaufpreis, kaufpreisbrutto, kaufpreisnetto, kaufpreis_pro_qm, kaution, kaution_text, mieteinnahmen_ist, mieteinnahmen_soll, mietpreis_pro_qm, mietzuschlaege, monatlichekostenbrutto, monatlichekostennetto, mwst_gesamt, mwst_satz, nebenkosten, nebenkostenprom2von, nettokaltmiete, nettomieteprom2von, nettorendite, nettorendite_ist, nettorendite_soll, pacht, pauschalmiete, preis_zeiteinheit, preis_zeitraum_bis, preis_zeitraum_von, provisionbrutto, provisionnetto, provisionspflichtig, provision_teilen, richtpreis, richtpreisprom2, ruecklagenetto, sonstigekostennetto, sonstigemietenetto, stp_carport, stp_duplex, stp_freiplatz, stp_garage, stp_parkhaus, stp_sonstige, stp_tiefgarage, summemietenetto, user_defined_anyfield, user_defined_extend, user_defined_simplefield, waehrung, warmmiete, x_fache, zzg_mehrwertsteuer',
+        'searchFields' => 'abstand, aussen_courtage, betriebskostennetto, courtage_hinweis, erbpacht, erschliessungskosten, evbnetto, freitext_preis, gesamtbelastungbrutto, gesamtbelastungnetto, gesamtkostenprom2von, gesamtmietebrutto, gesamtmietenetto, geschaeftsguthaben, hauptmietzinsnetto, hausgeld, heizkosten, heizkosten_enthalten, heizkostennetto, immobilie, innen_courtage, kaltmiete, kaufpreis, kaufpreisbrutto, kaufpreisnetto, kaufpreis_pro_qm, kaution, kaution_text, mieteinnahmen_ist, mieteinnahmen_soll, mietpreis_pro_qm, mietzuschlaege, monatlichekostenbrutto, monatlichekostennetto, mwst_gesamt, mwst_satz, nebenkosten, nebenkostenprom2von, nettokaltmiete, nettomieteprom2von, nettorendite, nettorendite_ist, nettorendite_soll, pacht, pauschalmiete, preis_zeiteinheit, preis_zeitraum_bis, preis_zeitraum_von, provisionbrutto, provisionnetto, provisionspflichtig, provision_teilen, richtpreis, richtpreisprom2, ruecklagenetto, sonstigekostennetto, sonstigemietenetto, stp_carport, stp_duplex, stp_freiplatz, stp_garage, stp_parkhaus, stp_sonstige, stp_tiefgarage, summemietenetto, user_defined_anyfield, user_defined_extend, user_defined_simplefield, waehrung, warmmiete, x_fache, zzg_mehrwertsteuer',
         'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/information/information-typo3-version.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, abstand, aussen_courtage, betriebskostennetto, courtage_hinweis, erbpacht, erschliessungskosten, evbnetto, freitext_preis, gesamtbelastungbrutto, gesamtbelastungnetto, gesamtkostenprom2von, gesamtmietebrutto, gesamtmietenetto, geschaeftsguthaben, hauptmietzinsnetto, hausgeld, heizkosten, heizkosten_enthalten, heizkostennetto, innen_courtage, kaltmiete, kaufpreis, kaufpreisbrutto, kaufpreisnetto, kaufpreis_pro_qm, kaution, kaution_text, mieteinnahmen_ist, mieteinnahmen_soll, mietpreis_pro_qm, mietzuschlaege, monatlichekostenbrutto, monatlichekostennetto, mwst_gesamt, mwst_satz, nebenkosten, nebenkostenprom2von, nettokaltmiete, nettomieteprom2von, nettorendite, nettorendite_ist, nettorendite_soll, pacht, pauschalmiete, preis_zeiteinheit, preis_zeitraum_bis, preis_zeitraum_von, provisionbrutto, provisionnetto, provisionspflichtig, provision_teilen, richtpreis, richtpreisprom2, ruecklagenetto, sonstigekostennetto, sonstigemietenetto, stp_carport, stp_duplex, stp_freiplatz, stp_garage, stp_parkhaus, stp_sonstige, stp_tiefgarage, summemietenetto, user_defined_anyfield, user_defined_extend, user_defined_simplefield, waehrung, warmmiete, x_fache, zzg_mehrwertsteuer',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, abstand, aussen_courtage, betriebskostennetto, courtage_hinweis, erbpacht, erschliessungskosten, evbnetto, freitext_preis, gesamtbelastungbrutto, gesamtbelastungnetto, gesamtkostenprom2von, gesamtmietebrutto, gesamtmietenetto, geschaeftsguthaben, hauptmietzinsnetto, hausgeld, heizkosten, heizkosten_enthalten, heizkostennetto, immobilie, innen_courtage, kaltmiete, kaufpreis, kaufpreisbrutto, kaufpreisnetto, kaufpreis_pro_qm, kaution, kaution_text, mieteinnahmen_ist, mieteinnahmen_soll, mietpreis_pro_qm, mietzuschlaege, monatlichekostenbrutto, monatlichekostennetto, mwst_gesamt, mwst_satz, nebenkosten, nebenkostenprom2von, nettokaltmiete, nettomieteprom2von, nettorendite, nettorendite_ist, nettorendite_soll, pacht, pauschalmiete, preis_zeiteinheit, preis_zeitraum_bis, preis_zeitraum_von, provisionbrutto, provisionnetto, provisionspflichtig, provision_teilen, richtpreis, richtpreisprom2, ruecklagenetto, sonstigekostennetto, sonstigemietenetto, stp_carport, stp_duplex, stp_freiplatz, stp_garage, stp_parkhaus, stp_sonstige, stp_tiefgarage, summemietenetto, user_defined_anyfield, user_defined_extend, user_defined_simplefield, waehrung, warmmiete, x_fache, zzg_mehrwertsteuer',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, abstand, aussen_courtage, betriebskostennetto, courtage_hinweis, erbpacht, erschliessungskosten, evbnetto, freitext_preis, gesamtbelastungbrutto, gesamtbelastungnetto, gesamtkostenprom2von, gesamtmietebrutto, gesamtmietenetto, geschaeftsguthaben, hauptmietzinsnetto, hausgeld, heizkosten, heizkosten_enthalten, heizkostennetto, innen_courtage, kaltmiete, kaufpreis, kaufpreisbrutto, kaufpreisnetto, kaufpreis_pro_qm, kaution, kaution_text, mieteinnahmen_ist, mieteinnahmen_soll, mietpreis_pro_qm, mietzuschlaege, monatlichekostenbrutto, monatlichekostennetto, mwst_gesamt, mwst_satz, nebenkosten, nebenkostenprom2von, nettokaltmiete, nettomieteprom2von, nettorendite, nettorendite_ist, nettorendite_soll, pacht, pauschalmiete, preis_zeiteinheit, preis_zeitraum_bis, preis_zeitraum_von, provisionbrutto, provisionnetto, provisionspflichtig, provision_teilen, richtpreis, richtpreisprom2, ruecklagenetto, sonstigekostennetto, sonstigemietenetto, stp_carport, stp_duplex, stp_freiplatz, stp_garage, stp_parkhaus, stp_sonstige, stp_tiefgarage, summemietenetto, user_defined_anyfield, user_defined_extend, user_defined_simplefield, waehrung, warmmiete, x_fache, zzg_mehrwertsteuer, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, abstand, aussen_courtage, betriebskostennetto, courtage_hinweis, erbpacht, erschliessungskosten, evbnetto, freitext_preis, gesamtbelastungbrutto, gesamtbelastungnetto, gesamtkostenprom2von, gesamtmietebrutto, gesamtmietenetto, geschaeftsguthaben, hauptmietzinsnetto, hausgeld, heizkosten, heizkosten_enthalten, heizkostennetto, immobilie, innen_courtage, kaltmiete, kaufpreis, kaufpreisbrutto, kaufpreisnetto, kaufpreis_pro_qm, kaution, kaution_text, mieteinnahmen_ist, mieteinnahmen_soll, mietpreis_pro_qm, mietzuschlaege, monatlichekostenbrutto, monatlichekostennetto, mwst_gesamt, mwst_satz, nebenkosten, nebenkostenprom2von, nettokaltmiete, nettomieteprom2von, nettorendite, nettorendite_ist, nettorendite_soll, pacht, pauschalmiete, preis_zeiteinheit, preis_zeitraum_bis, preis_zeitraum_von, provisionbrutto, provisionnetto, provisionspflichtig, provision_teilen, richtpreis, richtpreisprom2, ruecklagenetto, sonstigekostennetto, sonstigemietenetto, stp_carport, stp_duplex, stp_freiplatz, stp_garage, stp_parkhaus, stp_sonstige, stp_tiefgarage, summemietenetto, user_defined_anyfield, user_defined_extend, user_defined_simplefield, waehrung, warmmiete, x_fache, zzg_mehrwertsteuer, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -129,7 +130,7 @@ return [
             'label' => 'AussenCourtage',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_aussen_courtage',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_aussencourtage',
                 'maxitems' => 1,
                 'appearance' => [
                     'collapseAll' => 0,
@@ -343,12 +344,19 @@ return [
                 ],
             ],
         ],
+        'immobilie' => [
+            'exclude' => true,
+            'label' => 'Immobilie',
+            'config' => [
+                'type' => 'passthrough',
+            ],
+        ],
         'innen_courtage' => [
             'exclude' => true,
             'label' => 'InnenCourtage',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_innen_courtage',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_innencourtage',
                 'maxitems' => 1,
                 'appearance' => [
                     'collapseAll' => 0,
@@ -442,7 +450,7 @@ return [
             'label' => 'MieteinnahmenIst',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_mieteinnahmen_ist',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_mieteinnahmenist',
                 'maxitems' => 1,
                 'appearance' => [
                     'collapseAll' => 0,
@@ -458,7 +466,7 @@ return [
             'label' => 'MieteinnahmenSoll',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_mieteinnahmen_soll',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_mieteinnahmensoll',
                 'maxitems' => 1,
                 'appearance' => [
                     'collapseAll' => 0,
@@ -630,7 +638,7 @@ return [
             'label' => 'PreisZeiteinheit',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_preis_zeiteinheit',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_preiszeiteinheit',
                 'maxitems' => 1,
                 'appearance' => [
                     'collapseAll' => 0,
@@ -703,7 +711,7 @@ return [
             'label' => 'ProvisionTeilen',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_provision_teilen',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_provisionteilen',
                 'maxitems' => 1,
                 'appearance' => [
                     'collapseAll' => 0,
@@ -785,7 +793,7 @@ return [
             'label' => 'StpCarport',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_stp_carport',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_stpcarport',
                 'maxitems' => 1,
                 'appearance' => [
                     'collapseAll' => 0,
@@ -801,7 +809,7 @@ return [
             'label' => 'StpDuplex',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_stp_duplex',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_stpduplex',
                 'maxitems' => 1,
                 'appearance' => [
                     'collapseAll' => 0,
@@ -817,7 +825,7 @@ return [
             'label' => 'StpFreiplatz',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_stp_freiplatz',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_stpfreiplatz',
                 'maxitems' => 1,
                 'appearance' => [
                     'collapseAll' => 0,
@@ -833,7 +841,7 @@ return [
             'label' => 'StpGarage',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_stp_garage',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_stpgarage',
                 'maxitems' => 1,
                 'appearance' => [
                     'collapseAll' => 0,
@@ -849,7 +857,7 @@ return [
             'label' => 'StpParkhaus',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_stp_parkhaus',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_stpparkhaus',
                 'maxitems' => 1,
                 'appearance' => [
                     'collapseAll' => 0,
@@ -865,7 +873,8 @@ return [
             'label' => 'StpSonstige',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_stp_sonstige',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_stpsonstige',
+                'foreign_field' => 'preise',
                 'maxitems' => 9999,
                 'appearance' => [
                     'collapseAll' => 1,
@@ -881,7 +890,7 @@ return [
             'label' => 'StpTiefgarage',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_stp_tiefgarage',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_stptiefgarage',
                 'maxitems' => 1,
                 'appearance' => [
                     'collapseAll' => 0,

@@ -2,6 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'Freitexte',
+        'hideTable' => 1,
         'label' => 'uid',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -16,14 +17,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'ausstatt_beschr, dreizeiler, lage, objektbeschreibung, objekt_text, objekttitel, sonstige_angaben, user_defined_anyfield, user_defined_extend, user_defined_simplefield',
+        'searchFields' => 'ausstatt_beschr, dreizeiler, immobilie, lage, objektbeschreibung, objekt_text, objekttitel, sonstige_angaben, user_defined_anyfield, user_defined_extend, user_defined_simplefield',
         'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/information/information-typo3-version.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, ausstatt_beschr, dreizeiler, lage, objektbeschreibung, objekt_text, objekttitel, sonstige_angaben, user_defined_anyfield, user_defined_extend, user_defined_simplefield',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, ausstatt_beschr, dreizeiler, immobilie, lage, objektbeschreibung, objekt_text, objekttitel, sonstige_angaben, user_defined_anyfield, user_defined_extend, user_defined_simplefield',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, ausstatt_beschr, dreizeiler, lage, objektbeschreibung, objekt_text, objekttitel, sonstige_angaben, user_defined_anyfield, user_defined_extend, user_defined_simplefield, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, ausstatt_beschr, dreizeiler, immobilie, lage, objektbeschreibung, objekt_text, objekttitel, sonstige_angaben, user_defined_anyfield, user_defined_extend, user_defined_simplefield, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -135,6 +136,13 @@ return [
                 'eval' => 'trim',
             ],
         ],
+        'immobilie' => [
+            'exclude' => true,
+            'label' => 'Immobilie',
+            'config' => [
+                'type' => 'passthrough',
+            ],
+        ],
         'lage' => [
             'exclude' => true,
             'label' => 'Lage',
@@ -160,7 +168,7 @@ return [
             'label' => 'ObjektText',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_objekt_text',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_objekttext',
                 'maxitems' => 1,
                 'appearance' => [
                     'collapseAll' => 0,

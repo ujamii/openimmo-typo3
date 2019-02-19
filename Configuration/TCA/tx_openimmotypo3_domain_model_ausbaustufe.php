@@ -2,6 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'Ausbaustufe',
+        'hideTable' => 1,
         'label' => 'uid',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -16,14 +17,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'ausbauhaus, bausatzhaus, schluesselfertigmitbodenplatte, schluesselfertigmitkeller, schluesselfertigohnebodenplatte',
+        'searchFields' => 'ausbauhaus, ausstattung, bausatzhaus, schluesselfertigmitbodenplatte, schluesselfertigmitkeller, schluesselfertigohnebodenplatte',
         'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/information/information-typo3-version.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, ausbauhaus, bausatzhaus, schluesselfertigmitbodenplatte, schluesselfertigmitkeller, schluesselfertigohnebodenplatte',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, ausbauhaus, ausstattung, bausatzhaus, schluesselfertigmitbodenplatte, schluesselfertigmitkeller, schluesselfertigohnebodenplatte',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, ausbauhaus, bausatzhaus, schluesselfertigmitbodenplatte, schluesselfertigmitkeller, schluesselfertigohnebodenplatte, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, ausbauhaus, ausstattung, bausatzhaus, schluesselfertigmitbodenplatte, schluesselfertigmitkeller, schluesselfertigohnebodenplatte, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -121,6 +122,13 @@ return [
             'config' => [
                 'type' => 'check',
                 'default' => 0,
+            ],
+        ],
+        'ausstattung' => [
+            'exclude' => true,
+            'label' => 'Ausstattung',
+            'config' => [
+                'type' => 'passthrough',
             ],
         ],
         'bausatzhaus' => [

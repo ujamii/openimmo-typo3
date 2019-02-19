@@ -2,6 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'Objektart',
+        'hideTable' => 1,
         'label' => 'uid',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -16,14 +17,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'buero_praxen, einzelhandel, freizeitimmobilie_gewerblich, gastgewerbe, grundstueck, hallen_lager_prod, haus, land_und_forstwirtschaft, objektart_zusatz, parken, sonstige, wohnung, zimmer, zinshaus_renditeobjekt',
+        'searchFields' => 'buero_praxen, einzelhandel, freizeitimmobilie_gewerblich, gastgewerbe, grundstueck, hallen_lager_prod, haus, land_und_forstwirtschaft, objektart_zusatz, objektkategorie, parken, sonstige, wohnung, zimmer, zinshaus_renditeobjekt',
         'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/information/information-typo3-version.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, buero_praxen, einzelhandel, freizeitimmobilie_gewerblich, gastgewerbe, grundstueck, hallen_lager_prod, haus, land_und_forstwirtschaft, objektart_zusatz, parken, sonstige, wohnung, zimmer, zinshaus_renditeobjekt',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, buero_praxen, einzelhandel, freizeitimmobilie_gewerblich, gastgewerbe, grundstueck, hallen_lager_prod, haus, land_und_forstwirtschaft, objektart_zusatz, objektkategorie, parken, sonstige, wohnung, zimmer, zinshaus_renditeobjekt',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, buero_praxen, einzelhandel, freizeitimmobilie_gewerblich, gastgewerbe, grundstueck, hallen_lager_prod, haus, land_und_forstwirtschaft, objektart_zusatz, parken, sonstige, wohnung, zimmer, zinshaus_renditeobjekt, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, buero_praxen, einzelhandel, freizeitimmobilie_gewerblich, gastgewerbe, grundstueck, hallen_lager_prod, haus, land_und_forstwirtschaft, objektart_zusatz, objektkategorie, parken, sonstige, wohnung, zimmer, zinshaus_renditeobjekt, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -120,7 +121,8 @@ return [
             'label' => 'BueroPraxen',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_buero_praxen',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_bueropraxen',
+                'foreign_field' => 'objektart',
                 'maxitems' => 9999,
                 'appearance' => [
                     'collapseAll' => 1,
@@ -137,6 +139,7 @@ return [
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_openimmotypo3_domain_model_einzelhandel',
+                'foreign_field' => 'objektart',
                 'maxitems' => 9999,
                 'appearance' => [
                     'collapseAll' => 1,
@@ -152,7 +155,8 @@ return [
             'label' => 'FreizeitimmobilieGewerblich',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_freizeitimmobilie_gewerblich',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_freizeitimmobiliegewerblich',
+                'foreign_field' => 'objektart',
                 'maxitems' => 9999,
                 'appearance' => [
                     'collapseAll' => 1,
@@ -169,6 +173,7 @@ return [
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_openimmotypo3_domain_model_gastgewerbe',
+                'foreign_field' => 'objektart',
                 'maxitems' => 9999,
                 'appearance' => [
                     'collapseAll' => 1,
@@ -185,6 +190,7 @@ return [
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_openimmotypo3_domain_model_grundstueck',
+                'foreign_field' => 'objektart',
                 'maxitems' => 9999,
                 'appearance' => [
                     'collapseAll' => 1,
@@ -200,7 +206,8 @@ return [
             'label' => 'HallenLagerProd',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_hallen_lager_prod',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_hallenlagerprod',
+                'foreign_field' => 'objektart',
                 'maxitems' => 9999,
                 'appearance' => [
                     'collapseAll' => 1,
@@ -217,6 +224,7 @@ return [
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_openimmotypo3_domain_model_haus',
+                'foreign_field' => 'objektart',
                 'maxitems' => 9999,
                 'appearance' => [
                     'collapseAll' => 1,
@@ -232,7 +240,8 @@ return [
             'label' => 'LandUndForstwirtschaft',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_land_und_forstwirtschaft',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_landundforstwirtschaft',
+                'foreign_field' => 'objektart',
                 'maxitems' => 9999,
                 'appearance' => [
                     'collapseAll' => 1,
@@ -247,16 +256,17 @@ return [
             'exclude' => true,
             'label' => 'ObjektartZusatz',
             'config' => [
-                'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_string',
-                'maxitems' => 9999,
-                'appearance' => [
-                    'collapseAll' => 1,
-                    'levelLinksPosition' => 'top',
-                    'showSynchronizationLink' => 1,
-                    'showPossibleLocalizationRecords' => 1,
-                    'showAllLocalizationLink' => 1
-                ],
+                'type' => 'text',
+                'cols' => 40,
+                'rows' => 15,
+                'eval' => 'trim',
+            ],
+        ],
+        'objektkategorie' => [
+            'exclude' => true,
+            'label' => 'Objektkategorie',
+            'config' => [
+                'type' => 'passthrough',
             ],
         ],
         'parken' => [
@@ -265,6 +275,7 @@ return [
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_openimmotypo3_domain_model_parken',
+                'foreign_field' => 'objektart',
                 'maxitems' => 9999,
                 'appearance' => [
                     'collapseAll' => 1,
@@ -281,6 +292,7 @@ return [
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_openimmotypo3_domain_model_sonstige',
+                'foreign_field' => 'objektart',
                 'maxitems' => 9999,
                 'appearance' => [
                     'collapseAll' => 1,
@@ -297,6 +309,7 @@ return [
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_openimmotypo3_domain_model_wohnung',
+                'foreign_field' => 'objektart',
                 'maxitems' => 9999,
                 'appearance' => [
                     'collapseAll' => 1,
@@ -313,6 +326,7 @@ return [
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_openimmotypo3_domain_model_zimmer',
+                'foreign_field' => 'objektart',
                 'maxitems' => 9999,
                 'appearance' => [
                     'collapseAll' => 1,
@@ -328,7 +342,8 @@ return [
             'label' => 'ZinshausRenditeobjekt',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_zinshaus_renditeobjekt',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_zinshausrenditeobjekt',
+                'foreign_field' => 'objektart',
                 'maxitems' => 9999,
                 'appearance' => [
                     'collapseAll' => 1,

@@ -2,6 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'Ausstattung',
+        'hideTable' => 1,
         'label' => 'uid',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -16,14 +17,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'abstellraum, angeschl_gastronomie, ausbaustufe, ausricht_balkon_terrasse, ausstatt_kategorie, bad, barrierefrei, bauweise, befeuerung, bibliothek, boden, brauereibindung, breitband_zugang, dachboden, dachform, dvbt, dv_verkabelung, energietyp, fahrradraum, fahrstuhl, gaestewc, gartennutzung, gastterrasse, hallenhoehe, hebebuehne, heizungsart, kabelkanaele, kabel_sat_tv, kamin, kantine_cafeteria, klimatisiert, kran, kueche, moebliert, raeume_veraenderbar, rampe, rolladen, rollstuhlgerecht, sauna, seniorengerecht, serviceleistungen, sicherheitstechnik, sporteinrichtungen, stellplatzart, stromanschlusswert, swimmingpool, teekueche, telefon_ferienimmobilie, umts_empfang, unterkellert, user_defined_anyfield, user_defined_extend, user_defined_simplefield, wasch_trockenraum, wellnessbereich, wg_geeignet, wintergarten',
+        'searchFields' => 'abstellraum, angeschl_gastronomie, ausbaustufe, ausricht_balkon_terrasse, ausstatt_kategorie, bad, barrierefrei, bauweise, befeuerung, bibliothek, boden, brauereibindung, breitband_zugang, dachboden, dachform, dvbt, dv_verkabelung, energietyp, fahrradraum, fahrstuhl, gaestewc, gartennutzung, gastterrasse, hallenhoehe, hebebuehne, heizungsart, immobilie, kabelkanaele, kabel_sat_tv, kamin, kantine_cafeteria, klimatisiert, kran, kueche, moebliert, raeume_veraenderbar, rampe, rolladen, rollstuhlgerecht, sauna, seniorengerecht, serviceleistungen, sicherheitstechnik, sporteinrichtungen, stellplatzart, stromanschlusswert, swimmingpool, teekueche, telefon_ferienimmobilie, umts_empfang, unterkellert, user_defined_anyfield, user_defined_extend, user_defined_simplefield, wasch_trockenraum, wellnessbereich, wg_geeignet, wintergarten',
         'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/information/information-typo3-version.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, abstellraum, angeschl_gastronomie, ausbaustufe, ausricht_balkon_terrasse, ausstatt_kategorie, bad, barrierefrei, bauweise, befeuerung, bibliothek, boden, brauereibindung, breitband_zugang, dachboden, dachform, dvbt, dv_verkabelung, energietyp, fahrradraum, fahrstuhl, gaestewc, gartennutzung, gastterrasse, hallenhoehe, hebebuehne, heizungsart, kabelkanaele, kabel_sat_tv, kamin, kantine_cafeteria, klimatisiert, kran, kueche, moebliert, raeume_veraenderbar, rampe, rolladen, rollstuhlgerecht, sauna, seniorengerecht, serviceleistungen, sicherheitstechnik, sporteinrichtungen, stellplatzart, stromanschlusswert, swimmingpool, teekueche, telefon_ferienimmobilie, umts_empfang, unterkellert, user_defined_anyfield, user_defined_extend, user_defined_simplefield, wasch_trockenraum, wellnessbereich, wg_geeignet, wintergarten',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, abstellraum, angeschl_gastronomie, ausbaustufe, ausricht_balkon_terrasse, ausstatt_kategorie, bad, barrierefrei, bauweise, befeuerung, bibliothek, boden, brauereibindung, breitband_zugang, dachboden, dachform, dvbt, dv_verkabelung, energietyp, fahrradraum, fahrstuhl, gaestewc, gartennutzung, gastterrasse, hallenhoehe, hebebuehne, heizungsart, immobilie, kabelkanaele, kabel_sat_tv, kamin, kantine_cafeteria, klimatisiert, kran, kueche, moebliert, raeume_veraenderbar, rampe, rolladen, rollstuhlgerecht, sauna, seniorengerecht, serviceleistungen, sicherheitstechnik, sporteinrichtungen, stellplatzart, stromanschlusswert, swimmingpool, teekueche, telefon_ferienimmobilie, umts_empfang, unterkellert, user_defined_anyfield, user_defined_extend, user_defined_simplefield, wasch_trockenraum, wellnessbereich, wg_geeignet, wintergarten',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, abstellraum, angeschl_gastronomie, ausbaustufe, ausricht_balkon_terrasse, ausstatt_kategorie, bad, barrierefrei, bauweise, befeuerung, bibliothek, boden, brauereibindung, breitband_zugang, dachboden, dachform, dvbt, dv_verkabelung, energietyp, fahrradraum, fahrstuhl, gaestewc, gartennutzung, gastterrasse, hallenhoehe, hebebuehne, heizungsart, kabelkanaele, kabel_sat_tv, kamin, kantine_cafeteria, klimatisiert, kran, kueche, moebliert, raeume_veraenderbar, rampe, rolladen, rollstuhlgerecht, sauna, seniorengerecht, serviceleistungen, sicherheitstechnik, sporteinrichtungen, stellplatzart, stromanschlusswert, swimmingpool, teekueche, telefon_ferienimmobilie, umts_empfang, unterkellert, user_defined_anyfield, user_defined_extend, user_defined_simplefield, wasch_trockenraum, wellnessbereich, wg_geeignet, wintergarten, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, abstellraum, angeschl_gastronomie, ausbaustufe, ausricht_balkon_terrasse, ausstatt_kategorie, bad, barrierefrei, bauweise, befeuerung, bibliothek, boden, brauereibindung, breitband_zugang, dachboden, dachform, dvbt, dv_verkabelung, energietyp, fahrradraum, fahrstuhl, gaestewc, gartennutzung, gastterrasse, hallenhoehe, hebebuehne, heizungsart, immobilie, kabelkanaele, kabel_sat_tv, kamin, kantine_cafeteria, klimatisiert, kran, kueche, moebliert, raeume_veraenderbar, rampe, rolladen, rollstuhlgerecht, sauna, seniorengerecht, serviceleistungen, sicherheitstechnik, sporteinrichtungen, stellplatzart, stromanschlusswert, swimmingpool, teekueche, telefon_ferienimmobilie, umts_empfang, unterkellert, user_defined_anyfield, user_defined_extend, user_defined_simplefield, wasch_trockenraum, wellnessbereich, wg_geeignet, wintergarten, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -128,7 +129,7 @@ return [
             'label' => 'AngeschlGastronomie',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_angeschl_gastronomie',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_angeschlgastronomie',
                 'maxitems' => 1,
                 'appearance' => [
                     'collapseAll' => 0,
@@ -160,7 +161,7 @@ return [
             'label' => 'AusrichtBalkonTerrasse',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_ausricht_balkon_terrasse',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_ausrichtbalkonterrasse',
                 'maxitems' => 1,
                 'appearance' => [
                     'collapseAll' => 0,
@@ -279,7 +280,7 @@ return [
             'label' => 'BreitbandZugang',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_breitband_zugang',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_breitbandzugang',
                 'maxitems' => 1,
                 'appearance' => [
                     'collapseAll' => 0,
@@ -427,6 +428,13 @@ return [
                 ],
             ],
         ],
+        'immobilie' => [
+            'exclude' => true,
+            'label' => 'Immobilie',
+            'config' => [
+                'type' => 'passthrough',
+            ],
+        ],
         'kabelkanaele' => [
             'exclude' => true,
             'label' => 'Kabelkanaele',
@@ -561,6 +569,7 @@ return [
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_openimmotypo3_domain_model_serviceleistungen',
+                'foreign_field' => 'ausstattung',
                 'maxitems' => 9999,
                 'appearance' => [
                     'collapseAll' => 1,
@@ -601,6 +610,7 @@ return [
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_openimmotypo3_domain_model_stellplatzart',
+                'foreign_field' => 'ausstattung',
                 'maxitems' => 9999,
                 'appearance' => [
                     'collapseAll' => 1,

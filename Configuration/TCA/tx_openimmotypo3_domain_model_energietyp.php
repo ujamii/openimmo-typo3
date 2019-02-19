@@ -2,6 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'Energietyp',
+        'hideTable' => 1,
         'label' => 'uid',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -16,14 +17,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'kfw40, kfw55, kfw60, kfw70, minergiebauweise, minergie_zertifiziert, neubaustandard, niedrigenergie, passivhaus',
+        'searchFields' => 'ausstattung, kfw40, kfw55, kfw60, kfw70, minergiebauweise, minergie_zertifiziert, neubaustandard, niedrigenergie, passivhaus',
         'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/information/information-typo3-version.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, kfw40, kfw55, kfw60, kfw70, minergiebauweise, minergie_zertifiziert, neubaustandard, niedrigenergie, passivhaus',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, ausstattung, kfw40, kfw55, kfw60, kfw70, minergiebauweise, minergie_zertifiziert, neubaustandard, niedrigenergie, passivhaus',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, kfw40, kfw55, kfw60, kfw70, minergiebauweise, minergie_zertifiziert, neubaustandard, niedrigenergie, passivhaus, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, ausstattung, kfw40, kfw55, kfw60, kfw70, minergiebauweise, minergie_zertifiziert, neubaustandard, niedrigenergie, passivhaus, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -113,6 +114,13 @@ return [
                 'behaviour' => [
                     'allowLanguageSynchronization' => true
                 ]
+            ],
+        ],
+        'ausstattung' => [
+            'exclude' => true,
+            'label' => 'Ausstattung',
+            'config' => [
+                'type' => 'passthrough',
             ],
         ],
         'kfw40' => [

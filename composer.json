@@ -11,7 +11,7 @@
     ],
     "require": {
         "typo3/cms-core": "^9.5",
-        "ujamii/openimmo": "^0.1"
+        "ujamii/openimmo": "~0.2"
     },
     "require-dev": {
         "friendsoftypo3/extension-builder": "^9.10"

@@ -2,6 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'Immobilie',
+        'hideTable' => 0,
         'label' => 'uid',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -16,14 +17,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'anhaenge, ausstattung, bewertung, bieterverfahren, flaechen, freitexte, geo, infrastruktur, kontaktperson, objektkategorie, preise, user_defined_anyfield, user_defined_extend, user_defined_simplefield, versteigerung, verwaltung_objekt, verwaltung_techn, weitere_adresse, zustand_angaben',
+        'searchFields' => 'anbieter, anhaenge, ausstattung, bewertung, bieterverfahren, flaechen, freitexte, geo, infrastruktur, kontaktperson, objektkategorie, preise, user_defined_anyfield, user_defined_extend, user_defined_simplefield, versteigerung, verwaltung_objekt, verwaltung_techn, weitere_adresse, zustand_angaben',
         'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/information/information-typo3-version.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, anhaenge, ausstattung, bewertung, bieterverfahren, flaechen, freitexte, geo, infrastruktur, kontaktperson, objektkategorie, preise, user_defined_anyfield, user_defined_extend, user_defined_simplefield, versteigerung, verwaltung_objekt, verwaltung_techn, weitere_adresse, zustand_angaben',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, anbieter, anhaenge, ausstattung, bewertung, bieterverfahren, flaechen, freitexte, geo, infrastruktur, kontaktperson, objektkategorie, preise, user_defined_anyfield, user_defined_extend, user_defined_simplefield, versteigerung, verwaltung_objekt, verwaltung_techn, weitere_adresse, zustand_angaben',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, anhaenge, ausstattung, bewertung, bieterverfahren, flaechen, freitexte, geo, infrastruktur, kontaktperson, objektkategorie, preise, user_defined_anyfield, user_defined_extend, user_defined_simplefield, versteigerung, verwaltung_objekt, verwaltung_techn, weitere_adresse, zustand_angaben, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, anbieter, anhaenge, ausstattung, bewertung, bieterverfahren, flaechen, freitexte, geo, infrastruktur, kontaktperson, objektkategorie, preise, user_defined_anyfield, user_defined_extend, user_defined_simplefield, versteigerung, verwaltung_objekt, verwaltung_techn, weitere_adresse, zustand_angaben, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -113,6 +114,13 @@ return [
                 'behaviour' => [
                     'allowLanguageSynchronization' => true
                 ]
+            ],
+        ],
+        'anbieter' => [
+            'exclude' => true,
+            'label' => 'Anbieter',
+            'config' => [
+                'type' => 'passthrough',
             ],
         ],
         'anhaenge' => [
@@ -333,7 +341,7 @@ return [
             'label' => 'VerwaltungObjekt',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_verwaltung_objekt',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_verwaltungobjekt',
                 'maxitems' => 1,
                 'appearance' => [
                     'collapseAll' => 0,
@@ -349,7 +357,7 @@ return [
             'label' => 'VerwaltungTechn',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_verwaltung_techn',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_verwaltungtechn',
                 'maxitems' => 1,
                 'appearance' => [
                     'collapseAll' => 0,
@@ -365,7 +373,8 @@ return [
             'label' => 'WeitereAdresse',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_weitere_adresse',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_weitereadresse',
+                'foreign_field' => 'immobilie',
                 'maxitems' => 9999,
                 'appearance' => [
                     'collapseAll' => 1,
@@ -381,7 +390,7 @@ return [
             'label' => 'ZustandAngaben',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_zustand_angaben',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_zustandangaben',
                 'maxitems' => 1,
                 'appearance' => [
                     'collapseAll' => 0,

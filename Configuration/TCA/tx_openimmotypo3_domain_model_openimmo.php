@@ -2,6 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'Openimmo',
+        'hideTable' => 1,
         'label' => 'uid',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -121,6 +122,7 @@ return [
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_openimmotypo3_domain_model_anbieter',
+                'foreign_field' => 'openimmo',
                 'maxitems' => 9999,
                 'appearance' => [
                     'collapseAll' => 1,

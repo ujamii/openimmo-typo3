@@ -2,6 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'Geschlecht',
+        'hideTable' => 1,
         'label' => 'uid',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -16,14 +17,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'geschl_attr',
+        'searchFields' => 'geschl_attr, verwaltung_objekt',
         'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/information/information-typo3-version.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, geschl_attr',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, geschl_attr, verwaltung_objekt',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, geschl_attr, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, geschl_attr, verwaltung_objekt, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -128,6 +129,13 @@ return [
                     ['Nur_frau', 'NUR_FRAU'],
                     ['Nur_mann', 'NUR_MANN'],
                 ],
+            ],
+        ],
+        'verwaltung_objekt' => [
+            'exclude' => true,
+            'label' => 'VerwaltungObjekt',
+            'config' => [
+                'type' => 'passthrough',
             ],
         ],
     ],

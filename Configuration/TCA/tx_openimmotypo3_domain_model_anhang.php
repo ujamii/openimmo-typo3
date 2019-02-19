@@ -2,6 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'Anhang',
+        'hideTable' => 1,
         'label' => 'uid',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -16,14 +17,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'anhangtitel, sqlsafe_check, daten, format, gruppe, location',
+        'searchFields' => 'anbieter, anhaenge, anhangtitel, sqlsafe_check, daten, format, gruppe, location',
         'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/information/information-typo3-version.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, anhangtitel, sqlsafe_check, daten, format, gruppe, location',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, anbieter, anhaenge, anhangtitel, sqlsafe_check, daten, format, gruppe, location',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, anhangtitel, sqlsafe_check, daten, format, gruppe, location, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, anbieter, anhaenge, anhangtitel, sqlsafe_check, daten, format, gruppe, location, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -115,6 +116,20 @@ return [
                 ]
             ],
         ],
+        'anbieter' => [
+            'exclude' => true,
+            'label' => 'Anbieter',
+            'config' => [
+                'type' => 'passthrough',
+            ],
+        ],
+        'anhaenge' => [
+            'exclude' => true,
+            'label' => 'Anhaenge',
+            'config' => [
+                'type' => 'passthrough',
+            ],
+        ],
         'anhangtitel' => [
             'exclude' => true,
             'label' => 'Anhangtitel',
@@ -130,7 +145,7 @@ return [
             'label' => 'Check',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_sqlsafe_check',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_sqlsafecheck',
                 'maxitems' => 1,
                 'appearance' => [
                     'collapseAll' => 0,

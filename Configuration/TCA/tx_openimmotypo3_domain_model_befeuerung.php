@@ -2,6 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'Befeuerung',
+        'hideTable' => 1,
         'label' => 'uid',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -16,14 +17,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'alternativ, block, elektro, erdwaerme, fern, fluessiggas, gas, holz, kohle, luftwp, oel, pellet, solar, wasser_elektro',
+        'searchFields' => 'alternativ, ausstattung, block, elektro, erdwaerme, fern, fluessiggas, gas, holz, kohle, luftwp, oel, pellet, solar, wasser_elektro',
         'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/information/information-typo3-version.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, alternativ, block, elektro, erdwaerme, fern, fluessiggas, gas, holz, kohle, luftwp, oel, pellet, solar, wasser_elektro',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, alternativ, ausstattung, block, elektro, erdwaerme, fern, fluessiggas, gas, holz, kohle, luftwp, oel, pellet, solar, wasser_elektro',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, alternativ, block, elektro, erdwaerme, fern, fluessiggas, gas, holz, kohle, luftwp, oel, pellet, solar, wasser_elektro, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, alternativ, ausstattung, block, elektro, erdwaerme, fern, fluessiggas, gas, holz, kohle, luftwp, oel, pellet, solar, wasser_elektro, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -121,6 +122,13 @@ return [
             'config' => [
                 'type' => 'check',
                 'default' => 0,
+            ],
+        ],
+        'ausstattung' => [
+            'exclude' => true,
+            'label' => 'Ausstattung',
+            'config' => [
+                'type' => 'passthrough',
             ],
         ],
         'block' => [

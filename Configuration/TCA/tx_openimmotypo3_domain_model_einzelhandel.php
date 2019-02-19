@@ -2,6 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'Einzelhandel',
+        'hideTable' => 1,
         'label' => 'uid',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -16,14 +17,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'handel_typ',
+        'searchFields' => 'handel_typ, objektart',
         'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/information/information-typo3-version.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, handel_typ',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, handel_typ, objektart',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, handel_typ, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, handel_typ, objektart, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -134,6 +135,13 @@ return [
                     ['Verbrauchermarkt', 'VERBRAUCHERMARKT'],
                     ['Verkaufsflaeche', 'VERKAUFSFLAECHE'],
                 ],
+            ],
+        ],
+        'objektart' => [
+            'exclude' => true,
+            'label' => 'Objektart',
+            'config' => [
+                'type' => 'passthrough',
             ],
         ],
     ],

@@ -2,6 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'Geo',
+        'hideTable' => 1,
         'label' => 'uid',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -16,14 +17,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'anzahl_etagen, bundesland, etage, flur, flurstueck, gemarkung, gemeindecode, geokoordinaten, hausnummer, karten_makro, karten_mikro, lage_gebiet, lage_im_bau, land, luftbildern, ort, plz, regionaler_zusatz, strasse, user_defined_anyfield, user_defined_extend, user_defined_simplefield, virtuelletour, wohnungsnr',
+        'searchFields' => 'anzahl_etagen, bundesland, etage, flur, flurstueck, gemarkung, gemeindecode, geokoordinaten, hausnummer, immobilie, karten_makro, karten_mikro, lage_gebiet, lage_im_bau, land, luftbildern, ort, plz, regionaler_zusatz, strasse, user_defined_anyfield, user_defined_extend, user_defined_simplefield, virtuelletour, wohnungsnr',
         'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/information/information-typo3-version.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, anzahl_etagen, bundesland, etage, flur, flurstueck, gemarkung, gemeindecode, geokoordinaten, hausnummer, karten_makro, karten_mikro, lage_gebiet, lage_im_bau, land, luftbildern, ort, plz, regionaler_zusatz, strasse, user_defined_anyfield, user_defined_extend, user_defined_simplefield, virtuelletour, wohnungsnr',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, anzahl_etagen, bundesland, etage, flur, flurstueck, gemarkung, gemeindecode, geokoordinaten, hausnummer, immobilie, karten_makro, karten_mikro, lage_gebiet, lage_im_bau, land, luftbildern, ort, plz, regionaler_zusatz, strasse, user_defined_anyfield, user_defined_extend, user_defined_simplefield, virtuelletour, wohnungsnr',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, anzahl_etagen, bundesland, etage, flur, flurstueck, gemarkung, gemeindecode, geokoordinaten, hausnummer, karten_makro, karten_mikro, lage_gebiet, lage_im_bau, land, luftbildern, ort, plz, regionaler_zusatz, strasse, user_defined_anyfield, user_defined_extend, user_defined_simplefield, virtuelletour, wohnungsnr, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, anzahl_etagen, bundesland, etage, flur, flurstueck, gemarkung, gemeindecode, geokoordinaten, hausnummer, immobilie, karten_makro, karten_mikro, lage_gebiet, lage_im_bau, land, luftbildern, ort, plz, regionaler_zusatz, strasse, user_defined_anyfield, user_defined_extend, user_defined_simplefield, virtuelletour, wohnungsnr, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -209,6 +210,13 @@ return [
                 'eval' => 'trim',
             ],
         ],
+        'immobilie' => [
+            'exclude' => true,
+            'label' => 'Immobilie',
+            'config' => [
+                'type' => 'passthrough',
+            ],
+        ],
         'karten_makro' => [
             'exclude' => true,
             'label' => 'KartenMakro',
@@ -230,7 +238,7 @@ return [
             'label' => 'LageGebiet',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_lage_gebiet',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_lagegebiet',
                 'maxitems' => 1,
                 'appearance' => [
                     'collapseAll' => 0,
@@ -246,7 +254,7 @@ return [
             'label' => 'LageImBau',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_lage_im_bau',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_lageimbau',
                 'maxitems' => 1,
                 'appearance' => [
                     'collapseAll' => 0,

@@ -2,6 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'Haus',
+        'hideTable' => 1,
         'label' => 'uid',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -16,14 +17,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'haustyp',
+        'searchFields' => 'haustyp, objektart',
         'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/information/information-typo3-version.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, haustyp',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, haustyp, objektart',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, haustyp, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, haustyp, objektart, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -152,6 +153,13 @@ return [
                     ['Villa', 'VILLA'],
                     ['Zweifamilienhaus', 'ZWEIFAMILIENHAUS'],
                 ],
+            ],
+        ],
+        'objektart' => [
+            'exclude' => true,
+            'label' => 'Objektart',
+            'config' => [
+                'type' => 'passthrough',
             ],
         ],
     ],

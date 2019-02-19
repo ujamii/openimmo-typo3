@@ -8,6 +8,7 @@ use gossi\codegen\model\PhpClass;
 use gossi\codegen\model\PhpConstant;
 use gossi\codegen\model\PhPProperty;
 use gossi\docblock\tags\AbstractDescriptionTag;
+use gossi\docblock\tags\TagFactory;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -17,6 +18,7 @@ use TYPO3\CMS\Core\Utility\StringUtility;
 use TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface;
 use TYPO3\CMS\Extbase\Persistence\ObjectMonitoringInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
+use Ujamii\OpenImmo\Generator\ApiGenerator;
 
 /**
  * Class GenerateTypo3WrapperCommand
@@ -29,8 +31,31 @@ class GenerateTypo3WrapperCommand extends Command
     protected $typo3ModelNamespace = 'Ujamii\OpenImmoTypo3\Domain\Model';
     protected $typo3RepositoryNamespace = 'Ujamii\OpenImmoTypo3\Domain\Repository';
     protected $sqlTablePrefix = 'tx_openimmotypo3_domain_model_';
+    protected $allowedInListView = [
+        'tx_openimmotypo3_domain_model_anbieter',
+        'tx_openimmotypo3_domain_model_immobilie',
+    ];
 
+    /**
+     * List of API classes incl. namespace.
+     *
+     * @var array
+     */
     protected $apiClasses = [];
+
+    /**
+     * List of API classes excl. namepsace.
+     *
+     * @var array
+     */
+    protected $classNamesInApiNamespace = [];
+
+    /**
+     * This will be filled for "backlink" mm-fields during SQL generation process.
+     *
+     * @var array
+     */
+    protected $mmSqlCode = [];
 
     /**
      * @var InputInterface
@@ -55,6 +80,7 @@ class GenerateTypo3WrapperCommand extends Command
      * @param OutputInterface $output
      *
      * @return int|void|null
+     * @throws \ReflectionException
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
@@ -65,12 +91,14 @@ class GenerateTypo3WrapperCommand extends Command
         $allClasses  = $classLoader->getClassMap();
 
         foreach ($allClasses as $classname => $file) {
-            $this->output->writeln($classname);
             // Store the namespace of each class in the namespace map
             if (substr($classname, 0, strlen($this->openImmoApiNamespace)) == $this->openImmoApiNamespace) {
                 $this->apiClasses[$classname] = $file;
+                $this->classNamesInApiNamespace[] = (new \ReflectionClass($classname))->getShortName();
             }
         }
+
+        //TODO: exclude OpenImmo class
 
         GeneralUtility::writeFile($this->getTargetForFile('ext_tables.sql'), $this->generateExtbaseSql());
         $this->generateDomainClasses();
@@ -81,23 +109,34 @@ class GenerateTypo3WrapperCommand extends Command
      */
     protected function generateDomainClasses()
     {
+        $backlinks = [];
+
         foreach ($this->apiClasses as $classname => $file) {
             // models
-            $modelClass = new PhpClass($classname);
+            $modelClass = PhpClass::fromFile($file);
             $modelClass
                 ->setNamespace($this->typo3ModelNamespace)
-                ->setParentClassName('\\' . $classname)
                 ->setInterfaces([
                     '\\' . DomainObjectInterface::class,
                     '\\' . ObjectMonitoringInterface::class
                 ])
-                ->setTraits(['ExtbaseModelTrait']);
-            $this->createPhpFile($modelClass, 'Classes/Domain/Model/');
+                ->setTraits(['ExtbaseModelTrait'])
+            ;
 
-            // TCA
-            $apiClass = PhpClass::fromFile($file);
-            GeneralUtility::writeFile($this->getTargetForFile('Configuration/TCA/' . $this->getSqlTableNameForClass($apiClass) . '.php'),
-                $this->generateTcaCode($apiClass));
+            // care for backlinks
+            /* @var $property PhPProperty */
+            foreach ($modelClass->getProperties() as $property) {
+                $propType = str_replace('[]', '', $property->getType());
+
+                if (in_array($propType, $this->classNamesInApiNamespace)) {
+                    $backlinks[] = [
+                        'childClass' => $propType,
+                        'parentClass' => $modelClass->getName()
+                    ];
+                }
+            }
+
+            $this->createPhpFile($modelClass, 'Classes/Domain/Model/');
 
             // repositories
             $repoClass = new PhpClass($classname . 'Repository');
@@ -105,6 +144,28 @@ class GenerateTypo3WrapperCommand extends Command
                 ->setNamespace($this->typo3RepositoryNamespace)
                 ->setParentClassName('\\' . Repository::class);
             $this->createPhpFile($repoClass, 'Classes/Domain/Repository/');
+        }
+
+        foreach ($backlinks as $backlinkConfig) {
+            $backlinkProperty = new PhPProperty(lcfirst($backlinkConfig['parentClass']));
+            $backlinkProperty->setType('int')->setVisibility(PhPProperty::VISIBILITY_PROTECTED);
+            $backlinkProperty->getDocblock()->appendTag(TagFactory::create('Exclude()'));
+            $backlinkProperty->setLongDescription('Id of the parent object for backlink purpose in TYPO3.');
+
+            $modelClass = PhpClass::fromFile($this->getTargetForFile('Classes/Domain/Model/' . $backlinkConfig['childClass'] . '.php'));
+            $modelClass->setProperty($backlinkProperty);
+            $modelClass->addUseStatement('JMS\Serializer\Annotation\Exclude');
+
+            ApiGenerator::generateGetterAndSetter($backlinkProperty, $modelClass);
+
+            $this->createPhpFile($modelClass, 'Classes/Domain/Model/');
+        }
+
+        // TCA
+        foreach ($this->classNamesInApiNamespace as $class) {
+            $apiClass = PhpClass::fromFile($this->getTargetForFile('Classes/Domain/Model/' . $class . '.php'));
+            GeneralUtility::writeFile($this->getTargetForFile('Configuration/TCA/' . $this->getSqlTableNameForClass($apiClass) . '.php'),
+                $this->generateTcaCode($apiClass));
         }
     }
 
@@ -114,42 +175,48 @@ class GenerateTypo3WrapperCommand extends Command
     protected function generateExtbaseSql()
     {
         $sqlCode = [];
+        $this->mmSqlCode = [];
 
-        foreach ($this->apiClasses as $classname => $file) {
-            $class = PhpClass::fromFile($file);
+        foreach ($this->classNamesInApiNamespace as $file) {
+            $class = PhpClass::fromFile($this->getTargetForFile('Classes/Domain/Model/' . $file . '.php'));
 
             if ($class->getProperties()->size() == 0) {
                 // if a class has NO properties, no table is needed
                 continue;
             }
 
-            $this->output->writeln('Found Class ' . $classname);
-
             $classSql    = ['CREATE TABLE ' . $this->getSqlTableNameForClass($class) . ' ('];
             $propertySql = [];
 
             /* @var $property PhPProperty */
             foreach ($class->getProperties() as $property) {
-                $propertySql[] = "\t" . $this->generatePropertySql($property);
+                $propertySql[] = "\t" . $this->generatePropertySql($property, $class);
             }
 
             $classSql[] = implode(',' . PHP_EOL, $propertySql) . PHP_EOL . ');' . PHP_EOL;
             $sqlCode[]  = implode(PHP_EOL, $classSql);
         }
 
-        return implode(PHP_EOL, $sqlCode);
+        return implode(PHP_EOL, $sqlCode) . implode(PHP_EOL, $this->mmSqlCode);
     }
 
     /**
      * @param PhPProperty $property
+     * @param PhPClass $backlinkClass
      *
      * @return string
      */
-    protected function generatePropertySql(PhPProperty $property)
+    protected function generatePropertySql(PhPProperty $property, PhPClass $backlinkClass)
     {
         /* @var $tag AbstractDescriptionTag */
-        $typeTag      = $property->getDocblock()->getTags('Type')->get(0);
-        $type         = trim($typeTag->getDescription(), '"() ');
+        $typeTags = $property->getDocblock()->getTags('Type');
+        if ($typeTags->size() > 0) {
+            $typeTag      = $typeTags->get(0);
+            $type         = trim($typeTag->getDescription(), '"() ');
+        } else {
+            $type = trim($property->getType(), '"[] ');
+        }
+
         $sqlFieldname = $this->getSqlName($property->getName());
         $propertySql  = $sqlFieldname . ' ';
 
@@ -179,8 +246,20 @@ class GenerateTypo3WrapperCommand extends Command
             default:
                 if (strstr($type, '\\')) {
                     // this is the case for links to other classes, maybe just one object or count of objects
+
                     $propertySql .= 'int(11) unsigned DEFAULT \'0\' NOT NULL';
+                    $isPlural = substr($type, 0, 6) == 'array<';
+                    if ($isPlural) {
+                        // also add a backlink field to the children table
+                        $backlinkPropertyName = $this->getSqlName($backlinkClass->getName());
+                        if ($backlinkPropertyName != 'openimmo') {
+                            $this->mmSqlCode[] = 'CREATE TABLE ' . $this->getSqlTableName($property->getName()) . ' (';
+                            $this->mmSqlCode[] = '    ' . $backlinkPropertyName . ' int(11) unsigned DEFAULT \'0\' NOT NULL';
+                            $this->mmSqlCode[] = ');' . PHP_EOL;
+                        }
+                    }
                 } else {
+                    // fallback for unknown types
                     $propertySql .= $type;
                 }
                 break;
@@ -194,7 +273,7 @@ class GenerateTypo3WrapperCommand extends Command
      *
      * @return string
      */
-    protected function getSqlName(string $phpName)
+    public static function getSqlName(string $phpName)
     {
         $name = GeneralUtility::camelCaseToLowerCaseUnderscored($phpName);
         if (ValidationService::isReservedMYSQLWord($name)) {
@@ -212,7 +291,7 @@ class GenerateTypo3WrapperCommand extends Command
      */
     protected function getSqlTableName(string $className)
     {
-        return $this->sqlTablePrefix . $this->getSqlName($className);
+        return $this->sqlTablePrefix . str_replace('_', '', $this->getSqlName($className));
     }
 
     /**
@@ -250,6 +329,8 @@ class GenerateTypo3WrapperCommand extends Command
             'generateReturnTypeHints' => true
         ]);
         $code      = $generator->generate($class);
+        // this rewrites the namespace into TYPO3
+        $code = str_replace($this->openImmoApiNamespace, $this->typo3ModelNamespace, $code);
 
         return GeneralUtility::writeFile($this->getTargetForFile($folder . $class->getName() . '.php'), $code);
     }
@@ -272,6 +353,7 @@ class GenerateTypo3WrapperCommand extends Command
 return [
     'ctrl' => [
         'title' => '" . $class->getName() . "',
+        'hideTable' => " . (in_array($sqlTableName, $this->allowedInListView) ? 0 : 1) . ",
         'label' => 'uid',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -413,7 +495,15 @@ return [
             'config' => [
                 ";
 
-        switch ($property->getType()) {
+        // this is for the backlink fields. They of an object type, the db value is only the TYPO3 uid
+        $isExcluded = $property->getDocblock()->getTags('Exclude')->size() > 0;
+        if ($isExcluded) {
+            $switchTrigger = 'excluded';
+        } else {
+            $switchTrigger = $property->getType();
+        }
+
+        switch ($switchTrigger) {
 
             case 'boolean':
                 $tcaCode .= "'type' => 'check',
@@ -421,6 +511,7 @@ return [
                 break;
 
             case 'string':
+            case 'string[]':// TODO: super special case
                 if ($property->getDocblock()->hasTag('see')) {
                     // there may also be constants with that name, then generate a fixed selectbox
                     $items = [];
@@ -467,6 +558,7 @@ return [
                 'default' => null,";
                 break;
 
+            case 'excluded':
             case 'UserDefinedAnyfield[]':
             case 'UserDefinedExtend[]':
             case 'UserDefinedSimplefield[]':
@@ -479,9 +571,9 @@ return [
                 $singular = str_replace('[]', '', $property->getType());
 
                 if ($isPlural) {
-                    // TODO: there have to be "mm"-tables in the TYPO3 db to make this work
                     $tcaCode .= "'type' => 'inline',
                 'foreign_table' => '" . $this->getSqlTableName($singular) . "',
+                'foreign_field' => '" . $this->getSqlName($class->getName()) . "',
                 'maxitems' => 9999,
                 'appearance' => [
                     'collapseAll' => 1,

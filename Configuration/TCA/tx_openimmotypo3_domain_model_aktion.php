@@ -2,6 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'Aktion',
+        'hideTable' => 1,
         'label' => 'uid',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -16,14 +17,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'aktionart',
+        'searchFields' => 'aktionart, verwaltung_techn',
         'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/information/information-typo3-version.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, aktionart',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, aktionart, verwaltung_techn',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, aktionart, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, aktionart, verwaltung_techn, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -128,6 +129,13 @@ return [
                     ['Delete', 'DELETE'],
                     ['Referenz', 'REFERENZ'],
                 ],
+            ],
+        ],
+        'verwaltung_techn' => [
+            'exclude' => true,
+            'label' => 'VerwaltungTechn',
+            'config' => [
+                'type' => 'passthrough',
             ],
         ],
     ],

@@ -2,6 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'Flaechen',
+        'hideTable' => 1,
         'label' => 'uid',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -16,14 +17,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'anzahl_badezimmer, anzahl_balkone, anzahl_betten, anzahl_gewerbeeinheiten, anzahl_logia, anzahl_schlafzimmer, anzahl_sep_wc, anzahl_stellplaetze, anzahl_tagungsraeume, anzahl_terrassen, anzahl_wohneinheiten, anzahl_wohn_schlafzimmer, anzahl_zimmer, ausnuetzungsziffer, balkon_terrasse_flaeche, beheizbare_flaeche, bgf, bmz, bueroflaeche, bueroteilflaeche, dachbodenflaeche, einliegerwohnung, fensterfront, fensterfront_qm, flaechebis, flaechevon, freiflaeche, gartenflaeche, gastroflaeche, gesamtflaeche, gfz, grundstuecksflaeche, grundstuecksfront, grz, kellerflaeche, kubatur, ladenflaeche, lagerflaeche, nutzflaeche, plaetze_gastraum, sonstflaeche, teilbar_ab, user_defined_anyfield, user_defined_extend, user_defined_simplefield, verkaufsflaeche, vermietbare_flaeche, verwaltungsflaeche, wohnflaeche',
+        'searchFields' => 'anzahl_badezimmer, anzahl_balkone, anzahl_betten, anzahl_gewerbeeinheiten, anzahl_logia, anzahl_schlafzimmer, anzahl_sep_wc, anzahl_stellplaetze, anzahl_tagungsraeume, anzahl_terrassen, anzahl_wohneinheiten, anzahl_wohn_schlafzimmer, anzahl_zimmer, ausnuetzungsziffer, balkon_terrasse_flaeche, beheizbare_flaeche, bgf, bmz, bueroflaeche, bueroteilflaeche, dachbodenflaeche, einliegerwohnung, fensterfront, fensterfront_qm, flaechebis, flaechevon, freiflaeche, gartenflaeche, gastroflaeche, gesamtflaeche, gfz, grundstuecksflaeche, grundstuecksfront, grz, immobilie, kellerflaeche, kubatur, ladenflaeche, lagerflaeche, nutzflaeche, plaetze_gastraum, sonstflaeche, teilbar_ab, user_defined_anyfield, user_defined_extend, user_defined_simplefield, verkaufsflaeche, vermietbare_flaeche, verwaltungsflaeche, wohnflaeche',
         'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/information/information-typo3-version.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, anzahl_badezimmer, anzahl_balkone, anzahl_betten, anzahl_gewerbeeinheiten, anzahl_logia, anzahl_schlafzimmer, anzahl_sep_wc, anzahl_stellplaetze, anzahl_tagungsraeume, anzahl_terrassen, anzahl_wohneinheiten, anzahl_wohn_schlafzimmer, anzahl_zimmer, ausnuetzungsziffer, balkon_terrasse_flaeche, beheizbare_flaeche, bgf, bmz, bueroflaeche, bueroteilflaeche, dachbodenflaeche, einliegerwohnung, fensterfront, fensterfront_qm, flaechebis, flaechevon, freiflaeche, gartenflaeche, gastroflaeche, gesamtflaeche, gfz, grundstuecksflaeche, grundstuecksfront, grz, kellerflaeche, kubatur, ladenflaeche, lagerflaeche, nutzflaeche, plaetze_gastraum, sonstflaeche, teilbar_ab, user_defined_anyfield, user_defined_extend, user_defined_simplefield, verkaufsflaeche, vermietbare_flaeche, verwaltungsflaeche, wohnflaeche',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, anzahl_badezimmer, anzahl_balkone, anzahl_betten, anzahl_gewerbeeinheiten, anzahl_logia, anzahl_schlafzimmer, anzahl_sep_wc, anzahl_stellplaetze, anzahl_tagungsraeume, anzahl_terrassen, anzahl_wohneinheiten, anzahl_wohn_schlafzimmer, anzahl_zimmer, ausnuetzungsziffer, balkon_terrasse_flaeche, beheizbare_flaeche, bgf, bmz, bueroflaeche, bueroteilflaeche, dachbodenflaeche, einliegerwohnung, fensterfront, fensterfront_qm, flaechebis, flaechevon, freiflaeche, gartenflaeche, gastroflaeche, gesamtflaeche, gfz, grundstuecksflaeche, grundstuecksfront, grz, immobilie, kellerflaeche, kubatur, ladenflaeche, lagerflaeche, nutzflaeche, plaetze_gastraum, sonstflaeche, teilbar_ab, user_defined_anyfield, user_defined_extend, user_defined_simplefield, verkaufsflaeche, vermietbare_flaeche, verwaltungsflaeche, wohnflaeche',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, anzahl_badezimmer, anzahl_balkone, anzahl_betten, anzahl_gewerbeeinheiten, anzahl_logia, anzahl_schlafzimmer, anzahl_sep_wc, anzahl_stellplaetze, anzahl_tagungsraeume, anzahl_terrassen, anzahl_wohneinheiten, anzahl_wohn_schlafzimmer, anzahl_zimmer, ausnuetzungsziffer, balkon_terrasse_flaeche, beheizbare_flaeche, bgf, bmz, bueroflaeche, bueroteilflaeche, dachbodenflaeche, einliegerwohnung, fensterfront, fensterfront_qm, flaechebis, flaechevon, freiflaeche, gartenflaeche, gastroflaeche, gesamtflaeche, gfz, grundstuecksflaeche, grundstuecksfront, grz, kellerflaeche, kubatur, ladenflaeche, lagerflaeche, nutzflaeche, plaetze_gastraum, sonstflaeche, teilbar_ab, user_defined_anyfield, user_defined_extend, user_defined_simplefield, verkaufsflaeche, vermietbare_flaeche, verwaltungsflaeche, wohnflaeche, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, anzahl_badezimmer, anzahl_balkone, anzahl_betten, anzahl_gewerbeeinheiten, anzahl_logia, anzahl_schlafzimmer, anzahl_sep_wc, anzahl_stellplaetze, anzahl_tagungsraeume, anzahl_terrassen, anzahl_wohneinheiten, anzahl_wohn_schlafzimmer, anzahl_zimmer, ausnuetzungsziffer, balkon_terrasse_flaeche, beheizbare_flaeche, bgf, bmz, bueroflaeche, bueroteilflaeche, dachbodenflaeche, einliegerwohnung, fensterfront, fensterfront_qm, flaechebis, flaechevon, freiflaeche, gartenflaeche, gastroflaeche, gesamtflaeche, gfz, grundstuecksflaeche, grundstuecksfront, grz, immobilie, kellerflaeche, kubatur, ladenflaeche, lagerflaeche, nutzflaeche, plaetze_gastraum, sonstflaeche, teilbar_ab, user_defined_anyfield, user_defined_extend, user_defined_simplefield, verkaufsflaeche, vermietbare_flaeche, verwaltungsflaeche, wohnflaeche, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -422,6 +423,13 @@ return [
                 'cols' => 40,
                 'rows' => 15,
                 'eval' => 'trim',
+            ],
+        ],
+        'immobilie' => [
+            'exclude' => true,
+            'label' => 'Immobilie',
+            'config' => [
+                'type' => 'passthrough',
             ],
         ],
         'kellerflaeche' => [

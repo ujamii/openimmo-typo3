@@ -2,6 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'Erschliessung',
+        'hideTable' => 1,
         'label' => 'uid',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -16,14 +17,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'erschl_attr',
+        'searchFields' => 'erschl_attr, zustand_angaben',
         'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/information/information-typo3-version.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, erschl_attr',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, erschl_attr, zustand_angaben',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, erschl_attr, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, erschl_attr, zustand_angaben, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -129,6 +130,13 @@ return [
                     ['Unerschlossen', 'UNERSCHLOSSEN'],
                     ['Vollerschlossen', 'VOLLERSCHLOSSEN'],
                 ],
+            ],
+        ],
+        'zustand_angaben' => [
+            'exclude' => true,
+            'label' => 'ZustandAngaben',
+            'config' => [
+                'type' => 'passthrough',
             ],
         ],
     ],
