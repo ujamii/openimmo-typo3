@@ -27,10 +27,11 @@ use Ujamii\OpenImmo\Generator\ApiGenerator;
 class GenerateTypo3WrapperCommand extends Command
 {
 
+    const SQL_TABLE_PREFIX = 'tx_openimmotypo3_domain_model_';
+
     protected $openImmoApiNamespace = 'Ujamii\OpenImmo\API';
     protected $typo3ModelNamespace = 'Ujamii\OpenImmoTypo3\Domain\Model';
     protected $typo3RepositoryNamespace = 'Ujamii\OpenImmoTypo3\Domain\Repository';
-    protected $sqlTablePrefix = 'tx_openimmotypo3_domain_model_';
     protected $allowedInListView = [
         'tx_openimmotypo3_domain_model_anbieter',
         'tx_openimmotypo3_domain_model_immobilie',
@@ -291,7 +292,7 @@ class GenerateTypo3WrapperCommand extends Command
      */
     protected function getSqlTableName(string $className)
     {
-        return $this->sqlTablePrefix . str_replace('_', '', $this->getSqlName($className));
+        return self::SQL_TABLE_PREFIX . str_replace('_', '', $this->getSqlName($className));
     }
 
     /**

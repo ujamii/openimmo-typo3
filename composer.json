@@ -10,6 +10,7 @@
         }
     ],
     "require": {
+        "ext-zip": "*",
         "typo3/cms-core": "^9.5",
         "ujamii/openimmo": "~0.2"
     },

@@ -30,7 +30,20 @@ composer req ujamii/openimmo-typo3
 
 ### Importing OpenImmo XML into the TYPO3 database
 
-TODO
+Importing new data assumes you have a zip file located in your server filesystem. The import command
+will extract the zip file into a new folder, truncate the db tables (optional, default is true) and
+then parse the xml file and add the db content again.
+
+```shell
+vendor/bin/typo3 openimmo:import <pid> [<sourceFolder> [<truncateTables>]]
+```
+
+The pid parameter is mandatory, sourceFolder is `/uploads/tx_openimmo/` by default. The command expects
+**exactly** one *.zip file in that directoy. The content will be extracted into a new directory with the
+same name as the zip file and the archive will be deleted after the import is done.
+
+The command will fail if there are more or less zip files in that directory or if there is not exactly one
+xml file in the archive.
 
 ### Exporting OpenImmo XML from TYPO3 database content
 
