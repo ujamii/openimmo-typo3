@@ -102,7 +102,12 @@ class GenerateTypo3WrapperCommand extends Command
         //TODO: exclude OpenImmo class
 
         GeneralUtility::writeFile($this->getTargetForFile('ext_tables.sql'), $this->generateExtbaseSql());
+
+        // Models + Repositories
         $this->generateDomainClasses();
+
+        // TCA
+        $this->generateTcaFiles();
     }
 
     /**
@@ -161,13 +166,6 @@ class GenerateTypo3WrapperCommand extends Command
 
             $this->createPhpFile($modelClass, 'Classes/Domain/Model/');
         }
-
-        // TCA
-        foreach ($this->classNamesInApiNamespace as $class) {
-            $apiClass = PhpClass::fromFile($this->getTargetForFile('Classes/Domain/Model/' . $class . '.php'));
-            GeneralUtility::writeFile($this->getTargetForFile('Configuration/TCA/' . $this->getSqlTableNameForClass($apiClass) . '.php'),
-                $this->generateTcaCode($apiClass));
-        }
     }
 
     /**
@@ -186,7 +184,7 @@ class GenerateTypo3WrapperCommand extends Command
                 continue;
             }
 
-            $classSql    = ['CREATE TABLE ' . $this->getSqlTableNameForClass($class) . ' ('];
+            $classSql    = ['CREATE TABLE ' . self::getSqlTableNameForClass($class) . ' ('];
             $propertySql = [];
 
             /* @var $property PhPProperty */
@@ -218,7 +216,7 @@ class GenerateTypo3WrapperCommand extends Command
             $type = trim($property->getType(), '"[] ');
         }
 
-        $sqlFieldname = $this->getSqlName($property->getName());
+        $sqlFieldname = self::getSqlName($property->getName());
         $propertySql  = $sqlFieldname . ' ';
 
         switch ($type) {
@@ -252,9 +250,9 @@ class GenerateTypo3WrapperCommand extends Command
                     $isPlural = substr($type, 0, 6) == 'array<';
                     if ($isPlural) {
                         // also add a backlink field to the children table
-                        $backlinkPropertyName = $this->getSqlName($backlinkClass->getName());
+                        $backlinkPropertyName = self::getSqlName($backlinkClass->getName());
                         if ($backlinkPropertyName != 'openimmo') {
-                            $this->mmSqlCode[] = 'CREATE TABLE ' . $this->getSqlTableName($property->getName()) . ' (';
+                            $this->mmSqlCode[] = 'CREATE TABLE ' . self::getSqlTableName($property->getName()) . ' (';
                             $this->mmSqlCode[] = '    ' . $backlinkPropertyName . ' int(11) unsigned DEFAULT \'0\' NOT NULL';
                             $this->mmSqlCode[] = ');' . PHP_EOL;
                         }
@@ -290,9 +288,9 @@ class GenerateTypo3WrapperCommand extends Command
      *
      * @return string
      */
-    protected function getSqlTableName(string $className)
+    public static function getSqlTableName(string $className)
     {
-        return self::SQL_TABLE_PREFIX . str_replace('_', '', $this->getSqlName($className));
+        return self::SQL_TABLE_PREFIX . str_replace('_', '', self::getSqlName($className));
     }
 
     /**
@@ -300,9 +298,9 @@ class GenerateTypo3WrapperCommand extends Command
      *
      * @return string
      */
-    protected function getSqlTableNameForClass(PhpClass $class)
+    public static function getSqlTableNameForClass(PhpClass $class)
     {
-        return $this->getSqlTableName($class->getName());
+        return self::getSqlTableName($class->getName());
     }
 
     /**
@@ -343,10 +341,10 @@ class GenerateTypo3WrapperCommand extends Command
      */
     protected function generateTcaCode(PhpClass $class)
     {
-        $sqlTableName = $this->getSqlTableNameForClass($class);
+        $sqlTableName = self::getSqlTableNameForClass($class);
         $properties   = [];
         foreach ($class->getPropertyNames() as $propertyName) {
-            $properties[] = $this->getSqlName($propertyName);
+            $properties[] = self::getSqlName($propertyName);
         }
         $commaSepProperties = implode(', ', $properties);
 
@@ -490,7 +488,7 @@ return [
     protected function generateTcaFieldConfigForProperty(PhPProperty $property, PhpClass $class)
     {
         $tcaCode = "
-        '" . $this->getSqlName($property->getName()) . "' => [
+        '" . self::getSqlName($property->getName()) . "' => [
             'exclude' => true,
             'label' => '" . ucfirst($property->getName()) . "',
             'config' => [
@@ -573,8 +571,8 @@ return [
 
                 if ($isPlural) {
                     $tcaCode .= "'type' => 'inline',
-                'foreign_table' => '" . $this->getSqlTableName($singular) . "',
-                'foreign_field' => '" . $this->getSqlName($class->getName()) . "',
+                'foreign_table' => '" . self::getSqlTableName($singular) . "',
+                'foreign_field' => '" . self::getSqlName($class->getName()) . "',
                 'maxitems' => 9999,
                 'appearance' => [
                     'collapseAll' => 1,
@@ -585,7 +583,7 @@ return [
                 ],";
                 } else {
                     $tcaCode .= "'type' => 'inline',
-                'foreign_table' => '" . $this->getSqlTableName($singular) . "',
+                'foreign_table' => '" . self::getSqlTableName($singular) . "',
                 'maxitems' => 1,
                 'appearance' => [
                     'collapseAll' => 0,
@@ -604,6 +602,18 @@ return [
         ],";
 
         return $tcaCode;
+    }
+
+    /**
+     * Generates TCA files.
+     */
+    protected function generateTcaFiles(): void
+    {
+        foreach ($this->classNamesInApiNamespace as $class) {
+            $apiClass = PhpClass::fromFile($this->getTargetForFile('Classes/Domain/Model/' . $class . '.php'));
+            GeneralUtility::writeFile($this->getTargetForFile('Configuration/TCA/' . self::getSqlTableNameForClass($apiClass) . '.php'),
+                $this->generateTcaCode($apiClass));
+        }
     }
 
 }
