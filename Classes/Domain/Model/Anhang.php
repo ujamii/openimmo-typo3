@@ -113,13 +113,13 @@ class Anhang implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Check") 
-	 * @var Check
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Check
 	 */
 	protected $check;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Daten") 
-	 * @var Daten
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Daten
 	 */
 	protected $daten;
 

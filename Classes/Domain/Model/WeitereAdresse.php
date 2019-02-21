@@ -59,7 +59,7 @@ class WeitereAdresse implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInte
 	/**
 	 * @XmlList (inline = true, entry = "email_sonstige") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\EmailSonstige>") 
-	 * @var EmailSonstige[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\EmailSonstige>
 	 */
 	protected $emailSonstige;
 
@@ -97,7 +97,7 @@ class WeitereAdresse implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInte
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Land") 
-	 * @var Land
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Land
 	 */
 	protected $land;
 
@@ -176,7 +176,7 @@ class WeitereAdresse implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInte
 	/**
 	 * @XmlList (inline = true, entry = "tel_sonstige") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\TelSonstige>") 
-	 * @var TelSonstige[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\TelSonstige>
 	 */
 	protected $telSonstige;
 
@@ -201,21 +201,21 @@ class WeitereAdresse implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInte
 	/**
 	 * @XmlList (inline = true, entry = "user_defined_anyfield") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedAnyfield>") 
-	 * @var UserDefinedAnyfield[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedAnyfield>
 	 */
 	protected $userDefinedAnyfield;
 
 	/**
 	 * @XmlList (inline = true, entry = "user_defined_extend") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedExtend>") 
-	 * @var UserDefinedExtend[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedExtend>
 	 */
 	protected $userDefinedExtend;
 
 	/**
 	 * @XmlList (inline = true, entry = "user_defined_simplefield") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedSimplefield>") 
-	 * @var UserDefinedSimplefield[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedSimplefield>
 	 */
 	protected $userDefinedSimplefield;
 
@@ -276,9 +276,9 @@ class WeitereAdresse implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInte
 	/**
 	 * Returns array of EmailSonstige
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getEmailSonstige(): array {
+	public function getEmailSonstige(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->emailSonstige;
 	}
 
@@ -411,9 +411,9 @@ class WeitereAdresse implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInte
 	/**
 	 * Returns array of TelSonstige
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getTelSonstige(): array {
+	public function getTelSonstige(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->telSonstige;
 	}
 
@@ -441,27 +441,27 @@ class WeitereAdresse implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInte
 	/**
 	 * Returns array of UserDefinedAnyfield
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getUserDefinedAnyfield(): array {
+	public function getUserDefinedAnyfield(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->userDefinedAnyfield;
 	}
 
 	/**
 	 * Returns array of UserDefinedExtend
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getUserDefinedExtend(): array {
+	public function getUserDefinedExtend(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->userDefinedExtend;
 	}
 
 	/**
 	 * Returns array of UserDefinedSimplefield
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getUserDefinedSimplefield(): array {
+	public function getUserDefinedSimplefield(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->userDefinedSimplefield;
 	}
 
@@ -534,10 +534,10 @@ class WeitereAdresse implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInte
 	}
 
 	/**
-	 * @param array $emailSonstige Setter for emailSonstige
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $emailSonstige Setter for emailSonstige
 	 * @return WeitereAdresse
 	 */
-	public function setEmailSonstige(array $emailSonstige): WeitereAdresse {
+	public function setEmailSonstige(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $emailSonstige): WeitereAdresse {
 		$this->emailSonstige = $emailSonstige;
 		return $this;
 	}
@@ -705,10 +705,10 @@ class WeitereAdresse implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInte
 	}
 
 	/**
-	 * @param array $telSonstige Setter for telSonstige
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $telSonstige Setter for telSonstige
 	 * @return WeitereAdresse
 	 */
-	public function setTelSonstige(array $telSonstige): WeitereAdresse {
+	public function setTelSonstige(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $telSonstige): WeitereAdresse {
 		$this->telSonstige = $telSonstige;
 		return $this;
 	}
@@ -741,28 +741,28 @@ class WeitereAdresse implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInte
 	}
 
 	/**
-	 * @param array $userDefinedAnyfield Setter for userDefinedAnyfield
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedAnyfield Setter for userDefinedAnyfield
 	 * @return WeitereAdresse
 	 */
-	public function setUserDefinedAnyfield(array $userDefinedAnyfield): WeitereAdresse {
+	public function setUserDefinedAnyfield(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedAnyfield): WeitereAdresse {
 		$this->userDefinedAnyfield = $userDefinedAnyfield;
 		return $this;
 	}
 
 	/**
-	 * @param array $userDefinedExtend Setter for userDefinedExtend
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedExtend Setter for userDefinedExtend
 	 * @return WeitereAdresse
 	 */
-	public function setUserDefinedExtend(array $userDefinedExtend): WeitereAdresse {
+	public function setUserDefinedExtend(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedExtend): WeitereAdresse {
 		$this->userDefinedExtend = $userDefinedExtend;
 		return $this;
 	}
 
 	/**
-	 * @param array $userDefinedSimplefield Setter for userDefinedSimplefield
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedSimplefield Setter for userDefinedSimplefield
 	 * @return WeitereAdresse
 	 */
-	public function setUserDefinedSimplefield(array $userDefinedSimplefield): WeitereAdresse {
+	public function setUserDefinedSimplefield(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedSimplefield): WeitereAdresse {
 		$this->userDefinedSimplefield = $userDefinedSimplefield;
 		return $this;
 	}

@@ -24,13 +24,13 @@ class Preise implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\AussenCourtage") 
-	 * @var AussenCourtage
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\AussenCourtage
 	 */
 	protected $aussenCourtage;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Betriebskostennetto") 
-	 * @var Betriebskostennetto
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Betriebskostennetto
 	 */
 	protected $betriebskostennetto;
 
@@ -54,7 +54,7 @@ class Preise implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Evbnetto") 
-	 * @var Evbnetto
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Evbnetto
 	 */
 	protected $evbnetto;
 
@@ -72,13 +72,13 @@ class Preise implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Gesamtbelastungnetto") 
-	 * @var Gesamtbelastungnetto
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Gesamtbelastungnetto
 	 */
 	protected $gesamtbelastungnetto;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Gesamtkostenprom2von") 
-	 * @var Gesamtkostenprom2von
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Gesamtkostenprom2von
 	 */
 	protected $gesamtkostenprom2von;
 
@@ -90,7 +90,7 @@ class Preise implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Gesamtmietenetto") 
-	 * @var Gesamtmietenetto
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Gesamtmietenetto
 	 */
 	protected $gesamtmietenetto;
 
@@ -102,7 +102,7 @@ class Preise implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Hauptmietzinsnetto") 
-	 * @var Hauptmietzinsnetto
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Hauptmietzinsnetto
 	 */
 	protected $hauptmietzinsnetto;
 
@@ -126,7 +126,7 @@ class Preise implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Heizkostennetto") 
-	 * @var Heizkostennetto
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Heizkostennetto
 	 */
 	protected $heizkostennetto;
 
@@ -140,7 +140,7 @@ class Preise implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\InnenCourtage") 
-	 * @var InnenCourtage
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\InnenCourtage
 	 */
 	protected $innenCourtage;
 
@@ -152,7 +152,7 @@ class Preise implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Kaufpreis") 
-	 * @var Kaufpreis
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Kaufpreis
 	 */
 	protected $kaufpreis;
 
@@ -164,7 +164,7 @@ class Preise implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Kaufpreisnetto") 
-	 * @var Kaufpreisnetto
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Kaufpreisnetto
 	 */
 	protected $kaufpreisnetto;
 
@@ -188,13 +188,13 @@ class Preise implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\MieteinnahmenIst") 
-	 * @var MieteinnahmenIst
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\MieteinnahmenIst
 	 */
 	protected $mieteinnahmenIst;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\MieteinnahmenSoll") 
-	 * @var MieteinnahmenSoll
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\MieteinnahmenSoll
 	 */
 	protected $mieteinnahmenSoll;
 
@@ -218,7 +218,7 @@ class Preise implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Monatlichekostennetto") 
-	 * @var Monatlichekostennetto
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Monatlichekostennetto
 	 */
 	protected $monatlichekostennetto;
 
@@ -242,7 +242,7 @@ class Preise implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Nebenkostenprom2von") 
-	 * @var Nebenkostenprom2von
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Nebenkostenprom2von
 	 */
 	protected $nebenkostenprom2von;
 
@@ -254,7 +254,7 @@ class Preise implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Nettomieteprom2von") 
-	 * @var Nettomieteprom2von
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Nettomieteprom2von
 	 */
 	protected $nettomieteprom2von;
 
@@ -290,7 +290,7 @@ class Preise implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\PreisZeiteinheit") 
-	 * @var PreisZeiteinheit
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\PreisZeiteinheit
 	 */
 	protected $preisZeiteinheit;
 
@@ -314,7 +314,7 @@ class Preise implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Provisionnetto") 
-	 * @var Provisionnetto
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Provisionnetto
 	 */
 	protected $provisionnetto;
 
@@ -326,7 +326,7 @@ class Preise implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\ProvisionTeilen") 
-	 * @var ProvisionTeilen
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\ProvisionTeilen
 	 */
 	protected $provisionTeilen;
 
@@ -344,95 +344,95 @@ class Preise implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Ruecklagenetto") 
-	 * @var Ruecklagenetto
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Ruecklagenetto
 	 */
 	protected $ruecklagenetto;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Sonstigekostennetto") 
-	 * @var Sonstigekostennetto
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Sonstigekostennetto
 	 */
 	protected $sonstigekostennetto;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Sonstigemietenetto") 
-	 * @var Sonstigemietenetto
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Sonstigemietenetto
 	 */
 	protected $sonstigemietenetto;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\StpCarport") 
-	 * @var StpCarport
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\StpCarport
 	 */
 	protected $stpCarport;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\StpDuplex") 
-	 * @var StpDuplex
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\StpDuplex
 	 */
 	protected $stpDuplex;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\StpFreiplatz") 
-	 * @var StpFreiplatz
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\StpFreiplatz
 	 */
 	protected $stpFreiplatz;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\StpGarage") 
-	 * @var StpGarage
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\StpGarage
 	 */
 	protected $stpGarage;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\StpParkhaus") 
-	 * @var StpParkhaus
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\StpParkhaus
 	 */
 	protected $stpParkhaus;
 
 	/**
 	 * @XmlList (inline = true, entry = "stp_sonstige") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\StpSonstige>") 
-	 * @var StpSonstige[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\StpSonstige>
 	 */
 	protected $stpSonstige;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\StpTiefgarage") 
-	 * @var StpTiefgarage
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\StpTiefgarage
 	 */
 	protected $stpTiefgarage;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Summemietenetto") 
-	 * @var Summemietenetto
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Summemietenetto
 	 */
 	protected $summemietenetto;
 
 	/**
 	 * @XmlList (inline = true, entry = "user_defined_anyfield") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedAnyfield>") 
-	 * @var UserDefinedAnyfield[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedAnyfield>
 	 */
 	protected $userDefinedAnyfield;
 
 	/**
 	 * @XmlList (inline = true, entry = "user_defined_extend") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedExtend>") 
-	 * @var UserDefinedExtend[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedExtend>
 	 */
 	protected $userDefinedExtend;
 
 	/**
 	 * @XmlList (inline = true, entry = "user_defined_simplefield") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedSimplefield>") 
-	 * @var UserDefinedSimplefield[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedSimplefield>
 	 */
 	protected $userDefinedSimplefield;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Waehrung") 
-	 * @var Waehrung
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Waehrung
 	 */
 	protected $waehrung;
 
@@ -891,9 +891,9 @@ class Preise implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \
 	/**
 	 * Returns array of StpSonstige
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getStpSonstige(): array {
+	public function getStpSonstige(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->stpSonstige;
 	}
 
@@ -914,27 +914,27 @@ class Preise implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \
 	/**
 	 * Returns array of UserDefinedAnyfield
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getUserDefinedAnyfield(): array {
+	public function getUserDefinedAnyfield(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->userDefinedAnyfield;
 	}
 
 	/**
 	 * Returns array of UserDefinedExtend
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getUserDefinedExtend(): array {
+	public function getUserDefinedExtend(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->userDefinedExtend;
 	}
 
 	/**
 	 * Returns array of UserDefinedSimplefield
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getUserDefinedSimplefield(): array {
+	public function getUserDefinedSimplefield(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->userDefinedSimplefield;
 	}
 
@@ -1525,10 +1525,10 @@ class Preise implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \
 	}
 
 	/**
-	 * @param array $stpSonstige Setter for stpSonstige
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $stpSonstige Setter for stpSonstige
 	 * @return Preise
 	 */
-	public function setStpSonstige(array $stpSonstige): Preise {
+	public function setStpSonstige(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $stpSonstige): Preise {
 		$this->stpSonstige = $stpSonstige;
 		return $this;
 	}
@@ -1552,28 +1552,28 @@ class Preise implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \
 	}
 
 	/**
-	 * @param array $userDefinedAnyfield Setter for userDefinedAnyfield
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedAnyfield Setter for userDefinedAnyfield
 	 * @return Preise
 	 */
-	public function setUserDefinedAnyfield(array $userDefinedAnyfield): Preise {
+	public function setUserDefinedAnyfield(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedAnyfield): Preise {
 		$this->userDefinedAnyfield = $userDefinedAnyfield;
 		return $this;
 	}
 
 	/**
-	 * @param array $userDefinedExtend Setter for userDefinedExtend
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedExtend Setter for userDefinedExtend
 	 * @return Preise
 	 */
-	public function setUserDefinedExtend(array $userDefinedExtend): Preise {
+	public function setUserDefinedExtend(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedExtend): Preise {
 		$this->userDefinedExtend = $userDefinedExtend;
 		return $this;
 	}
 
 	/**
-	 * @param array $userDefinedSimplefield Setter for userDefinedSimplefield
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedSimplefield Setter for userDefinedSimplefield
 	 * @return Preise
 	 */
-	public function setUserDefinedSimplefield(array $userDefinedSimplefield): Preise {
+	public function setUserDefinedSimplefield(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedSimplefield): Preise {
 		$this->userDefinedSimplefield = $userDefinedSimplefield;
 		return $this;
 	}

@@ -19,7 +19,7 @@ class Anhaenge implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface,
 	/**
 	 * @XmlList (inline = true, entry = "anhang") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\Anhang>") 
-	 * @var Anhang[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\Anhang>
 	 */
 	protected $anhang;
 
@@ -34,30 +34,30 @@ class Anhaenge implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface,
 	/**
 	 * @XmlList (inline = true, entry = "user_defined_anyfield") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedAnyfield>") 
-	 * @var UserDefinedAnyfield[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedAnyfield>
 	 */
 	protected $userDefinedAnyfield;
 
 	/**
 	 * @XmlList (inline = true, entry = "user_defined_extend") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedExtend>") 
-	 * @var UserDefinedExtend[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedExtend>
 	 */
 	protected $userDefinedExtend;
 
 	/**
 	 * @XmlList (inline = true, entry = "user_defined_simplefield") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedSimplefield>") 
-	 * @var UserDefinedSimplefield[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedSimplefield>
 	 */
 	protected $userDefinedSimplefield;
 
 	/**
 	 * Returns array of Anhang
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getAnhang(): array {
+	public function getAnhang(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->anhang;
 	}
 
@@ -71,35 +71,35 @@ class Anhaenge implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface,
 	/**
 	 * Returns array of UserDefinedAnyfield
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getUserDefinedAnyfield(): array {
+	public function getUserDefinedAnyfield(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->userDefinedAnyfield;
 	}
 
 	/**
 	 * Returns array of UserDefinedExtend
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getUserDefinedExtend(): array {
+	public function getUserDefinedExtend(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->userDefinedExtend;
 	}
 
 	/**
 	 * Returns array of UserDefinedSimplefield
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getUserDefinedSimplefield(): array {
+	public function getUserDefinedSimplefield(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->userDefinedSimplefield;
 	}
 
 	/**
-	 * @param array $anhang Setter for anhang
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $anhang Setter for anhang
 	 * @return Anhaenge
 	 */
-	public function setAnhang(array $anhang): Anhaenge {
+	public function setAnhang(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $anhang): Anhaenge {
 		$this->anhang = $anhang;
 		return $this;
 	}
@@ -114,28 +114,28 @@ class Anhaenge implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface,
 	}
 
 	/**
-	 * @param array $userDefinedAnyfield Setter for userDefinedAnyfield
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedAnyfield Setter for userDefinedAnyfield
 	 * @return Anhaenge
 	 */
-	public function setUserDefinedAnyfield(array $userDefinedAnyfield): Anhaenge {
+	public function setUserDefinedAnyfield(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedAnyfield): Anhaenge {
 		$this->userDefinedAnyfield = $userDefinedAnyfield;
 		return $this;
 	}
 
 	/**
-	 * @param array $userDefinedExtend Setter for userDefinedExtend
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedExtend Setter for userDefinedExtend
 	 * @return Anhaenge
 	 */
-	public function setUserDefinedExtend(array $userDefinedExtend): Anhaenge {
+	public function setUserDefinedExtend(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedExtend): Anhaenge {
 		$this->userDefinedExtend = $userDefinedExtend;
 		return $this;
 	}
 
 	/**
-	 * @param array $userDefinedSimplefield Setter for userDefinedSimplefield
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedSimplefield Setter for userDefinedSimplefield
 	 * @return Anhaenge
 	 */
-	public function setUserDefinedSimplefield(array $userDefinedSimplefield): Anhaenge {
+	public function setUserDefinedSimplefield(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedSimplefield): Anhaenge {
 		$this->userDefinedSimplefield = $userDefinedSimplefield;
 		return $this;
 	}

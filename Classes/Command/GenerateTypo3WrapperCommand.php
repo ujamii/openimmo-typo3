@@ -139,6 +139,18 @@ class GenerateTypo3WrapperCommand extends Command
                         'childClass' => $propType,
                         'parentClass' => $modelClass->getName()
                     ];
+
+                    // as extbase does not care for namespaces in return types, we have to set fully qualified names here #danketypo3
+                    $unnecessaryFullQualifiedType = '\\' . $this->typo3ModelNamespace . '\\' . $propType;
+                    if ($propType != $property->getType()) {
+                        // of course, also arrays are evil in TYPO3, so lets use something else...
+                        $typo3Type = '\TYPO3\CMS\Extbase\Persistence\ObjectStorage<'.$unnecessaryFullQualifiedType.'>';
+                        $modelClass->getMethod('get' . ucfirst($property->getName()))->setType('\TYPO3\CMS\Extbase\Persistence\ObjectStorage');
+                        $modelClass->getMethod('set' . ucfirst($property->getName()))->getParameter($property->getName())->setType('\TYPO3\CMS\Extbase\Persistence\ObjectStorage');
+                    } else {
+                        $typo3Type = $unnecessaryFullQualifiedType;
+                    }
+                    $property->setType($typo3Type);
                 }
             }
 
@@ -499,8 +511,10 @@ return [
         if ($isExcluded) {
             $switchTrigger = 'excluded';
         } else {
-            $switchTrigger = $property->getType();
+            $switchTrigger = $this->getSingularObjectNameFromTypo3SpecialType($property->getType());
         }
+
+        $isPlural = substr($property->getType(), -2) == '[]' || stristr($property->getType(), '\TYPO3\CMS\Extbase\Persistence\ObjectStorage');
 
         switch ($switchTrigger) {
 
@@ -558,20 +572,17 @@ return [
                 break;
 
             case 'excluded':
-            case 'UserDefinedAnyfield[]':
-            case 'UserDefinedExtend[]':
-            case 'UserDefinedSimplefield[]':
+            case 'UserDefinedAnyfield':
+            case 'UserDefinedExtend':
+            case 'UserDefinedSimplefield':
                 // TODO: fallback for unknown types
                 $tcaCode .= "'type' => 'passthrough',";
                 break;
 
             default:
-                $isPlural = substr($property->getType(), -2) == '[]';
-                $singular = str_replace('[]', '', $property->getType());
-
                 if ($isPlural) {
                     $tcaCode .= "'type' => 'inline',
-                'foreign_table' => '" . self::getSqlTableName($singular) . "',
+                'foreign_table' => '" . self::getSqlTableName($switchTrigger) . "',
                 'foreign_field' => '" . self::getSqlName($class->getName()) . "',
                 'maxitems' => 9999,
                 'appearance' => [
@@ -583,7 +594,7 @@ return [
                 ],";
                 } else {
                     $tcaCode .= "'type' => 'inline',
-                'foreign_table' => '" . self::getSqlTableName($singular) . "',
+                'foreign_table' => '" . self::getSqlTableName($switchTrigger) . "',
                 'maxitems' => 1,
                 'appearance' => [
                     'collapseAll' => 0,
@@ -602,6 +613,20 @@ return [
         ],";
 
         return $tcaCode;
+    }
+
+    /**
+     * @param string $variableType
+     *
+     * @return mixed
+     */
+    protected function getSingularObjectNameFromTypo3SpecialType(string $variableType)
+    {
+        return str_replace([
+            '\TYPO3\CMS\Extbase\Persistence\ObjectStorage<',
+            '>',
+            '\\' . $this->typo3ModelNamespace . '\\'
+        ], '', $variableType);
     }
 
     /**

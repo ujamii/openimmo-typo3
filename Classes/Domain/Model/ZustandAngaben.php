@@ -18,7 +18,7 @@ class ZustandAngaben implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInte
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Alter") 
-	 * @var Alter
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Alter
 	 */
 	protected $alter;
 
@@ -42,26 +42,26 @@ class ZustandAngaben implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInte
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\BebaubarNach") 
-	 * @var BebaubarNach
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\BebaubarNach
 	 */
 	protected $bebaubarNach;
 
 	/**
 	 * @XmlList (inline = true, entry = "energiepass") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\Energiepass>") 
-	 * @var Energiepass[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\Energiepass>
 	 */
 	protected $energiepass;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Erschliessung") 
-	 * @var Erschliessung
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Erschliessung
 	 */
 	protected $erschliessung;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\ErschliessungUmfang") 
-	 * @var ErschliessungUmfang
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\ErschliessungUmfang
 	 */
 	protected $erschliessungUmfang;
 
@@ -82,33 +82,33 @@ class ZustandAngaben implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInte
 	/**
 	 * @XmlList (inline = true, entry = "user_defined_anyfield") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedAnyfield>") 
-	 * @var UserDefinedAnyfield[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedAnyfield>
 	 */
 	protected $userDefinedAnyfield;
 
 	/**
 	 * @XmlList (inline = true, entry = "user_defined_extend") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedExtend>") 
-	 * @var UserDefinedExtend[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedExtend>
 	 */
 	protected $userDefinedExtend;
 
 	/**
 	 * @XmlList (inline = true, entry = "user_defined_simplefield") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedSimplefield>") 
-	 * @var UserDefinedSimplefield[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedSimplefield>
 	 */
 	protected $userDefinedSimplefield;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Verkaufstatus") 
-	 * @var Verkaufstatus
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Verkaufstatus
 	 */
 	protected $verkaufstatus;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Zustand") 
-	 * @var Zustand
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Zustand
 	 */
 	protected $zustand;
 
@@ -150,9 +150,9 @@ class ZustandAngaben implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInte
 	/**
 	 * Returns array of Energiepass
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getEnergiepass(): array {
+	public function getEnergiepass(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->energiepass;
 	}
 
@@ -187,27 +187,27 @@ class ZustandAngaben implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInte
 	/**
 	 * Returns array of UserDefinedAnyfield
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getUserDefinedAnyfield(): array {
+	public function getUserDefinedAnyfield(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->userDefinedAnyfield;
 	}
 
 	/**
 	 * Returns array of UserDefinedExtend
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getUserDefinedExtend(): array {
+	public function getUserDefinedExtend(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->userDefinedExtend;
 	}
 
 	/**
 	 * Returns array of UserDefinedSimplefield
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getUserDefinedSimplefield(): array {
+	public function getUserDefinedSimplefield(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->userDefinedSimplefield;
 	}
 
@@ -271,10 +271,10 @@ class ZustandAngaben implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInte
 	}
 
 	/**
-	 * @param array $energiepass Setter for energiepass
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $energiepass Setter for energiepass
 	 * @return ZustandAngaben
 	 */
-	public function setEnergiepass(array $energiepass): ZustandAngaben {
+	public function setEnergiepass(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $energiepass): ZustandAngaben {
 		$this->energiepass = $energiepass;
 		return $this;
 	}
@@ -316,28 +316,28 @@ class ZustandAngaben implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInte
 	}
 
 	/**
-	 * @param array $userDefinedAnyfield Setter for userDefinedAnyfield
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedAnyfield Setter for userDefinedAnyfield
 	 * @return ZustandAngaben
 	 */
-	public function setUserDefinedAnyfield(array $userDefinedAnyfield): ZustandAngaben {
+	public function setUserDefinedAnyfield(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedAnyfield): ZustandAngaben {
 		$this->userDefinedAnyfield = $userDefinedAnyfield;
 		return $this;
 	}
 
 	/**
-	 * @param array $userDefinedExtend Setter for userDefinedExtend
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedExtend Setter for userDefinedExtend
 	 * @return ZustandAngaben
 	 */
-	public function setUserDefinedExtend(array $userDefinedExtend): ZustandAngaben {
+	public function setUserDefinedExtend(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedExtend): ZustandAngaben {
 		$this->userDefinedExtend = $userDefinedExtend;
 		return $this;
 	}
 
 	/**
-	 * @param array $userDefinedSimplefield Setter for userDefinedSimplefield
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedSimplefield Setter for userDefinedSimplefield
 	 * @return ZustandAngaben
 	 */
-	public function setUserDefinedSimplefield(array $userDefinedSimplefield): ZustandAngaben {
+	public function setUserDefinedSimplefield(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedSimplefield): ZustandAngaben {
 		$this->userDefinedSimplefield = $userDefinedSimplefield;
 		return $this;
 	}

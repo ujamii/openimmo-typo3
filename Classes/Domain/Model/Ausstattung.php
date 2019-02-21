@@ -36,19 +36,19 @@ class Ausstattung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\AngeschlGastronomie") 
-	 * @var AngeschlGastronomie
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\AngeschlGastronomie
 	 */
 	protected $angeschlGastronomie;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Ausbaustufe") 
-	 * @var Ausbaustufe
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Ausbaustufe
 	 */
 	protected $ausbaustufe;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\AusrichtBalkonTerrasse") 
-	 * @var AusrichtBalkonTerrasse
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\AusrichtBalkonTerrasse
 	 */
 	protected $ausrichtBalkonTerrasse;
 
@@ -61,7 +61,7 @@ class Ausstattung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Bad") 
-	 * @var Bad
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Bad
 	 */
 	protected $bad;
 
@@ -73,13 +73,13 @@ class Ausstattung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Bauweise") 
-	 * @var Bauweise
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Bauweise
 	 */
 	protected $bauweise;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Befeuerung") 
-	 * @var Befeuerung
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Befeuerung
 	 */
 	protected $befeuerung;
 
@@ -91,7 +91,7 @@ class Ausstattung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Boden") 
-	 * @var Boden
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Boden
 	 */
 	protected $boden;
 
@@ -103,7 +103,7 @@ class Ausstattung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\BreitbandZugang") 
-	 * @var BreitbandZugang
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\BreitbandZugang
 	 */
 	protected $breitbandZugang;
 
@@ -115,7 +115,7 @@ class Ausstattung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Dachform") 
-	 * @var Dachform
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Dachform
 	 */
 	protected $dachform;
 
@@ -133,7 +133,7 @@ class Ausstattung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Energietyp") 
-	 * @var Energietyp
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Energietyp
 	 */
 	protected $energietyp;
 
@@ -145,7 +145,7 @@ class Ausstattung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Fahrstuhl") 
-	 * @var Fahrstuhl
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Fahrstuhl
 	 */
 	protected $fahrstuhl;
 
@@ -181,7 +181,7 @@ class Ausstattung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Heizungsart") 
-	 * @var Heizungsart
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Heizungsart
 	 */
 	protected $heizungsart;
 
@@ -231,13 +231,13 @@ class Ausstattung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Kueche") 
-	 * @var Kueche
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Kueche
 	 */
 	protected $kueche;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Moebliert") 
-	 * @var Moebliert
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Moebliert
 	 */
 	protected $moebliert;
 
@@ -280,13 +280,13 @@ class Ausstattung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 	/**
 	 * @XmlList (inline = true, entry = "serviceleistungen") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\Serviceleistungen>") 
-	 * @var Serviceleistungen[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\Serviceleistungen>
 	 */
 	protected $serviceleistungen;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Sicherheitstechnik") 
-	 * @var Sicherheitstechnik
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Sicherheitstechnik
 	 */
 	protected $sicherheitstechnik;
 
@@ -299,7 +299,7 @@ class Ausstattung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 	/**
 	 * @XmlList (inline = true, entry = "stellplatzart") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\Stellplatzart>") 
-	 * @var Stellplatzart[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\Stellplatzart>
 	 */
 	protected $stellplatzart;
 
@@ -335,28 +335,28 @@ class Ausstattung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Unterkellert") 
-	 * @var Unterkellert
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Unterkellert
 	 */
 	protected $unterkellert;
 
 	/**
 	 * @XmlList (inline = true, entry = "user_defined_anyfield") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedAnyfield>") 
-	 * @var UserDefinedAnyfield[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedAnyfield>
 	 */
 	protected $userDefinedAnyfield;
 
 	/**
 	 * @XmlList (inline = true, entry = "user_defined_extend") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedExtend>") 
-	 * @var UserDefinedExtend[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedExtend>
 	 */
 	protected $userDefinedExtend;
 
 	/**
 	 * @XmlList (inline = true, entry = "user_defined_simplefield") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedSimplefield>") 
-	 * @var UserDefinedSimplefield[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedSimplefield>
 	 */
 	protected $userDefinedSimplefield;
 
@@ -674,9 +674,9 @@ class Ausstattung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 	/**
 	 * Returns array of Serviceleistungen
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getServiceleistungen(): array {
+	public function getServiceleistungen(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->serviceleistungen;
 	}
 
@@ -697,9 +697,9 @@ class Ausstattung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 	/**
 	 * Returns array of Stellplatzart
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getStellplatzart(): array {
+	public function getStellplatzart(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->stellplatzart;
 	}
 
@@ -748,27 +748,27 @@ class Ausstattung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 	/**
 	 * Returns array of UserDefinedAnyfield
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getUserDefinedAnyfield(): array {
+	public function getUserDefinedAnyfield(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->userDefinedAnyfield;
 	}
 
 	/**
 	 * Returns array of UserDefinedExtend
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getUserDefinedExtend(): array {
+	public function getUserDefinedExtend(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->userDefinedExtend;
 	}
 
 	/**
 	 * Returns array of UserDefinedSimplefield
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getUserDefinedSimplefield(): array {
+	public function getUserDefinedSimplefield(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->userDefinedSimplefield;
 	}
 
@@ -1170,10 +1170,10 @@ class Ausstattung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 	}
 
 	/**
-	 * @param array $serviceleistungen Setter for serviceleistungen
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $serviceleistungen Setter for serviceleistungen
 	 * @return Ausstattung
 	 */
-	public function setServiceleistungen(array $serviceleistungen): Ausstattung {
+	public function setServiceleistungen(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $serviceleistungen): Ausstattung {
 		$this->serviceleistungen = $serviceleistungen;
 		return $this;
 	}
@@ -1197,10 +1197,10 @@ class Ausstattung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 	}
 
 	/**
-	 * @param array $stellplatzart Setter for stellplatzart
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $stellplatzart Setter for stellplatzart
 	 * @return Ausstattung
 	 */
-	public function setStellplatzart(array $stellplatzart): Ausstattung {
+	public function setStellplatzart(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $stellplatzart): Ausstattung {
 		$this->stellplatzart = $stellplatzart;
 		return $this;
 	}
@@ -1260,28 +1260,28 @@ class Ausstattung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 	}
 
 	/**
-	 * @param array $userDefinedAnyfield Setter for userDefinedAnyfield
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedAnyfield Setter for userDefinedAnyfield
 	 * @return Ausstattung
 	 */
-	public function setUserDefinedAnyfield(array $userDefinedAnyfield): Ausstattung {
+	public function setUserDefinedAnyfield(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedAnyfield): Ausstattung {
 		$this->userDefinedAnyfield = $userDefinedAnyfield;
 		return $this;
 	}
 
 	/**
-	 * @param array $userDefinedExtend Setter for userDefinedExtend
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedExtend Setter for userDefinedExtend
 	 * @return Ausstattung
 	 */
-	public function setUserDefinedExtend(array $userDefinedExtend): Ausstattung {
+	public function setUserDefinedExtend(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedExtend): Ausstattung {
 		$this->userDefinedExtend = $userDefinedExtend;
 		return $this;
 	}
 
 	/**
-	 * @param array $userDefinedSimplefield Setter for userDefinedSimplefield
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedSimplefield Setter for userDefinedSimplefield
 	 * @return Ausstattung
 	 */
-	public function setUserDefinedSimplefield(array $userDefinedSimplefield): Ausstattung {
+	public function setUserDefinedSimplefield(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedSimplefield): Ausstattung {
 		$this->userDefinedSimplefield = $userDefinedSimplefield;
 		return $this;
 	}

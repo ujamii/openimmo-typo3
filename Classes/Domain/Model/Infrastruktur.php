@@ -18,21 +18,21 @@ class Infrastruktur implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInter
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Ausblick") 
-	 * @var Ausblick
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Ausblick
 	 */
 	protected $ausblick;
 
 	/**
 	 * @XmlList (inline = true, entry = "distanzen") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\Distanzen>") 
-	 * @var Distanzen[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\Distanzen>
 	 */
 	protected $distanzen;
 
 	/**
 	 * @XmlList (inline = true, entry = "distanzen_sport") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\DistanzenSport>") 
-	 * @var DistanzenSport[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\DistanzenSport>
 	 */
 	protected $distanzenSport;
 
@@ -47,21 +47,21 @@ class Infrastruktur implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInter
 	/**
 	 * @XmlList (inline = true, entry = "user_defined_anyfield") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedAnyfield>") 
-	 * @var UserDefinedAnyfield[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedAnyfield>
 	 */
 	protected $userDefinedAnyfield;
 
 	/**
 	 * @XmlList (inline = true, entry = "user_defined_extend") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedExtend>") 
-	 * @var UserDefinedExtend[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedExtend>
 	 */
 	protected $userDefinedExtend;
 
 	/**
 	 * @XmlList (inline = true, entry = "user_defined_simplefield") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedSimplefield>") 
-	 * @var UserDefinedSimplefield[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedSimplefield>
 	 */
 	protected $userDefinedSimplefield;
 
@@ -81,18 +81,18 @@ class Infrastruktur implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInter
 	/**
 	 * Returns array of Distanzen
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getDistanzen(): array {
+	public function getDistanzen(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->distanzen;
 	}
 
 	/**
 	 * Returns array of DistanzenSport
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getDistanzenSport(): array {
+	public function getDistanzenSport(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->distanzenSport;
 	}
 
@@ -106,27 +106,27 @@ class Infrastruktur implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInter
 	/**
 	 * Returns array of UserDefinedAnyfield
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getUserDefinedAnyfield(): array {
+	public function getUserDefinedAnyfield(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->userDefinedAnyfield;
 	}
 
 	/**
 	 * Returns array of UserDefinedExtend
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getUserDefinedExtend(): array {
+	public function getUserDefinedExtend(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->userDefinedExtend;
 	}
 
 	/**
 	 * Returns array of UserDefinedSimplefield
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getUserDefinedSimplefield(): array {
+	public function getUserDefinedSimplefield(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->userDefinedSimplefield;
 	}
 
@@ -147,19 +147,19 @@ class Infrastruktur implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInter
 	}
 
 	/**
-	 * @param array $distanzen Setter for distanzen
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $distanzen Setter for distanzen
 	 * @return Infrastruktur
 	 */
-	public function setDistanzen(array $distanzen): Infrastruktur {
+	public function setDistanzen(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $distanzen): Infrastruktur {
 		$this->distanzen = $distanzen;
 		return $this;
 	}
 
 	/**
-	 * @param array $distanzenSport Setter for distanzenSport
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $distanzenSport Setter for distanzenSport
 	 * @return Infrastruktur
 	 */
-	public function setDistanzenSport(array $distanzenSport): Infrastruktur {
+	public function setDistanzenSport(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $distanzenSport): Infrastruktur {
 		$this->distanzenSport = $distanzenSport;
 		return $this;
 	}
@@ -174,28 +174,28 @@ class Infrastruktur implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInter
 	}
 
 	/**
-	 * @param array $userDefinedAnyfield Setter for userDefinedAnyfield
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedAnyfield Setter for userDefinedAnyfield
 	 * @return Infrastruktur
 	 */
-	public function setUserDefinedAnyfield(array $userDefinedAnyfield): Infrastruktur {
+	public function setUserDefinedAnyfield(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedAnyfield): Infrastruktur {
 		$this->userDefinedAnyfield = $userDefinedAnyfield;
 		return $this;
 	}
 
 	/**
-	 * @param array $userDefinedExtend Setter for userDefinedExtend
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedExtend Setter for userDefinedExtend
 	 * @return Infrastruktur
 	 */
-	public function setUserDefinedExtend(array $userDefinedExtend): Infrastruktur {
+	public function setUserDefinedExtend(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedExtend): Infrastruktur {
 		$this->userDefinedExtend = $userDefinedExtend;
 		return $this;
 	}
 
 	/**
-	 * @param array $userDefinedSimplefield Setter for userDefinedSimplefield
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedSimplefield Setter for userDefinedSimplefield
 	 * @return Infrastruktur
 	 */
-	public function setUserDefinedSimplefield(array $userDefinedSimplefield): Infrastruktur {
+	public function setUserDefinedSimplefield(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedSimplefield): Infrastruktur {
 		$this->userDefinedSimplefield = $userDefinedSimplefield;
 		return $this;
 	}

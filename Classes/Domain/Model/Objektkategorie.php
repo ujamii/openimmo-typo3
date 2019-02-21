@@ -26,40 +26,40 @@ class Objektkategorie implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInt
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Nutzungsart") 
-	 * @var Nutzungsart
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Nutzungsart
 	 */
 	protected $nutzungsart;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Objektart") 
-	 * @var Objektart
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Objektart
 	 */
 	protected $objektart;
 
 	/**
 	 * @XmlList (inline = true, entry = "user_defined_anyfield") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedAnyfield>") 
-	 * @var UserDefinedAnyfield[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedAnyfield>
 	 */
 	protected $userDefinedAnyfield;
 
 	/**
 	 * @XmlList (inline = true, entry = "user_defined_extend") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedExtend>") 
-	 * @var UserDefinedExtend[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedExtend>
 	 */
 	protected $userDefinedExtend;
 
 	/**
 	 * @XmlList (inline = true, entry = "user_defined_simplefield") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedSimplefield>") 
-	 * @var UserDefinedSimplefield[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedSimplefield>
 	 */
 	protected $userDefinedSimplefield;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Vermarktungsart") 
-	 * @var Vermarktungsart
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Vermarktungsart
 	 */
 	protected $vermarktungsart;
 
@@ -87,27 +87,27 @@ class Objektkategorie implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInt
 	/**
 	 * Returns array of UserDefinedAnyfield
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getUserDefinedAnyfield(): array {
+	public function getUserDefinedAnyfield(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->userDefinedAnyfield;
 	}
 
 	/**
 	 * Returns array of UserDefinedExtend
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getUserDefinedExtend(): array {
+	public function getUserDefinedExtend(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->userDefinedExtend;
 	}
 
 	/**
 	 * Returns array of UserDefinedSimplefield
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getUserDefinedSimplefield(): array {
+	public function getUserDefinedSimplefield(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->userDefinedSimplefield;
 	}
 
@@ -146,28 +146,28 @@ class Objektkategorie implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInt
 	}
 
 	/**
-	 * @param array $userDefinedAnyfield Setter for userDefinedAnyfield
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedAnyfield Setter for userDefinedAnyfield
 	 * @return Objektkategorie
 	 */
-	public function setUserDefinedAnyfield(array $userDefinedAnyfield): Objektkategorie {
+	public function setUserDefinedAnyfield(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedAnyfield): Objektkategorie {
 		$this->userDefinedAnyfield = $userDefinedAnyfield;
 		return $this;
 	}
 
 	/**
-	 * @param array $userDefinedExtend Setter for userDefinedExtend
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedExtend Setter for userDefinedExtend
 	 * @return Objektkategorie
 	 */
-	public function setUserDefinedExtend(array $userDefinedExtend): Objektkategorie {
+	public function setUserDefinedExtend(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedExtend): Objektkategorie {
 		$this->userDefinedExtend = $userDefinedExtend;
 		return $this;
 	}
 
 	/**
-	 * @param array $userDefinedSimplefield Setter for userDefinedSimplefield
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedSimplefield Setter for userDefinedSimplefield
 	 * @return Objektkategorie
 	 */
-	public function setUserDefinedSimplefield(array $userDefinedSimplefield): Objektkategorie {
+	public function setUserDefinedSimplefield(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedSimplefield): Objektkategorie {
 		$this->userDefinedSimplefield = $userDefinedSimplefield;
 		return $this;
 	}

@@ -1,0 +1,14 @@
+<tr>
+	<td><f:link.action action="show" arguments="{immobilie : immobilie}">{immobilie.freitexte.objekttitel}</f:link.action></td>
+	<td>Zimmer: {immobilie.flaechen.anzahlZimmer}</td>
+	<td>Wohnfläche: {immobilie.flaechen.wohnflaeche}</td>
+	<td>Adresse: {immobilie.geo.strasse} {immobilie.geo.hausnummer}, {immobilie.geo.plz} {immobilie.geo.ort}</td>
+	<td>Warmmiete: {immobilie.preise.warmmiete}</td>
+	<td>
+		<f:for each="{immobilie.anhaenge.anhang}" as="anhang">
+			<f:if condition="{anhang.gruppe} == 'BILD'">
+				<f:image src="uploads/tx_openimmo/1548246253/{anhang.daten.pfad}" width="200"/>
+			</f:if>
+		</f:for>
+	</td>
+</tr>

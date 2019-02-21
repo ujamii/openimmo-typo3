@@ -25,7 +25,7 @@ class Anbieter implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface,
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Anhang") 
-	 * @var Anhang
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Anhang
 	 */
 	protected $anhang;
 
@@ -38,7 +38,7 @@ class Anbieter implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface,
 	/**
 	 * @XmlList (inline = true, entry = "immobilie") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\Immobilie>") 
-	 * @var Immobilie[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\Immobilie>
 	 */
 	protected $immobilie;
 
@@ -50,7 +50,7 @@ class Anbieter implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface,
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\ImpressumStrukt") 
-	 * @var ImpressumStrukt
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\ImpressumStrukt
 	 */
 	protected $impressumStrukt;
 
@@ -77,21 +77,21 @@ class Anbieter implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface,
 	/**
 	 * @XmlList (inline = true, entry = "user_defined_anyfield") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedAnyfield>") 
-	 * @var UserDefinedAnyfield[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedAnyfield>
 	 */
 	protected $userDefinedAnyfield;
 
 	/**
 	 * @XmlList (inline = true, entry = "user_defined_extend") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedExtend>") 
-	 * @var UserDefinedExtend[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedExtend>
 	 */
 	protected $userDefinedExtend;
 
 	/**
 	 * @XmlList (inline = true, entry = "user_defined_simplefield") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedSimplefield>") 
-	 * @var UserDefinedSimplefield[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedSimplefield>
 	 */
 	protected $userDefinedSimplefield;
 
@@ -119,9 +119,9 @@ class Anbieter implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface,
 	/**
 	 * Returns array of Immobilie
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getImmobilie(): array {
+	public function getImmobilie(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->immobilie;
 	}
 
@@ -163,27 +163,27 @@ class Anbieter implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface,
 	/**
 	 * Returns array of UserDefinedAnyfield
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getUserDefinedAnyfield(): array {
+	public function getUserDefinedAnyfield(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->userDefinedAnyfield;
 	}
 
 	/**
 	 * Returns array of UserDefinedExtend
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getUserDefinedExtend(): array {
+	public function getUserDefinedExtend(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->userDefinedExtend;
 	}
 
 	/**
 	 * Returns array of UserDefinedSimplefield
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getUserDefinedSimplefield(): array {
+	public function getUserDefinedSimplefield(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->userDefinedSimplefield;
 	}
 
@@ -215,10 +215,10 @@ class Anbieter implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface,
 	}
 
 	/**
-	 * @param array $immobilie Setter for immobilie
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $immobilie Setter for immobilie
 	 * @return Anbieter
 	 */
-	public function setImmobilie(array $immobilie): Anbieter {
+	public function setImmobilie(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $immobilie): Anbieter {
 		$this->immobilie = $immobilie;
 		return $this;
 	}
@@ -269,28 +269,28 @@ class Anbieter implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface,
 	}
 
 	/**
-	 * @param array $userDefinedAnyfield Setter for userDefinedAnyfield
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedAnyfield Setter for userDefinedAnyfield
 	 * @return Anbieter
 	 */
-	public function setUserDefinedAnyfield(array $userDefinedAnyfield): Anbieter {
+	public function setUserDefinedAnyfield(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedAnyfield): Anbieter {
 		$this->userDefinedAnyfield = $userDefinedAnyfield;
 		return $this;
 	}
 
 	/**
-	 * @param array $userDefinedExtend Setter for userDefinedExtend
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedExtend Setter for userDefinedExtend
 	 * @return Anbieter
 	 */
-	public function setUserDefinedExtend(array $userDefinedExtend): Anbieter {
+	public function setUserDefinedExtend(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedExtend): Anbieter {
 		$this->userDefinedExtend = $userDefinedExtend;
 		return $this;
 	}
 
 	/**
-	 * @param array $userDefinedSimplefield Setter for userDefinedSimplefield
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedSimplefield Setter for userDefinedSimplefield
 	 * @return Anbieter
 	 */
-	public function setUserDefinedSimplefield(array $userDefinedSimplefield): Anbieter {
+	public function setUserDefinedSimplefield(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedSimplefield): Anbieter {
 		$this->userDefinedSimplefield = $userDefinedSimplefield;
 		return $this;
 	}

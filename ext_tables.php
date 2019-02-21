@@ -10,5 +10,13 @@ call_user_func(
         foreach ($tcaFields as $file) {
             \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages(basename($file, 'php'));
         }
+
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+            'Ujamii.OpenImmoTypo3',
+            'Immobilien',
+            'Immobilien',
+            'EXT:openimmo/Resources/Public/Icons/user_plugin_immobilien.svg'
+        );
+        $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist']['openimmotypo3_immobilien'] = 'pages,recursive';
     }
 );

@@ -27,119 +27,119 @@ class Immobilie implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Anhaenge") 
-	 * @var Anhaenge
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Anhaenge
 	 */
 	protected $anhaenge;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Ausstattung") 
-	 * @var Ausstattung
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Ausstattung
 	 */
 	protected $ausstattung;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Bewertung") 
-	 * @var Bewertung
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Bewertung
 	 */
 	protected $bewertung;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Bieterverfahren") 
-	 * @var Bieterverfahren
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Bieterverfahren
 	 */
 	protected $bieterverfahren;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Flaechen") 
-	 * @var Flaechen
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Flaechen
 	 */
 	protected $flaechen;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Freitexte") 
-	 * @var Freitexte
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Freitexte
 	 */
 	protected $freitexte;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Geo") 
-	 * @var Geo
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Geo
 	 */
 	protected $geo;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Infrastruktur") 
-	 * @var Infrastruktur
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Infrastruktur
 	 */
 	protected $infrastruktur;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Kontaktperson") 
-	 * @var Kontaktperson
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Kontaktperson
 	 */
 	protected $kontaktperson;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Objektkategorie") 
-	 * @var Objektkategorie
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Objektkategorie
 	 */
 	protected $objektkategorie;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Preise") 
-	 * @var Preise
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Preise
 	 */
 	protected $preise;
 
 	/**
 	 * @XmlList (inline = true, entry = "user_defined_anyfield") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedAnyfield>") 
-	 * @var UserDefinedAnyfield[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedAnyfield>
 	 */
 	protected $userDefinedAnyfield;
 
 	/**
 	 * @XmlList (inline = true, entry = "user_defined_extend") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedExtend>") 
-	 * @var UserDefinedExtend[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedExtend>
 	 */
 	protected $userDefinedExtend;
 
 	/**
 	 * @XmlList (inline = true, entry = "user_defined_simplefield") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedSimplefield>") 
-	 * @var UserDefinedSimplefield[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\UserDefinedSimplefield>
 	 */
 	protected $userDefinedSimplefield;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Versteigerung") 
-	 * @var Versteigerung
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Versteigerung
 	 */
 	protected $versteigerung;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\VerwaltungObjekt") 
-	 * @var VerwaltungObjekt
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\VerwaltungObjekt
 	 */
 	protected $verwaltungObjekt;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\VerwaltungTechn") 
-	 * @var VerwaltungTechn
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\VerwaltungTechn
 	 */
 	protected $verwaltungTechn;
 
 	/**
 	 * @XmlList (inline = true, entry = "weitere_adresse") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\WeitereAdresse>") 
-	 * @var WeitereAdresse[]
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\WeitereAdresse>
 	 */
 	protected $weitereAdresse;
 
 	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\ZustandAngaben") 
-	 * @var ZustandAngaben
+	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\ZustandAngaben
 	 */
 	protected $zustandAngaben;
 
@@ -230,27 +230,27 @@ class Immobilie implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface
 	/**
 	 * Returns array of UserDefinedAnyfield
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getUserDefinedAnyfield(): array {
+	public function getUserDefinedAnyfield(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->userDefinedAnyfield;
 	}
 
 	/**
 	 * Returns array of UserDefinedExtend
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getUserDefinedExtend(): array {
+	public function getUserDefinedExtend(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->userDefinedExtend;
 	}
 
 	/**
 	 * Returns array of UserDefinedSimplefield
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getUserDefinedSimplefield(): array {
+	public function getUserDefinedSimplefield(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->userDefinedSimplefield;
 	}
 
@@ -278,9 +278,9 @@ class Immobilie implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface
 	/**
 	 * Returns array of WeitereAdresse
 	 *
-	 * @return array
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
-	public function getWeitereAdresse(): array {
+	public function getWeitereAdresse(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 		return $this->weitereAdresse;
 	}
 
@@ -400,28 +400,28 @@ class Immobilie implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface
 	}
 
 	/**
-	 * @param array $userDefinedAnyfield Setter for userDefinedAnyfield
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedAnyfield Setter for userDefinedAnyfield
 	 * @return Immobilie
 	 */
-	public function setUserDefinedAnyfield(array $userDefinedAnyfield): Immobilie {
+	public function setUserDefinedAnyfield(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedAnyfield): Immobilie {
 		$this->userDefinedAnyfield = $userDefinedAnyfield;
 		return $this;
 	}
 
 	/**
-	 * @param array $userDefinedExtend Setter for userDefinedExtend
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedExtend Setter for userDefinedExtend
 	 * @return Immobilie
 	 */
-	public function setUserDefinedExtend(array $userDefinedExtend): Immobilie {
+	public function setUserDefinedExtend(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedExtend): Immobilie {
 		$this->userDefinedExtend = $userDefinedExtend;
 		return $this;
 	}
 
 	/**
-	 * @param array $userDefinedSimplefield Setter for userDefinedSimplefield
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedSimplefield Setter for userDefinedSimplefield
 	 * @return Immobilie
 	 */
-	public function setUserDefinedSimplefield(array $userDefinedSimplefield): Immobilie {
+	public function setUserDefinedSimplefield(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $userDefinedSimplefield): Immobilie {
 		$this->userDefinedSimplefield = $userDefinedSimplefield;
 		return $this;
 	}
@@ -454,10 +454,10 @@ class Immobilie implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface
 	}
 
 	/**
-	 * @param array $weitereAdresse Setter for weitereAdresse
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $weitereAdresse Setter for weitereAdresse
 	 * @return Immobilie
 	 */
-	public function setWeitereAdresse(array $weitereAdresse): Immobilie {
+	public function setWeitereAdresse(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $weitereAdresse): Immobilie {
 		$this->weitereAdresse = $weitereAdresse;
 		return $this;
 	}
