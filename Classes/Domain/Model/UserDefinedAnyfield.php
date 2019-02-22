@@ -109,14 +109,6 @@ class UserDefinedAnyfield implements \TYPO3\CMS\Extbase\DomainObject\DomainObjec
 	 * @Exclude ()
 	 * @var int
 	 */
-	protected $openimmo;
-
-	/**
-	 * Id of the parent object for backlink purpose in TYPO3.
-	 *
-	 * @Exclude ()
-	 * @var int
-	 */
 	protected $preise;
 
 	/**
@@ -226,13 +218,6 @@ class UserDefinedAnyfield implements \TYPO3\CMS\Extbase\DomainObject\DomainObjec
 	 */
 	public function getObjektkategorie(): int {
 		return $this->objektkategorie;
-	}
-
-	/**
-	 * @return int
-	 */
-	public function getOpenimmo(): int {
-		return $this->openimmo;
 	}
 
 	/**
@@ -366,15 +351,6 @@ class UserDefinedAnyfield implements \TYPO3\CMS\Extbase\DomainObject\DomainObjec
 	 */
 	public function setObjektkategorie(int $objektkategorie): UserDefinedAnyfield {
 		$this->objektkategorie = $objektkategorie;
-		return $this;
-	}
-
-	/**
-	 * @param int $openimmo Setter for openimmo
-	 * @return UserDefinedAnyfield
-	 */
-	public function setOpenimmo(int $openimmo): UserDefinedAnyfield {
-		$this->openimmo = $openimmo;
 		return $this;
 	}
 

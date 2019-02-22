@@ -1,7 +1,6 @@
 <?php
 namespace Ujamii\OpenImmoTypo3\Domain\Model;
 
-use JMS\Serializer\Annotation\Exclude;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlAttribute;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -64,14 +63,6 @@ class Uebertragung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterf
 	 * @var string
 	 */
 	protected $modus;
-
-	/**
-	 * Id of the parent object for backlink purpose in TYPO3.
-	 *
-	 * @Exclude() 
-	 * @var int
-	 */
-	protected $openimmo;
 
 	/**
 	 * optional
@@ -152,13 +143,6 @@ class Uebertragung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterf
 	}
 
 	/**
-	 * @return int
-	 */
-	public function getOpenimmo(): int {
-		return $this->openimmo;
-	}
-
-	/**
 	 * @return string
 	 */
 	public function getRegiId(): string {
@@ -222,15 +206,6 @@ class Uebertragung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterf
 	 */
 	public function setModus(string $modus): Uebertragung {
 		$this->modus = $modus;
-		return $this;
-	}
-
-	/**
-	 * @param int $openimmo Setter for openimmo
-	 * @return Uebertragung
-	 */
-	public function setOpenimmo(int $openimmo) {
-		$this->openimmo = $openimmo;
 		return $this;
 	}
 

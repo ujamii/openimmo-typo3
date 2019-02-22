@@ -55,7 +55,7 @@ class GenerateTypo3WrapperCommand extends Command
      * @var array
      */
     protected $excludeClasses = [
-        'OpenImmo'
+        'Openimmo'
     ];
 
     /**
@@ -102,7 +102,6 @@ class GenerateTypo3WrapperCommand extends Command
             // Store the namespace of each class in the namespace map
             if (substr($classname, 0, strlen($this->openImmoApiNamespace)) == $this->openImmoApiNamespace) {
                 $shortname = (new \ReflectionClass($classname))->getShortName();
-
                 // some classes can be excluded
                 if (in_array($shortname, $this->excludeClasses)) {
                     continue;

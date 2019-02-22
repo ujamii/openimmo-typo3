@@ -17,14 +17,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'anbieternr, anhang, firma, immobilie, impressum, impressum_strukt, lizenzkennung, openimmo, openimmo_anid, user_defined_anyfield, user_defined_extend, user_defined_simplefield',
+        'searchFields' => 'anbieternr, anhang, firma, immobilie, impressum, impressum_strukt, lizenzkennung, openimmo_anid, user_defined_anyfield, user_defined_extend, user_defined_simplefield',
         'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/information/information-typo3-version.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, anbieternr, anhang, firma, immobilie, impressum, impressum_strukt, lizenzkennung, openimmo, openimmo_anid, user_defined_anyfield, user_defined_extend, user_defined_simplefield',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, anbieternr, anhang, firma, immobilie, impressum, impressum_strukt, lizenzkennung, openimmo_anid, user_defined_anyfield, user_defined_extend, user_defined_simplefield',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, anbieternr, anhang, firma, immobilie, impressum, impressum_strukt, lizenzkennung, openimmo, openimmo_anid, user_defined_anyfield, user_defined_extend, user_defined_simplefield, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, anbieternr, anhang, firma, immobilie, impressum, impressum_strukt, lizenzkennung, openimmo_anid, user_defined_anyfield, user_defined_extend, user_defined_simplefield, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -203,13 +203,6 @@ return [
                 'cols' => 40,
                 'rows' => 15,
                 'eval' => 'trim',
-            ],
-        ],
-        'openimmo' => [
-            'exclude' => true,
-            'label' => 'Openimmo',
-            'config' => [
-                'type' => 'passthrough',
             ],
         ],
         'openimmo_anid' => [

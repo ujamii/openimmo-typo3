@@ -746,13 +746,6 @@ CREATE TABLE tx_openimmotypo3_domain_model_objektkategorie (
 	vermarktungsart int(11) unsigned DEFAULT '0' NOT NULL
 );
 
-CREATE TABLE tx_openimmotypo3_domain_model_openimmo (
-	anbieter int(11) unsigned DEFAULT '0' NOT NULL,
-	uebertragung int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_anyfield int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_simplefield int(11) unsigned DEFAULT '0' NOT NULL
-);
-
 CREATE TABLE tx_openimmotypo3_domain_model_parken (
 	objektart int(11) unsigned DEFAULT '0' NOT NULL,
 	parken_typ text DEFAULT '' NOT NULL
