@@ -49,7 +49,7 @@ class Openimmo implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface,
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getAnbieter(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->anbieter;
+		return is_array($this->anbieter) ? self::arrayToObjectStorage($this->anbieter) : $this->anbieter;
 	}
 
 	/**
@@ -65,7 +65,7 @@ class Openimmo implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface,
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getUserDefinedAnyfield(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->userDefinedAnyfield;
+		return is_array($this->userDefinedAnyfield) ? self::arrayToObjectStorage($this->userDefinedAnyfield) : $this->userDefinedAnyfield;
 	}
 
 	/**
@@ -74,7 +74,7 @@ class Openimmo implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface,
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getUserDefinedSimplefield(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->userDefinedSimplefield;
+		return is_array($this->userDefinedSimplefield) ? self::arrayToObjectStorage($this->userDefinedSimplefield) : $this->userDefinedSimplefield;
 	}
 
 	/**

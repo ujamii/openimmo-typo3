@@ -233,7 +233,7 @@ class Immobilie implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getUserDefinedAnyfield(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->userDefinedAnyfield;
+		return is_array($this->userDefinedAnyfield) ? self::arrayToObjectStorage($this->userDefinedAnyfield) : $this->userDefinedAnyfield;
 	}
 
 	/**
@@ -242,7 +242,7 @@ class Immobilie implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getUserDefinedExtend(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->userDefinedExtend;
+		return is_array($this->userDefinedExtend) ? self::arrayToObjectStorage($this->userDefinedExtend) : $this->userDefinedExtend;
 	}
 
 	/**
@@ -251,7 +251,7 @@ class Immobilie implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getUserDefinedSimplefield(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->userDefinedSimplefield;
+		return is_array($this->userDefinedSimplefield) ? self::arrayToObjectStorage($this->userDefinedSimplefield) : $this->userDefinedSimplefield;
 	}
 
 	/**
@@ -281,7 +281,7 @@ class Immobilie implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getWeitereAdresse(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->weitereAdresse;
+		return is_array($this->weitereAdresse) ? self::arrayToObjectStorage($this->weitereAdresse) : $this->weitereAdresse;
 	}
 
 	/**

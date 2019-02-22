@@ -84,7 +84,7 @@ class Infrastruktur implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInter
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getDistanzen(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->distanzen;
+		return is_array($this->distanzen) ? self::arrayToObjectStorage($this->distanzen) : $this->distanzen;
 	}
 
 	/**
@@ -93,7 +93,7 @@ class Infrastruktur implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInter
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getDistanzenSport(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->distanzenSport;
+		return is_array($this->distanzenSport) ? self::arrayToObjectStorage($this->distanzenSport) : $this->distanzenSport;
 	}
 
 	/**
@@ -109,7 +109,7 @@ class Infrastruktur implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInter
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getUserDefinedAnyfield(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->userDefinedAnyfield;
+		return is_array($this->userDefinedAnyfield) ? self::arrayToObjectStorage($this->userDefinedAnyfield) : $this->userDefinedAnyfield;
 	}
 
 	/**
@@ -118,7 +118,7 @@ class Infrastruktur implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInter
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getUserDefinedExtend(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->userDefinedExtend;
+		return is_array($this->userDefinedExtend) ? self::arrayToObjectStorage($this->userDefinedExtend) : $this->userDefinedExtend;
 	}
 
 	/**
@@ -127,7 +127,7 @@ class Infrastruktur implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInter
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getUserDefinedSimplefield(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->userDefinedSimplefield;
+		return is_array($this->userDefinedSimplefield) ? self::arrayToObjectStorage($this->userDefinedSimplefield) : $this->userDefinedSimplefield;
 	}
 
 	/**

@@ -677,7 +677,7 @@ class Ausstattung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getServiceleistungen(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->serviceleistungen;
+		return is_array($this->serviceleistungen) ? self::arrayToObjectStorage($this->serviceleistungen) : $this->serviceleistungen;
 	}
 
 	/**
@@ -700,7 +700,7 @@ class Ausstattung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getStellplatzart(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->stellplatzart;
+		return is_array($this->stellplatzart) ? self::arrayToObjectStorage($this->stellplatzart) : $this->stellplatzart;
 	}
 
 	/**
@@ -751,7 +751,7 @@ class Ausstattung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getUserDefinedAnyfield(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->userDefinedAnyfield;
+		return is_array($this->userDefinedAnyfield) ? self::arrayToObjectStorage($this->userDefinedAnyfield) : $this->userDefinedAnyfield;
 	}
 
 	/**
@@ -760,7 +760,7 @@ class Ausstattung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getUserDefinedExtend(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->userDefinedExtend;
+		return is_array($this->userDefinedExtend) ? self::arrayToObjectStorage($this->userDefinedExtend) : $this->userDefinedExtend;
 	}
 
 	/**
@@ -769,7 +769,7 @@ class Ausstattung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getUserDefinedSimplefield(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->userDefinedSimplefield;
+		return is_array($this->userDefinedSimplefield) ? self::arrayToObjectStorage($this->userDefinedSimplefield) : $this->userDefinedSimplefield;
 	}
 
 	/**

@@ -7,7 +7,7 @@
 	<td>
 		<f:for each="{immobilie.anhaenge.anhang}" as="anhang">
 			<f:if condition="{anhang.gruppe} == 'BILD'">
-				<f:image src="uploads/tx_openimmo/1548246253/{anhang.daten.pfad}" width="200"/>
+				<f:image src="{anhang.daten.anhanginhalt}{anhang.daten.pfad}" width="200"/>
 			</f:if>
 		</f:for>
 	</td>

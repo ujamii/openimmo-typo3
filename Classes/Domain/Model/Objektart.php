@@ -129,7 +129,7 @@ class Objektart implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getBueroPraxen(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->bueroPraxen;
+		return is_array($this->bueroPraxen) ? self::arrayToObjectStorage($this->bueroPraxen) : $this->bueroPraxen;
 	}
 
 	/**
@@ -138,7 +138,7 @@ class Objektart implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getEinzelhandel(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->einzelhandel;
+		return is_array($this->einzelhandel) ? self::arrayToObjectStorage($this->einzelhandel) : $this->einzelhandel;
 	}
 
 	/**
@@ -147,7 +147,7 @@ class Objektart implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getFreizeitimmobilieGewerblich(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->freizeitimmobilieGewerblich;
+		return is_array($this->freizeitimmobilieGewerblich) ? self::arrayToObjectStorage($this->freizeitimmobilieGewerblich) : $this->freizeitimmobilieGewerblich;
 	}
 
 	/**
@@ -156,7 +156,7 @@ class Objektart implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getGastgewerbe(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->gastgewerbe;
+		return is_array($this->gastgewerbe) ? self::arrayToObjectStorage($this->gastgewerbe) : $this->gastgewerbe;
 	}
 
 	/**
@@ -165,7 +165,7 @@ class Objektart implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getGrundstueck(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->grundstueck;
+		return is_array($this->grundstueck) ? self::arrayToObjectStorage($this->grundstueck) : $this->grundstueck;
 	}
 
 	/**
@@ -174,7 +174,7 @@ class Objektart implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getHallenLagerProd(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->hallenLagerProd;
+		return is_array($this->hallenLagerProd) ? self::arrayToObjectStorage($this->hallenLagerProd) : $this->hallenLagerProd;
 	}
 
 	/**
@@ -183,7 +183,7 @@ class Objektart implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getHaus(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->haus;
+		return is_array($this->haus) ? self::arrayToObjectStorage($this->haus) : $this->haus;
 	}
 
 	/**
@@ -192,7 +192,7 @@ class Objektart implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getLandUndForstwirtschaft(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->landUndForstwirtschaft;
+		return is_array($this->landUndForstwirtschaft) ? self::arrayToObjectStorage($this->landUndForstwirtschaft) : $this->landUndForstwirtschaft;
 	}
 
 	/**
@@ -217,7 +217,7 @@ class Objektart implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getParken(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->parken;
+		return is_array($this->parken) ? self::arrayToObjectStorage($this->parken) : $this->parken;
 	}
 
 	/**
@@ -226,7 +226,7 @@ class Objektart implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getSonstige(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->sonstige;
+		return is_array($this->sonstige) ? self::arrayToObjectStorage($this->sonstige) : $this->sonstige;
 	}
 
 	/**
@@ -235,7 +235,7 @@ class Objektart implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getWohnung(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->wohnung;
+		return is_array($this->wohnung) ? self::arrayToObjectStorage($this->wohnung) : $this->wohnung;
 	}
 
 	/**
@@ -244,7 +244,7 @@ class Objektart implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getZimmer(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->zimmer;
+		return is_array($this->zimmer) ? self::arrayToObjectStorage($this->zimmer) : $this->zimmer;
 	}
 
 	/**
@@ -253,7 +253,7 @@ class Objektart implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getZinshausRenditeobjekt(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->zinshausRenditeobjekt;
+		return is_array($this->zinshausRenditeobjekt) ? self::arrayToObjectStorage($this->zinshausRenditeobjekt) : $this->zinshausRenditeobjekt;
 	}
 
 	/**

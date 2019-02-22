@@ -3,8 +3,10 @@
 namespace Ujamii\OpenImmoTypo3\Domain\Model;
 
 use JMS\Serializer\Annotation as Serializer;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface;
 use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
  * Trait ExtbaseModelTrait
@@ -57,6 +59,23 @@ trait ExtbaseModelTrait
      * @Serializer\Exclude()
      */
     private $_cleanProperties = [];
+
+    /**
+     * Helper method to solve type conflicts between de-/serialization process and TYPO3 data type.
+     *
+     * @param array $input
+     *
+     * @return ObjectStorage
+     */
+    public static function arrayToObjectStorage(array $input)
+    {
+        /* @var ObjectStorage $storage */
+        $storage = GeneralUtility::makeInstance(ObjectStorage::class);
+        foreach ($input as $item) {
+            $storage->attach($item);
+        }
+        return $storage;
+    }
 
     /**
      * Getter for uid.

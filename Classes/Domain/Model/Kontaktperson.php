@@ -299,7 +299,7 @@ class Kontaktperson implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInter
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getEmailSonstige(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->emailSonstige;
+		return is_array($this->emailSonstige) ? self::arrayToObjectStorage($this->emailSonstige) : $this->emailSonstige;
 	}
 
 	/**
@@ -462,7 +462,7 @@ class Kontaktperson implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInter
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getTelSonstige(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->telSonstige;
+		return is_array($this->telSonstige) ? self::arrayToObjectStorage($this->telSonstige) : $this->telSonstige;
 	}
 
 	/**
@@ -492,7 +492,7 @@ class Kontaktperson implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInter
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getUserDefinedAnyfield(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->userDefinedAnyfield;
+		return is_array($this->userDefinedAnyfield) ? self::arrayToObjectStorage($this->userDefinedAnyfield) : $this->userDefinedAnyfield;
 	}
 
 	/**
@@ -501,7 +501,7 @@ class Kontaktperson implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInter
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getUserDefinedExtend(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->userDefinedExtend;
+		return is_array($this->userDefinedExtend) ? self::arrayToObjectStorage($this->userDefinedExtend) : $this->userDefinedExtend;
 	}
 
 	/**
@@ -510,7 +510,7 @@ class Kontaktperson implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInter
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getUserDefinedSimplefield(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->userDefinedSimplefield;
+		return is_array($this->userDefinedSimplefield) ? self::arrayToObjectStorage($this->userDefinedSimplefield) : $this->userDefinedSimplefield;
 	}
 
 	/**

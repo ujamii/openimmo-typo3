@@ -894,7 +894,7 @@ class Preise implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getStpSonstige(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->stpSonstige;
+		return is_array($this->stpSonstige) ? self::arrayToObjectStorage($this->stpSonstige) : $this->stpSonstige;
 	}
 
 	/**
@@ -917,7 +917,7 @@ class Preise implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getUserDefinedAnyfield(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->userDefinedAnyfield;
+		return is_array($this->userDefinedAnyfield) ? self::arrayToObjectStorage($this->userDefinedAnyfield) : $this->userDefinedAnyfield;
 	}
 
 	/**
@@ -926,7 +926,7 @@ class Preise implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getUserDefinedExtend(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->userDefinedExtend;
+		return is_array($this->userDefinedExtend) ? self::arrayToObjectStorage($this->userDefinedExtend) : $this->userDefinedExtend;
 	}
 
 	/**
@@ -935,7 +935,7 @@ class Preise implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
 	 */
 	public function getUserDefinedSimplefield(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
-		return $this->userDefinedSimplefield;
+		return is_array($this->userDefinedSimplefield) ? self::arrayToObjectStorage($this->userDefinedSimplefield) : $this->userDefinedSimplefield;
 	}
 
 	/**

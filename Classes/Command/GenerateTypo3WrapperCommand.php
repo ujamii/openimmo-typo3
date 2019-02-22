@@ -52,6 +52,13 @@ class GenerateTypo3WrapperCommand extends Command
     protected $classNamesInApiNamespace = [];
 
     /**
+     * @var array
+     */
+    protected $excludeClasses = [
+        'OpenImmo'
+    ];
+
+    /**
      * This will be filled for "backlink" mm-fields during SQL generation process.
      *
      * @var array
@@ -94,12 +101,16 @@ class GenerateTypo3WrapperCommand extends Command
         foreach ($allClasses as $classname => $file) {
             // Store the namespace of each class in the namespace map
             if (substr($classname, 0, strlen($this->openImmoApiNamespace)) == $this->openImmoApiNamespace) {
-                $this->apiClasses[$classname] = $file;
-                $this->classNamesInApiNamespace[] = (new \ReflectionClass($classname))->getShortName();
+                $shortname = (new \ReflectionClass($classname))->getShortName();
+
+                // some classes can be excluded
+                if (in_array($shortname, $this->excludeClasses)) {
+                    continue;
+                }
+                $this->apiClasses[$classname]     = $file;
+                $this->classNamesInApiNamespace[] = $shortname;
             }
         }
-
-        //TODO: exclude OpenImmo class
 
         GeneralUtility::writeFile($this->getTargetForFile('ext_tables.sql'), $this->generateExtbaseSql());
 
@@ -126,8 +137,7 @@ class GenerateTypo3WrapperCommand extends Command
                     '\\' . DomainObjectInterface::class,
                     '\\' . ObjectMonitoringInterface::class
                 ])
-                ->setTraits(['ExtbaseModelTrait'])
-            ;
+                ->setTraits(['ExtbaseModelTrait']);
 
             // care for backlinks
             /* @var $property PhPProperty */
@@ -136,7 +146,7 @@ class GenerateTypo3WrapperCommand extends Command
 
                 if (in_array($propType, $this->classNamesInApiNamespace)) {
                     $backlinks[] = [
-                        'childClass' => $propType,
+                        'childClass'  => $propType,
                         'parentClass' => $modelClass->getName()
                     ];
 
@@ -144,9 +154,13 @@ class GenerateTypo3WrapperCommand extends Command
                     $unnecessaryFullQualifiedType = '\\' . $this->typo3ModelNamespace . '\\' . $propType;
                     if ($propType != $property->getType()) {
                         // of course, also arrays are evil in TYPO3, so lets use something else...
-                        $typo3Type = '\TYPO3\CMS\Extbase\Persistence\ObjectStorage<'.$unnecessaryFullQualifiedType.'>';
-                        $modelClass->getMethod('get' . ucfirst($property->getName()))->setType('\TYPO3\CMS\Extbase\Persistence\ObjectStorage');
-                        $modelClass->getMethod('set' . ucfirst($property->getName()))->getParameter($property->getName())->setType('\TYPO3\CMS\Extbase\Persistence\ObjectStorage');
+                        $typo3Type = '\TYPO3\CMS\Extbase\Persistence\ObjectStorage<' . $unnecessaryFullQualifiedType . '>';
+                        // default return type of ObjectStorage would not work here, as the deserialization sets an array
+                        $modelClass->getMethod('get' . ucfirst($property->getName()))
+                                   ->setType('\TYPO3\CMS\Extbase\Persistence\ObjectStorage')
+                                   ->setBody('return is_array($this->' . $property->getName() . ') ? self::arrayToObjectStorage($this->' . $property->getName() . ') : $this->' . $property->getName() . ';');
+                        $modelClass->getMethod('set' . ucfirst($property->getName()))
+                                   ->getParameter($property->getName())->setType('\TYPO3\CMS\Extbase\Persistence\ObjectStorage');
                     } else {
                         $typo3Type = $unnecessaryFullQualifiedType;
                     }
@@ -185,7 +199,7 @@ class GenerateTypo3WrapperCommand extends Command
      */
     protected function generateExtbaseSql()
     {
-        $sqlCode = [];
+        $sqlCode         = [];
         $this->mmSqlCode = [];
 
         foreach ($this->classNamesInApiNamespace as $file) {
@@ -222,8 +236,8 @@ class GenerateTypo3WrapperCommand extends Command
         /* @var $tag AbstractDescriptionTag */
         $typeTags = $property->getDocblock()->getTags('Type');
         if ($typeTags->size() > 0) {
-            $typeTag      = $typeTags->get(0);
-            $type         = trim($typeTag->getDescription(), '"() ');
+            $typeTag = $typeTags->get(0);
+            $type    = trim($typeTag->getDescription(), '"() ');
         } else {
             $type = trim($property->getType(), '"[] ');
         }
@@ -259,7 +273,7 @@ class GenerateTypo3WrapperCommand extends Command
                     // this is the case for links to other classes, maybe just one object or count of objects
 
                     $propertySql .= 'int(11) unsigned DEFAULT \'0\' NOT NULL';
-                    $isPlural = substr($type, 0, 6) == 'array<';
+                    $isPlural    = substr($type, 0, 6) == 'array<';
                     if ($isPlural) {
                         // also add a backlink field to the children table
                         $backlinkPropertyName = self::getSqlName($backlinkClass->getName());
@@ -417,7 +431,7 @@ return [
                 'items' => [
                     ['', 0],
                 ],
-                'foreign_table' => '".$sqlTableName."',
+                'foreign_table' => '" . $sqlTableName . "',
                 'foreign_table_where' => 'AND {#" . $sqlTableName . "}.{#pid}=###CURRENT_PID### AND {#" . $sqlTableName . "}.{#sys_language_uid} IN (-1,0)',
             ],
         ],
