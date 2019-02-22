@@ -89,12 +89,14 @@ class GenerateTypo3WrapperCommand extends Command
      *
      * @return int|void|null
      * @throws \ReflectionException
+     * @throws \Exception
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $this->input  = $input;
         $this->output = $output;
 
+        $this->output->writeln('Loading classes');
         $classLoader = require PATH_site . '../vendor/autoload.php';
         $allClasses  = $classLoader->getClassMap();
 
@@ -111,13 +113,21 @@ class GenerateTypo3WrapperCommand extends Command
             }
         }
 
-        GeneralUtility::writeFile($this->getTargetForFile('ext_tables.sql'), $this->generateExtbaseSql());
+        if (count($this->classNamesInApiNamespace) == 0) {
+            $msg = sprintf('No classes in the namepsace "%s" were found! Please call "composer dumpautoload --optimize" to generate a classmap!', $this->openImmoApiNamespace);
+            throw new \Exception($msg);
+        }
 
         // Models + Repositories
+        $this->output->writeln('Generating models and repository classes');
         $this->generateDomainClasses();
 
         // TCA
+        $this->output->writeln('Generating TCA files');
         $this->generateTcaFiles();
+
+        $this->output->writeln('Generating ext_tables.sql');
+        GeneralUtility::writeFile($this->getTargetForFile('ext_tables.sql'), $this->generateExtbaseSql());
     }
 
     /**
