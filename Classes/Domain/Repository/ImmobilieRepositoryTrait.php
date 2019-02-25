@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmoTypo3\Domain\Repository;
 
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use Ujamii\OpenImmoTypo3\Domain\Dto\RealEstateSearchDemand;
 
 /**
