@@ -7,8 +7,6 @@ use Symfony\Component\Console\Output\ConsoleOutput;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\CommandController;
 
-require_once ExtensionManagementUtility::extPath('openimmo', 'vendor/autoload.php');
-
 /**
  * Class ImportCommandController
  * @package Ujamii\OpenImmoTypo3\Command
