@@ -17,6 +17,10 @@ class StpFreiplatz implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterf
 	use ExtbaseModelTrait;
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_stpfreiplatz';
+
+	/**
 	 * optional
 	 *
 	 * @Type ("int")

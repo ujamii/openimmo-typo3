@@ -19,6 +19,10 @@ class ZinshausRenditeobjekt implements \TYPO3\CMS\Extbase\DomainObject\DomainObj
 
 	/**
 	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_zinshausrenditeobjekt';
+
+	/**
+	 */
 	const ZINS_TYP_BETREUTES_WOHNEN = 'BETREUTES-WOHNEN';
 
 	/**

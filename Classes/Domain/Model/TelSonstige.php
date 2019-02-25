@@ -19,6 +19,10 @@ class TelSonstige implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 
 	/**
 	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_telsonstige';
+
+	/**
+	 */
 	const TELEFONART_TEL_DURCHW = 'TEL_DURCHW';
 
 	/**

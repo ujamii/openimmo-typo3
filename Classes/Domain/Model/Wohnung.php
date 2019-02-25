@@ -19,6 +19,10 @@ class Wohnung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, 
 
 	/**
 	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_wohnung';
+
+	/**
+	 */
 	const WOHNUNGTYP_APARTMENT = 'APARTMENT';
 
 	/**

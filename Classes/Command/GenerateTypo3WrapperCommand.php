@@ -146,7 +146,9 @@ class GenerateTypo3WrapperCommand extends Command
                     '\\' . DomainObjectInterface::class,
                     '\\' . ObjectMonitoringInterface::class
                 ])
-                ->setTraits(['ExtbaseModelTrait']);
+                ->setTraits(['ExtbaseModelTrait'])
+                ->setConstant('TABLE_NAME', self::getSqlTableName($modelClass->getName()))
+            ;
 
             // care for backlinks
             /* @var $property PhPProperty */
@@ -184,6 +186,12 @@ class GenerateTypo3WrapperCommand extends Command
             $repoClass
                 ->setNamespace($this->typo3RepositoryNamespace)
                 ->setParentClassName('\\' . Repository::class);
+
+            // special case for filter demand
+            if ($repoClass->getName() == 'ImmobilieRepository') {
+                $repoClass->addTrait('ImmobilieRepositoryTrait');
+            }
+
             $this->createPhpFile($repoClass, 'Classes/Domain/Repository/');
         }
 

@@ -38,6 +38,10 @@ class Uebertragung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterf
 
 	/**
 	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_uebertragung';
+
+	/**
+	 */
 	const UMFANG_TEIL = 'TEIL';
 
 	/**

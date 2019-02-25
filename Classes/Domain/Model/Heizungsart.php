@@ -19,6 +19,10 @@ class Heizungsart implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 	use ExtbaseModelTrait;
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_heizungsart';
+
+	/**
 	 * Id of the parent object for backlink purpose in TYPO3.
 	 *
 	 * @Exclude() 

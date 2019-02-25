@@ -18,6 +18,10 @@ class Geokoordinaten implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInte
 	use ExtbaseModelTrait;
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_geokoordinaten';
+
+	/**
 	 * required
 	 *
 	 * @Type ("float")

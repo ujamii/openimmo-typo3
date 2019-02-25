@@ -17,6 +17,10 @@ class Kontaktperson implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInter
 	use ExtbaseModelTrait;
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_kontaktperson';
+
+	/**
 	 * @Type ("boolean") 
 	 * @var boolean
 	 */

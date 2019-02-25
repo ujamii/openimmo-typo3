@@ -90,6 +90,10 @@ class Anhang implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \
 	const LOCATION_REMOTE = 'REMOTE';
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_anhang';
+
+	/**
 	 * Id of the parent object for backlink purpose in TYPO3.
 	 *
 	 * @Exclude ()

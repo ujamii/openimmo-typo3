@@ -33,6 +33,10 @@ class Aktion implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \
 	const AKTIONART_REFERENZ = 'REFERENZ';
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_aktion';
+
+	/**
 	 * optional
 	 *
 	 * @Type ("string")

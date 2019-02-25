@@ -19,6 +19,10 @@ class PreisZeiteinheit implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectIn
 
 	/**
 	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_preiszeiteinheit';
+
+	/**
+	 */
 	const ZEITEINHEIT_JAHR = 'JAHR';
 
 	/**

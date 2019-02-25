@@ -76,6 +76,10 @@ class Distanzen implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface
 	const DISTANZ_ZU_ZENTRUM = 'ZENTRUM';
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_distanzen';
+
+	/**
 	 * required
 	 *
 	 * @Type ("string")

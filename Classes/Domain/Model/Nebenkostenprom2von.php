@@ -19,6 +19,10 @@ class Nebenkostenprom2von implements \TYPO3\CMS\Extbase\DomainObject\DomainObjec
 	use ExtbaseModelTrait;
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_nebenkostenprom2von';
+
+	/**
 	 * optional
 	 *
 	 * @Type ("float")

@@ -19,6 +19,10 @@ class Zustand implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, 
 
 	/**
 	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_zustand';
+
+	/**
+	 */
 	const ZUSTAND_ART_ABRISSOBJEKT = 'ABRISSOBJEKT';
 
 	/**

@@ -34,6 +34,10 @@ class MaxMietdauer implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterf
 	const MAX_DAUER_WOCHE = 'WOCHE';
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_maxmietdauer';
+
+	/**
 	 * optional
 	 *
 	 * @Type ("string")

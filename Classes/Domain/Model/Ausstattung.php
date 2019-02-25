@@ -29,6 +29,10 @@ class Ausstattung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 	const AUSSTATT_KATEGORIE_STANDARD = 'STANDARD';
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_ausstattung';
+
+	/**
 	 * @Type ("boolean") 
 	 * @var boolean
 	 */

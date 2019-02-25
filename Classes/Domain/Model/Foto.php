@@ -26,6 +26,10 @@ class Foto implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \TY
 	const LOCATION_REMOTE = 'REMOTE';
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_foto';
+
+	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Daten") 
 	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Daten
 	 */

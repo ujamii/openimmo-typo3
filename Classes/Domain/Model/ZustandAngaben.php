@@ -17,6 +17,10 @@ class ZustandAngaben implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInte
 	use ExtbaseModelTrait;
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_zustandangaben';
+
+	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Alter") 
 	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Alter
 	 */

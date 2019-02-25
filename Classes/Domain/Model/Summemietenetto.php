@@ -19,6 +19,10 @@ class Summemietenetto implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInt
 	use ExtbaseModelTrait;
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_summemietenetto';
+
+	/**
 	 * Id of the parent object for backlink purpose in TYPO3.
 	 *
 	 * @Exclude() 

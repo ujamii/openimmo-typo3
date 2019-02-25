@@ -54,6 +54,10 @@ class Einzelhandel implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterf
 	const HANDEL_TYP_VERKAUFSFLAECHE = 'VERKAUFSFLAECHE';
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_einzelhandel';
+
+	/**
 	 * optional
 	 *
 	 * @Type ("string")

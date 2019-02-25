@@ -54,6 +54,10 @@ class Grundstueck implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 	const GRUNDST_TYP_WOHNEN = 'WOHNEN';
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_grundstueck';
+
+	/**
 	 * optional
 	 *
 	 * @Type ("string")

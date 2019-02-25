@@ -45,6 +45,10 @@ class StpSonstige implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 	const PLATZART_TIEFGARAGE = 'TIEFGARAGE';
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_stpsonstige';
+
+	/**
 	 * optional
 	 *
 	 * @Type ("string")

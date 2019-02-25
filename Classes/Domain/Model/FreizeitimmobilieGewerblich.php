@@ -30,6 +30,10 @@ class FreizeitimmobilieGewerblich implements \TYPO3\CMS\Extbase\DomainObject\Dom
 	const FREIZEIT_TYP_VERGNUEGUNGSPARKS_UND_CENTER = 'VERGNUEGUNGSPARKS_UND_CENTER';
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_freizeitimmobiliegewerblich';
+
+	/**
 	 * optional
 	 *
 	 * @Type ("string")

@@ -74,6 +74,10 @@ class LandUndForstwirtschaft implements \TYPO3\CMS\Extbase\DomainObject\DomainOb
 	const LAND_TYP_WEINBAU = 'WEINBAU';
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_landundforstwirtschaft';
+
+	/**
 	 * optional
 	 *
 	 * @Type ("string")

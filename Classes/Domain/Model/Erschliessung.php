@@ -34,6 +34,10 @@ class Erschliessung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInter
 	const ERSCHL_ATTR_VOLLERSCHLOSSEN = 'VOLLERSCHLOSSEN';
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_erschliessung';
+
+	/**
 	 * optional
 	 *
 	 * @Type ("string")

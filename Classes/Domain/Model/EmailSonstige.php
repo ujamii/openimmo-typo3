@@ -34,6 +34,10 @@ class EmailSonstige implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInter
 	const EMAILART_EM_ZENTRALE = 'EM_ZENTRALE';
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_emailsonstige';
+
+	/**
 	 * optional
 	 *
 	 * @Type ("string")

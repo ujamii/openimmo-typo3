@@ -17,6 +17,10 @@ class Anhaenge implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface,
 	use ExtbaseModelTrait;
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_anhaenge';
+
+	/**
 	 * @XmlList (inline = true, entry = "anhang") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\Anhang>") 
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\Anhang>

@@ -19,6 +19,10 @@ class Gesamtbelastungnetto implements \TYPO3\CMS\Extbase\DomainObject\DomainObje
 	use ExtbaseModelTrait;
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_gesamtbelastungnetto';
+
+	/**
 	 * optional
 	 *
 	 * @Type ("float")

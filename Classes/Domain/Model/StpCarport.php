@@ -17,6 +17,10 @@ class StpCarport implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfac
 	use ExtbaseModelTrait;
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_stpcarport';
+
+	/**
 	 * optional
 	 *
 	 * @Type ("int")

@@ -26,6 +26,10 @@ class Alter implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \T
 	const ALTER_ATTR_NEUBAU = 'NEUBAU';
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_sqlsafealter';
+
+	/**
 	 * optional
 	 *
 	 * @Type ("string")

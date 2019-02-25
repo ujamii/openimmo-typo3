@@ -17,6 +17,10 @@ class Infrastruktur implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInter
 	use ExtbaseModelTrait;
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_infrastruktur';
+
+	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Ausblick") 
 	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Ausblick
 	 */

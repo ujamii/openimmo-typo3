@@ -17,6 +17,10 @@ class Flaechen implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface,
 	use ExtbaseModelTrait;
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_flaechen';
+
+	/**
 	 * @Type ("float") 
 	 * @var float
 	 */

@@ -35,6 +35,10 @@ class MieteinnahmenSoll implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectI
 	const PERIODE_WOCHE = 'WOCHE';
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_mieteinnahmensoll';
+
+	/**
 	 * optional
 	 *
 	 * @Type ("string")

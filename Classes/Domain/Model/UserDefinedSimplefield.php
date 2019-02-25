@@ -18,6 +18,10 @@ class UserDefinedSimplefield implements \TYPO3\CMS\Extbase\DomainObject\DomainOb
 	use ExtbaseModelTrait;
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_userdefinedsimplefield';
+
+	/**
 	 * Id of the parent object for backlink purpose in TYPO3.
 	 *
 	 * @Exclude ()

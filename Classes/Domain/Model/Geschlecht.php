@@ -31,6 +31,10 @@ class Geschlecht implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfac
 	const GESCHL_ATTR_NUR_MANN = 'NUR_MANN';
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_geschlecht';
+
+	/**
 	 * optional
 	 *
 	 * @Type ("string")

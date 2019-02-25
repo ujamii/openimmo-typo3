@@ -17,6 +17,10 @@ class VerwaltungTechn implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInt
 	use ExtbaseModelTrait;
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_verwaltungtechn';
+
+	/**
 	 * @Type ("Ujamii\OpenImmoTypo3\Domain\Model\Aktion") 
 	 * @var \Ujamii\OpenImmoTypo3\Domain\Model\Aktion
 	 */

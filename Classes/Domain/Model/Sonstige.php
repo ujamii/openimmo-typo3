@@ -39,6 +39,10 @@ class Sonstige implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface,
 	const SONSTIGE_TYP_TANKSTELLE = 'TANKSTELLE';
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_sonstige';
+
+	/**
 	 * Id of the parent object for backlink purpose in TYPO3.
 	 *
 	 * @Exclude() 

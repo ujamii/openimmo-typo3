@@ -126,6 +126,10 @@ class Haus implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \TY
 	const HAUSTYP_ZWEIFAMILIENHAUS = 'ZWEIFAMILIENHAUS';
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_haus';
+
+	/**
 	 * optional
 	 *
 	 * @Type ("string")

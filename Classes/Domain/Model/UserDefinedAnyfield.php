@@ -16,6 +16,10 @@ class UserDefinedAnyfield implements \TYPO3\CMS\Extbase\DomainObject\DomainObjec
 	use ExtbaseModelTrait;
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_userdefinedanyfield';
+
+	/**
 	 * Id of the parent object for backlink purpose in TYPO3.
 	 *
 	 * @Exclude ()

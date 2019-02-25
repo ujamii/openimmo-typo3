@@ -58,6 +58,10 @@ class Parken implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \
 	const PARKEN_TYP_TIEFGARAGENSTELLPLATZ = 'TIEFGARAGENSTELLPLATZ';
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_parken';
+
+	/**
 	 * Id of the parent object for backlink purpose in TYPO3.
 	 *
 	 * @Exclude() 

@@ -746,6 +746,10 @@ class Waehrung implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface,
 	const ISO_WAEHRUNG_ZWD = 'ZWD';
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_waehrung';
+
+	/**
 	 * optional
 	 *
 	 * @Type ("string")

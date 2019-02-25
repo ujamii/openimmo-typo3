@@ -48,6 +48,10 @@ class DistanzenSport implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInte
 	const DISTANZ_ZU_SPORT_WANDERGEBIETE = 'WANDERGEBIETE';
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_distanzensport';
+
+	/**
 	 * required
 	 *
 	 * @Type ("string")

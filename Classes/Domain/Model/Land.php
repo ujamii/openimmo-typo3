@@ -946,6 +946,10 @@ class Land implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \TY
 	const ISO_LAND_ZWE = 'ZWE';
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_land';
+
+	/**
 	 * Id of the parent object for backlink purpose in TYPO3.
 	 *
 	 * @Exclude ()

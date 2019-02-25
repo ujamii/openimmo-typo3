@@ -34,6 +34,10 @@ class ErschliessungUmfang implements \TYPO3\CMS\Extbase\DomainObject\DomainObjec
 	const ERSCHL_ATTR_WASSER = 'WASSER';
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_erschliessungumfang';
+
+	/**
 	 * optional
 	 *
 	 * @Type ("string")

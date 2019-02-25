@@ -58,6 +58,10 @@ class BueroPraxen implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 	const BUERO_TYP_SHARED_OFFICE = 'SHARED_OFFICE';
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_bueropraxen';
+
+	/**
 	 * optional
 	 *
 	 * @Type ("string")

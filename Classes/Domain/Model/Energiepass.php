@@ -53,6 +53,10 @@ class Energiepass implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 	const JAHRGANG_OHNE = 'ohne';
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_energiepass';
+
+	/**
 	 * @Type ("DateTime<'Y-m-d'>") 
 	 * @var \DateTime
 	 */

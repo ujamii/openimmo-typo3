@@ -18,6 +18,10 @@ class Bieterverfahren implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInt
 	use ExtbaseModelTrait;
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_bieterverfahren';
+
+	/**
 	 * @Type ("DateTime<'Y-m-d'>") 
 	 * @var \DateTime
 	 */

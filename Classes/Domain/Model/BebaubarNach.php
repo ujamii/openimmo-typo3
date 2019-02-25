@@ -46,6 +46,10 @@ class BebaubarNach implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterf
 	const BEBAUBAR_ATTR_LAENDERSPEZIFISCH = 'LAENDERSPEZIFISCH';
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_bebaubarnach';
+
+	/**
 	 * optional
 	 *
 	 * @Type ("string")

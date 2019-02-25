@@ -34,6 +34,10 @@ class Ausblick implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface,
 	const BLICK_SEE = 'SEE';
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_ausblick';
+
+	/**
 	 * optional
 	 *
 	 * @Type ("string")

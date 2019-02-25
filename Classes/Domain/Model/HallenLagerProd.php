@@ -66,6 +66,10 @@ class HallenLagerProd implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInt
 	const HALLEN_TYP_WERKSTATT = 'WERKSTATT';
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_hallenlagerprod';
+
+	/**
 	 * optional
 	 *
 	 * @Type ("string")

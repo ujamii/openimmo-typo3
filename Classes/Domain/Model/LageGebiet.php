@@ -70,6 +70,10 @@ class LageGebiet implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfac
 	const GEBIETE_WOHN = 'WOHN';
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_lagegebiet';
+
+	/**
 	 * optional
 	 *
 	 * @Type ("string")

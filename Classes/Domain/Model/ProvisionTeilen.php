@@ -19,6 +19,10 @@ class ProvisionTeilen implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInt
 
 	/**
 	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_provisionteilen';
+
+	/**
+	 */
 	const WERT_ABSOLUT = 'absolut';
 
 	/**

@@ -18,6 +18,10 @@ class Objektart implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface
 	use ExtbaseModelTrait;
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_objektart';
+
+	/**
 	 * @XmlList (inline = true, entry = "buero_praxen") 
 	 * @Type ("array<Ujamii\OpenImmoTypo3\Domain\Model\BueroPraxen>") 
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ujamii\OpenImmoTypo3\Domain\Model\BueroPraxen>

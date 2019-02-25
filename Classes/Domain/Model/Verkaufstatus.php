@@ -30,6 +30,10 @@ class Verkaufstatus implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInter
 	const STAND_VERKAUFT = 'VERKAUFT';
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_verkaufstatus';
+
+	/**
 	 * optional
 	 *
 	 * @Type ("string")

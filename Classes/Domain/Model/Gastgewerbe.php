@@ -62,6 +62,10 @@ class Gastgewerbe implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterfa
 	const GASTGEW_TYP_WEITERE_BEHERBERGUNGSBETRIEBE = 'WEITERE_BEHERBERGUNGSBETRIEBE';
 
 	/**
+	 */
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_gastgewerbe';
+
+	/**
 	 * optional
 	 *
 	 * @Type ("string")
