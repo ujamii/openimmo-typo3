@@ -1,1487 +1,4182 @@
-CREATE TABLE tx_openimmotypo3_domain_model_aktion (
-	aktionart text DEFAULT '' NOT NULL,
-	verwaltung_techn int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_sqlsafealter (
-	alter_attr text DEFAULT '' NOT NULL,
-	zustand_angaben int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_anbieter (
-	anbieternr text DEFAULT '' NOT NULL,
-	anhang int(11) unsigned DEFAULT '0' NOT NULL,
-	firma text DEFAULT '' NOT NULL,
-	immobilie int(11) unsigned DEFAULT '0' NOT NULL,
-	impressum text DEFAULT '' NOT NULL,
-	impressum_strukt int(11) unsigned DEFAULT '0' NOT NULL,
-	lizenzkennung text DEFAULT '' NOT NULL,
-	openimmo int(11) unsigned DEFAULT '0' NOT NULL,
-	openimmo_anid text DEFAULT '' NOT NULL,
-	user_defined_anyfield int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_extend int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_simplefield int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_angeschlgastronomie (
-	ausstattung int(11) unsigned DEFAULT '0' NOT NULL,
-	bar smallint(5) unsigned DEFAULT '0' NOT NULL,
-	hotelrestaurant smallint(5) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_anhaenge (
-	anhang int(11) unsigned DEFAULT '0' NOT NULL,
-	immobilie int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_anyfield int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_extend int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_simplefield int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_anhang (
-	anbieter int(11) unsigned DEFAULT '0' NOT NULL,
-	anhaenge int(11) unsigned DEFAULT '0' NOT NULL,
-	anhangtitel text DEFAULT '' NOT NULL,
-	sqlsafe_check int(11) unsigned DEFAULT '0' NOT NULL,
-	daten int(11) unsigned DEFAULT '0' NOT NULL,
-	format text DEFAULT '' NOT NULL,
-	gruppe text DEFAULT '' NOT NULL,
-	location text DEFAULT '' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_ausbaustufe (
-	ausbauhaus smallint(5) unsigned DEFAULT '0' NOT NULL,
-	ausstattung int(11) unsigned DEFAULT '0' NOT NULL,
-	bausatzhaus smallint(5) unsigned DEFAULT '0' NOT NULL,
-	schluesselfertigmitbodenplatte smallint(5) unsigned DEFAULT '0' NOT NULL,
-	schluesselfertigmitkeller smallint(5) unsigned DEFAULT '0' NOT NULL,
-	schluesselfertigohnebodenplatte smallint(5) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_ausblick (
-	blick text DEFAULT '' NOT NULL,
-	infrastruktur int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_ausrichtbalkonterrasse (
-	ausstattung int(11) unsigned DEFAULT '0' NOT NULL,
-	nord smallint(5) unsigned DEFAULT '0' NOT NULL,
-	nordost smallint(5) unsigned DEFAULT '0' NOT NULL,
-	nordwest smallint(5) unsigned DEFAULT '0' NOT NULL,
-	ost smallint(5) unsigned DEFAULT '0' NOT NULL,
-	sued smallint(5) unsigned DEFAULT '0' NOT NULL,
-	suedost smallint(5) unsigned DEFAULT '0' NOT NULL,
-	suedwest smallint(5) unsigned DEFAULT '0' NOT NULL,
-	west smallint(5) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_aussencourtage (
-	mit_mwst smallint(5) unsigned DEFAULT '0' NOT NULL,
-	preise int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_ausstattung (
-	abstellraum smallint(5) unsigned DEFAULT '0' NOT NULL,
-	angeschl_gastronomie int(11) unsigned DEFAULT '0' NOT NULL,
-	ausbaustufe int(11) unsigned DEFAULT '0' NOT NULL,
-	ausricht_balkon_terrasse int(11) unsigned DEFAULT '0' NOT NULL,
-	ausstatt_kategorie text DEFAULT '' NOT NULL,
-	bad int(11) unsigned DEFAULT '0' NOT NULL,
-	barrierefrei smallint(5) unsigned DEFAULT '0' NOT NULL,
-	bauweise int(11) unsigned DEFAULT '0' NOT NULL,
-	befeuerung int(11) unsigned DEFAULT '0' NOT NULL,
-	bibliothek smallint(5) unsigned DEFAULT '0' NOT NULL,
-	boden int(11) unsigned DEFAULT '0' NOT NULL,
-	brauereibindung smallint(5) unsigned DEFAULT '0' NOT NULL,
-	breitband_zugang int(11) unsigned DEFAULT '0' NOT NULL,
-	dachboden smallint(5) unsigned DEFAULT '0' NOT NULL,
-	dachform int(11) unsigned DEFAULT '0' NOT NULL,
-	dvbt smallint(5) unsigned DEFAULT '0' NOT NULL,
-	dv_verkabelung smallint(5) unsigned DEFAULT '0' NOT NULL,
-	energietyp int(11) unsigned DEFAULT '0' NOT NULL,
-	fahrradraum smallint(5) unsigned DEFAULT '0' NOT NULL,
-	fahrstuhl int(11) unsigned DEFAULT '0' NOT NULL,
-	gaestewc smallint(5) unsigned DEFAULT '0' NOT NULL,
-	gartennutzung smallint(5) unsigned DEFAULT '0' NOT NULL,
-	gastterrasse smallint(5) unsigned DEFAULT '0' NOT NULL,
-	hallenhoehe double(11,2) DEFAULT '0.00' NOT NULL,
-	hebebuehne smallint(5) unsigned DEFAULT '0' NOT NULL,
-	heizungsart int(11) unsigned DEFAULT '0' NOT NULL,
-	immobilie int(11) unsigned DEFAULT '0' NOT NULL,
-	kabelkanaele smallint(5) unsigned DEFAULT '0' NOT NULL,
-	kabel_sat_tv smallint(5) unsigned DEFAULT '0' NOT NULL,
-	kamin smallint(5) unsigned DEFAULT '0' NOT NULL,
-	kantine_cafeteria smallint(5) unsigned DEFAULT '0' NOT NULL,
-	klimatisiert smallint(5) unsigned DEFAULT '0' NOT NULL,
-	kran smallint(5) unsigned DEFAULT '0' NOT NULL,
-	kueche int(11) unsigned DEFAULT '0' NOT NULL,
-	moebliert int(11) unsigned DEFAULT '0' NOT NULL,
-	raeume_veraenderbar smallint(5) unsigned DEFAULT '0' NOT NULL,
-	rampe smallint(5) unsigned DEFAULT '0' NOT NULL,
-	rolladen smallint(5) unsigned DEFAULT '0' NOT NULL,
-	rollstuhlgerecht smallint(5) unsigned DEFAULT '0' NOT NULL,
-	sauna smallint(5) unsigned DEFAULT '0' NOT NULL,
-	seniorengerecht smallint(5) unsigned DEFAULT '0' NOT NULL,
-	serviceleistungen int(11) unsigned DEFAULT '0' NOT NULL,
-	sicherheitstechnik int(11) unsigned DEFAULT '0' NOT NULL,
-	sporteinrichtungen smallint(5) unsigned DEFAULT '0' NOT NULL,
-	stellplatzart int(11) unsigned DEFAULT '0' NOT NULL,
-	stromanschlusswert text DEFAULT '' NOT NULL,
-	swimmingpool smallint(5) unsigned DEFAULT '0' NOT NULL,
-	teekueche smallint(5) unsigned DEFAULT '0' NOT NULL,
-	telefon_ferienimmobilie smallint(5) unsigned DEFAULT '0' NOT NULL,
-	umts_empfang smallint(5) unsigned DEFAULT '0' NOT NULL,
-	unterkellert int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_anyfield int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_extend int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_simplefield int(11) unsigned DEFAULT '0' NOT NULL,
-	wasch_trockenraum smallint(5) unsigned DEFAULT '0' NOT NULL,
-	wellnessbereich smallint(5) unsigned DEFAULT '0' NOT NULL,
-	wg_geeignet smallint(5) unsigned DEFAULT '0' NOT NULL,
-	wintergarten smallint(5) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_bad (
-	ausstattung int(11) unsigned DEFAULT '0' NOT NULL,
-	bidet smallint(5) unsigned DEFAULT '0' NOT NULL,
-	dusche smallint(5) unsigned DEFAULT '0' NOT NULL,
-	fenster smallint(5) unsigned DEFAULT '0' NOT NULL,
-	pissoir smallint(5) unsigned DEFAULT '0' NOT NULL,
-	wanne smallint(5) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_bauweise (
-	ausstattung int(11) unsigned DEFAULT '0' NOT NULL,
-	fertigteile smallint(5) unsigned DEFAULT '0' NOT NULL,
-	holz smallint(5) unsigned DEFAULT '0' NOT NULL,
-	massiv smallint(5) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_bebaubarnach (
-	bebaubar_attr text DEFAULT '' NOT NULL,
-	zustand_angaben int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_befeuerung (
-	alternativ smallint(5) unsigned DEFAULT '0' NOT NULL,
-	ausstattung int(11) unsigned DEFAULT '0' NOT NULL,
-	block smallint(5) unsigned DEFAULT '0' NOT NULL,
-	elektro smallint(5) unsigned DEFAULT '0' NOT NULL,
-	erdwaerme smallint(5) unsigned DEFAULT '0' NOT NULL,
-	fern smallint(5) unsigned DEFAULT '0' NOT NULL,
-	fluessiggas smallint(5) unsigned DEFAULT '0' NOT NULL,
-	gas smallint(5) unsigned DEFAULT '0' NOT NULL,
-	holz smallint(5) unsigned DEFAULT '0' NOT NULL,
-	kohle smallint(5) unsigned DEFAULT '0' NOT NULL,
-	luftwp smallint(5) unsigned DEFAULT '0' NOT NULL,
-	oel smallint(5) unsigned DEFAULT '0' NOT NULL,
-	pellet smallint(5) unsigned DEFAULT '0' NOT NULL,
-	solar smallint(5) unsigned DEFAULT '0' NOT NULL,
-	wasser_elektro smallint(5) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_betriebskostennetto (
-	betriebskostenust double(11,2) DEFAULT '0.00' NOT NULL,
-	preise int(11) unsigned DEFAULT '0' NOT NULL,
-	value double(11,2) DEFAULT '0.00' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_bewertung (
-	feld text DEFAULT '' NOT NULL,
-	immobilie int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_bieterverfahren (
-	beginn_angebotsphase datetime DEFAULT NULL,
-	beginn_bietzeit int(11) unsigned DEFAULT '0' NOT NULL,
-	besichtigungstermin datetime DEFAULT NULL,
-	besichtigungstermin2 datetime DEFAULT NULL,
-	ende_bietzeit datetime DEFAULT NULL,
-	hoechstgebot_zeigen smallint(5) unsigned DEFAULT '0' NOT NULL,
-	immobilie int(11) unsigned DEFAULT '0' NOT NULL,
-	mindestpreis double(11,2) DEFAULT '0.00' NOT NULL,
-	user_defined_anyfield int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_extend int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_simplefield int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_boden (
-	ausstattung int(11) unsigned DEFAULT '0' NOT NULL,
-	dielen smallint(5) unsigned DEFAULT '0' NOT NULL,
-	doppelboden smallint(5) unsigned DEFAULT '0' NOT NULL,
-	estrich smallint(5) unsigned DEFAULT '0' NOT NULL,
-	fertigparkett smallint(5) unsigned DEFAULT '0' NOT NULL,
-	fliesen smallint(5) unsigned DEFAULT '0' NOT NULL,
-	granit smallint(5) unsigned DEFAULT '0' NOT NULL,
-	kunststoff smallint(5) unsigned DEFAULT '0' NOT NULL,
-	laminat smallint(5) unsigned DEFAULT '0' NOT NULL,
-	linoleum smallint(5) unsigned DEFAULT '0' NOT NULL,
-	marmor smallint(5) unsigned DEFAULT '0' NOT NULL,
-	parkett smallint(5) unsigned DEFAULT '0' NOT NULL,
-	stein smallint(5) unsigned DEFAULT '0' NOT NULL,
-	teppich smallint(5) unsigned DEFAULT '0' NOT NULL,
-	terrakotta smallint(5) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_breitbandzugang (
-	art text DEFAULT '' NOT NULL,
-	ausstattung int(11) unsigned DEFAULT '0' NOT NULL,
-	speed double(11,2) DEFAULT '0.00' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_bueropraxen (
-	buero_typ text DEFAULT '' NOT NULL,
-	objektart int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_sqlsafecheck (
-	anhang int(11) unsigned DEFAULT '0' NOT NULL,
-	ctype text DEFAULT '' NOT NULL,
-	value int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_dachform (
-	ausstattung int(11) unsigned DEFAULT '0' NOT NULL,
-	flachdach smallint(5) unsigned DEFAULT '0' NOT NULL,
-	krueppelwalmdach smallint(5) unsigned DEFAULT '0' NOT NULL,
-	mansarddach smallint(5) unsigned DEFAULT '0' NOT NULL,
-	pultdach smallint(5) unsigned DEFAULT '0' NOT NULL,
-	pyramidendach smallint(5) unsigned DEFAULT '0' NOT NULL,
-	satteldach smallint(5) unsigned DEFAULT '0' NOT NULL,
-	walmdach smallint(5) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_daten (
-	anhang int(11) unsigned DEFAULT '0' NOT NULL,
-	anhanginhalt text DEFAULT '' NOT NULL,
-	foto int(11) unsigned DEFAULT '0' NOT NULL,
-	pfad text DEFAULT '' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_distanzen (
-	distanz_zu text DEFAULT '' NOT NULL,
-	infrastruktur int(11) unsigned DEFAULT '0' NOT NULL,
-	value double(11,2) DEFAULT '0.00' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_distanzensport (
-	distanz_zu_sport text DEFAULT '' NOT NULL,
-	infrastruktur int(11) unsigned DEFAULT '0' NOT NULL,
-	value double(11,2) DEFAULT '0.00' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_einzelhandel (
-	handel_typ text DEFAULT '' NOT NULL,
-	objektart int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_emailsonstige (
-	bemerkung text DEFAULT '' NOT NULL,
-	emailart text DEFAULT '' NOT NULL,
-	kontaktperson int(11) unsigned DEFAULT '0' NOT NULL,
-	value text DEFAULT '' NOT NULL,
-	weitere_adresse int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_energiepass (
-	ausstelldatum datetime DEFAULT NULL,
-	baujahr text DEFAULT '' NOT NULL,
-	endenergiebedarf text DEFAULT '' NOT NULL,
-	energieverbrauchkennwert text DEFAULT '' NOT NULL,
-	epart text DEFAULT '' NOT NULL,
-	epasstext text DEFAULT '' NOT NULL,
-	fgeeklasse text DEFAULT '' NOT NULL,
-	fgeewert text DEFAULT '' NOT NULL,
-	gebaeudeart text DEFAULT '' NOT NULL,
-	geg2018 text DEFAULT '' NOT NULL,
-	gueltig_bis text DEFAULT '' NOT NULL,
-	hwbklasse text DEFAULT '' NOT NULL,
-	hwbwert text DEFAULT '' NOT NULL,
-	jahrgang text DEFAULT '' NOT NULL,
-	mitwarmwasser smallint(5) unsigned DEFAULT '0' NOT NULL,
-	primaerenergietraeger text DEFAULT '' NOT NULL,
-	stromwert text DEFAULT '' NOT NULL,
-	waermewert text DEFAULT '' NOT NULL,
-	wertklasse text DEFAULT '' NOT NULL,
-	zustand_angaben int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_energietyp (
-	ausstattung int(11) unsigned DEFAULT '0' NOT NULL,
-	kfw40 smallint(5) unsigned DEFAULT '0' NOT NULL,
-	kfw55 smallint(5) unsigned DEFAULT '0' NOT NULL,
-	kfw60 smallint(5) unsigned DEFAULT '0' NOT NULL,
-	kfw70 smallint(5) unsigned DEFAULT '0' NOT NULL,
-	minergiebauweise smallint(5) unsigned DEFAULT '0' NOT NULL,
-	minergie_zertifiziert smallint(5) unsigned DEFAULT '0' NOT NULL,
-	neubaustandard smallint(5) unsigned DEFAULT '0' NOT NULL,
-	niedrigenergie smallint(5) unsigned DEFAULT '0' NOT NULL,
-	passivhaus smallint(5) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_erschliessung (
-	erschl_attr text DEFAULT '' NOT NULL,
-	zustand_angaben int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_erschliessungumfang (
-	erschl_attr text DEFAULT '' NOT NULL,
-	zustand_angaben int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_evbnetto (
-	evbust double(11,2) DEFAULT '0.00' NOT NULL,
-	preise int(11) unsigned DEFAULT '0' NOT NULL,
-	value double(11,2) DEFAULT '0.00' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_fahrstuhl (
-	ausstattung int(11) unsigned DEFAULT '0' NOT NULL,
-	lasten smallint(5) unsigned DEFAULT '0' NOT NULL,
-	personen smallint(5) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_flaechen (
-	anzahl_badezimmer double(11,2) DEFAULT '0.00' NOT NULL,
-	anzahl_balkone double(11,2) DEFAULT '0.00' NOT NULL,
-	anzahl_betten double(11,2) DEFAULT '0.00' NOT NULL,
-	anzahl_gewerbeeinheiten double(11,2) DEFAULT '0.00' NOT NULL,
-	anzahl_logia double(11,2) DEFAULT '0.00' NOT NULL,
-	anzahl_schlafzimmer double(11,2) DEFAULT '0.00' NOT NULL,
-	anzahl_sep_wc double(11,2) DEFAULT '0.00' NOT NULL,
-	anzahl_stellplaetze int(11) unsigned DEFAULT '0' NOT NULL,
-	anzahl_tagungsraeume double(11,2) DEFAULT '0.00' NOT NULL,
-	anzahl_terrassen double(11,2) DEFAULT '0.00' NOT NULL,
-	anzahl_wohneinheiten double(11,2) DEFAULT '0.00' NOT NULL,
-	anzahl_wohn_schlafzimmer double(11,2) DEFAULT '0.00' NOT NULL,
-	anzahl_zimmer double(11,2) DEFAULT '0.00' NOT NULL,
-	ausnuetzungsziffer double(11,2) DEFAULT '0.00' NOT NULL,
-	balkon_terrasse_flaeche double(11,2) DEFAULT '0.00' NOT NULL,
-	beheizbare_flaeche double(11,2) DEFAULT '0.00' NOT NULL,
-	bgf text DEFAULT '' NOT NULL,
-	bmz text DEFAULT '' NOT NULL,
-	bueroflaeche double(11,2) DEFAULT '0.00' NOT NULL,
-	bueroteilflaeche double(11,2) DEFAULT '0.00' NOT NULL,
-	dachbodenflaeche double(11,2) DEFAULT '0.00' NOT NULL,
-	einliegerwohnung smallint(5) unsigned DEFAULT '0' NOT NULL,
-	fensterfront double(11,2) DEFAULT '0.00' NOT NULL,
-	fensterfront_qm double(11,2) DEFAULT '0.00' NOT NULL,
-	flaechebis double(11,2) DEFAULT '0.00' NOT NULL,
-	flaechevon double(11,2) DEFAULT '0.00' NOT NULL,
-	freiflaeche double(11,2) DEFAULT '0.00' NOT NULL,
-	gartenflaeche double(11,2) DEFAULT '0.00' NOT NULL,
-	gastroflaeche double(11,2) DEFAULT '0.00' NOT NULL,
-	gesamtflaeche double(11,2) DEFAULT '0.00' NOT NULL,
-	gfz text DEFAULT '' NOT NULL,
-	grundstuecksflaeche double(11,2) DEFAULT '0.00' NOT NULL,
-	grundstuecksfront double(11,2) DEFAULT '0.00' NOT NULL,
-	grz text DEFAULT '' NOT NULL,
-	immobilie int(11) unsigned DEFAULT '0' NOT NULL,
-	kellerflaeche double(11,2) DEFAULT '0.00' NOT NULL,
-	kubatur double(11,2) DEFAULT '0.00' NOT NULL,
-	ladenflaeche double(11,2) DEFAULT '0.00' NOT NULL,
-	lagerflaeche double(11,2) DEFAULT '0.00' NOT NULL,
-	nutzflaeche double(11,2) DEFAULT '0.00' NOT NULL,
-	plaetze_gastraum double(11,2) DEFAULT '0.00' NOT NULL,
-	sonstflaeche double(11,2) DEFAULT '0.00' NOT NULL,
-	teilbar_ab double(11,2) DEFAULT '0.00' NOT NULL,
-	user_defined_anyfield int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_extend int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_simplefield int(11) unsigned DEFAULT '0' NOT NULL,
-	verkaufsflaeche double(11,2) DEFAULT '0.00' NOT NULL,
-	vermietbare_flaeche double(11,2) DEFAULT '0.00' NOT NULL,
-	verwaltungsflaeche double(11,2) DEFAULT '0.00' NOT NULL,
-	wohnflaeche double(11,2) DEFAULT '0.00' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_foto (
-	daten int(11) unsigned DEFAULT '0' NOT NULL,
-	format text DEFAULT '' NOT NULL,
-	kontaktperson int(11) unsigned DEFAULT '0' NOT NULL,
-	location text DEFAULT '' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_freitexte (
-	ausstatt_beschr text DEFAULT '' NOT NULL,
-	dreizeiler text DEFAULT '' NOT NULL,
-	immobilie int(11) unsigned DEFAULT '0' NOT NULL,
-	lage text DEFAULT '' NOT NULL,
-	objektbeschreibung text DEFAULT '' NOT NULL,
-	objekt_text int(11) unsigned DEFAULT '0' NOT NULL,
-	objekttitel text DEFAULT '' NOT NULL,
-	sonstige_angaben text DEFAULT '' NOT NULL,
-	user_defined_anyfield int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_extend int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_simplefield int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_freizeitimmobiliegewerblich (
-	freizeit_typ text DEFAULT '' NOT NULL,
-	objektart int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_gastgewerbe (
-	gastgew_typ text DEFAULT '' NOT NULL,
-	objektart int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_geo (
-	anzahl_etagen int(11) unsigned DEFAULT '0' NOT NULL,
-	bundesland text DEFAULT '' NOT NULL,
-	etage int(11) unsigned DEFAULT '0' NOT NULL,
-	flur text DEFAULT '' NOT NULL,
-	flurstueck text DEFAULT '' NOT NULL,
-	gemarkung text DEFAULT '' NOT NULL,
-	gemeindecode text DEFAULT '' NOT NULL,
-	geokoordinaten int(11) unsigned DEFAULT '0' NOT NULL,
-	hausnummer text DEFAULT '' NOT NULL,
-	immobilie int(11) unsigned DEFAULT '0' NOT NULL,
-	karten_makro smallint(5) unsigned DEFAULT '0' NOT NULL,
-	karten_mikro smallint(5) unsigned DEFAULT '0' NOT NULL,
-	lage_gebiet int(11) unsigned DEFAULT '0' NOT NULL,
-	lage_im_bau int(11) unsigned DEFAULT '0' NOT NULL,
-	land int(11) unsigned DEFAULT '0' NOT NULL,
-	luftbildern smallint(5) unsigned DEFAULT '0' NOT NULL,
-	ort text DEFAULT '' NOT NULL,
-	plz text DEFAULT '' NOT NULL,
-	regionaler_zusatz text DEFAULT '' NOT NULL,
-	strasse text DEFAULT '' NOT NULL,
-	user_defined_anyfield int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_extend int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_simplefield int(11) unsigned DEFAULT '0' NOT NULL,
-	virtuelletour smallint(5) unsigned DEFAULT '0' NOT NULL,
-	wohnungsnr text DEFAULT '' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_geokoordinaten (
-	breitengrad double(11,2) DEFAULT '0.00' NOT NULL,
-	geo int(11) unsigned DEFAULT '0' NOT NULL,
-	laengengrad double(11,2) DEFAULT '0.00' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_gesamtbelastungnetto (
-	gesamtbelastungust double(11,2) DEFAULT '0.00' NOT NULL,
-	preise int(11) unsigned DEFAULT '0' NOT NULL,
-	value double(11,2) DEFAULT '0.00' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_gesamtkostenprom2von (
-	gesamtkostenprom2bis double(11,2) DEFAULT '0.00' NOT NULL,
-	preise int(11) unsigned DEFAULT '0' NOT NULL,
-	value double(11,2) DEFAULT '0.00' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_gesamtmietenetto (
-	gesamtmieteust double(11,2) DEFAULT '0.00' NOT NULL,
-	preise int(11) unsigned DEFAULT '0' NOT NULL,
-	value double(11,2) DEFAULT '0.00' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_geschlecht (
-	geschl_attr text DEFAULT '' NOT NULL,
-	verwaltung_objekt int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_grundstueck (
-	grundst_typ text DEFAULT '' NOT NULL,
-	objektart int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_hallenlagerprod (
-	hallen_typ text DEFAULT '' NOT NULL,
-	objektart int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_hauptmietzinsnetto (
-	hauptmietzinsust double(11,2) DEFAULT '0.00' NOT NULL,
-	preise int(11) unsigned DEFAULT '0' NOT NULL,
-	value double(11,2) DEFAULT '0.00' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_haus (
-	haustyp text DEFAULT '' NOT NULL,
-	objektart int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_heizkostennetto (
-	heizkostenust double(11,2) DEFAULT '0.00' NOT NULL,
-	preise int(11) unsigned DEFAULT '0' NOT NULL,
-	value double(11,2) DEFAULT '0.00' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_heizungsart (
-	ausstattung int(11) unsigned DEFAULT '0' NOT NULL,
-	etage smallint(5) unsigned DEFAULT '0' NOT NULL,
-	fern smallint(5) unsigned DEFAULT '0' NOT NULL,
-	fussboden smallint(5) unsigned DEFAULT '0' NOT NULL,
-	ofen smallint(5) unsigned DEFAULT '0' NOT NULL,
-	zentral smallint(5) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_immobilie (
-	anbieter int(11) unsigned DEFAULT '0' NOT NULL,
-	anhaenge int(11) unsigned DEFAULT '0' NOT NULL,
-	ausstattung int(11) unsigned DEFAULT '0' NOT NULL,
-	bewertung int(11) unsigned DEFAULT '0' NOT NULL,
-	bieterverfahren int(11) unsigned DEFAULT '0' NOT NULL,
-	flaechen int(11) unsigned DEFAULT '0' NOT NULL,
-	freitexte int(11) unsigned DEFAULT '0' NOT NULL,
-	geo int(11) unsigned DEFAULT '0' NOT NULL,
-	infrastruktur int(11) unsigned DEFAULT '0' NOT NULL,
-	kontaktperson int(11) unsigned DEFAULT '0' NOT NULL,
-	objektkategorie int(11) unsigned DEFAULT '0' NOT NULL,
-	preise int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_anyfield int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_extend int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_simplefield int(11) unsigned DEFAULT '0' NOT NULL,
-	versteigerung int(11) unsigned DEFAULT '0' NOT NULL,
-	verwaltung_objekt int(11) unsigned DEFAULT '0' NOT NULL,
-	verwaltung_techn int(11) unsigned DEFAULT '0' NOT NULL,
-	weitere_adresse int(11) unsigned DEFAULT '0' NOT NULL,
-	zustand_angaben int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_impressumstrukt (
-	anbieter int(11) unsigned DEFAULT '0' NOT NULL,
-	berufsaufsichtsbehoerde text DEFAULT '' NOT NULL,
-	firmenanschrift text DEFAULT '' NOT NULL,
-	firmenname text DEFAULT '' NOT NULL,
-	handelsregister text DEFAULT '' NOT NULL,
-	handelsregister_nr text DEFAULT '' NOT NULL,
-	steuernummer text DEFAULT '' NOT NULL,
-	telefon text DEFAULT '' NOT NULL,
-	umsst_id text DEFAULT '' NOT NULL,
-	vertretungsberechtigter text DEFAULT '' NOT NULL,
-	weiteres text DEFAULT '' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_infrastruktur (
-	ausblick int(11) unsigned DEFAULT '0' NOT NULL,
-	distanzen int(11) unsigned DEFAULT '0' NOT NULL,
-	distanzen_sport int(11) unsigned DEFAULT '0' NOT NULL,
-	immobilie int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_anyfield int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_extend int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_simplefield int(11) unsigned DEFAULT '0' NOT NULL,
-	zulieferung smallint(5) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_innencourtage (
-	mit_mwst smallint(5) unsigned DEFAULT '0' NOT NULL,
-	preise int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_kaufpreis (
-	auf_anfrage smallint(5) unsigned DEFAULT '0' NOT NULL,
-	preise int(11) unsigned DEFAULT '0' NOT NULL,
-	value double(11,2) DEFAULT '0.00' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_kaufpreisnetto (
-	kaufpreisust double(11,2) DEFAULT '0.00' NOT NULL,
-	preise int(11) unsigned DEFAULT '0' NOT NULL,
-	value double(11,2) DEFAULT '0.00' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_kontaktperson (
-	adressfreigabe smallint(5) unsigned DEFAULT '0' NOT NULL,
-	anrede text DEFAULT '' NOT NULL,
-	anrede_brief text DEFAULT '' NOT NULL,
-	email_direkt text DEFAULT '' NOT NULL,
-	email_feedback text DEFAULT '' NOT NULL,
-	email_privat text DEFAULT '' NOT NULL,
-	email_sonstige int(11) unsigned DEFAULT '0' NOT NULL,
-	email_zentrale text DEFAULT '' NOT NULL,
-	firma text DEFAULT '' NOT NULL,
-	foto int(11) unsigned DEFAULT '0' NOT NULL,
-	freitextfeld text DEFAULT '' NOT NULL,
-	hausnummer text DEFAULT '' NOT NULL,
-	immobilie int(11) unsigned DEFAULT '0' NOT NULL,
-	immobilientreuhaenderid text DEFAULT '' NOT NULL,
-	land int(11) unsigned DEFAULT '0' NOT NULL,
-	name text DEFAULT '' NOT NULL,
-	ort text DEFAULT '' NOT NULL,
-	personennummer text DEFAULT '' NOT NULL,
-	plz text DEFAULT '' NOT NULL,
-	position text DEFAULT '' NOT NULL,
-	postfach text DEFAULT '' NOT NULL,
-	postf_ort text DEFAULT '' NOT NULL,
-	postf_plz text DEFAULT '' NOT NULL,
-	referenz_id text DEFAULT '' NOT NULL,
-	strasse text DEFAULT '' NOT NULL,
-	tel_durchw text DEFAULT '' NOT NULL,
-	tel_fax text DEFAULT '' NOT NULL,
-	tel_handy text DEFAULT '' NOT NULL,
-	tel_privat text DEFAULT '' NOT NULL,
-	tel_sonstige int(11) unsigned DEFAULT '0' NOT NULL,
-	tel_zentrale text DEFAULT '' NOT NULL,
-	titel text DEFAULT '' NOT NULL,
-	url text DEFAULT '' NOT NULL,
-	user_defined_anyfield int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_extend int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_simplefield int(11) unsigned DEFAULT '0' NOT NULL,
-	vorname text DEFAULT '' NOT NULL,
-	zusatzfeld text DEFAULT '' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_kueche (
-	ausstattung int(11) unsigned DEFAULT '0' NOT NULL,
-	ebk smallint(5) unsigned DEFAULT '0' NOT NULL,
-	offen smallint(5) unsigned DEFAULT '0' NOT NULL,
-	pantry smallint(5) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_lagegebiet (
-	gebiete text DEFAULT '' NOT NULL,
-	geo int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_lageimbau (
-	geo int(11) unsigned DEFAULT '0' NOT NULL,
-	hinten smallint(5) unsigned DEFAULT '0' NOT NULL,
-	links smallint(5) unsigned DEFAULT '0' NOT NULL,
-	rechts smallint(5) unsigned DEFAULT '0' NOT NULL,
-	vorne smallint(5) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_land (
-	geo int(11) unsigned DEFAULT '0' NOT NULL,
-	iso_land text DEFAULT '' NOT NULL,
-	kontaktperson int(11) unsigned DEFAULT '0' NOT NULL,
-	weitere_adresse int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_landundforstwirtschaft (
-	land_typ text DEFAULT '' NOT NULL,
-	objektart int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_master (
-	verwaltung_techn int(11) unsigned DEFAULT '0' NOT NULL,
-	visible smallint(5) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_maxmietdauer (
-	max_dauer text DEFAULT '' NOT NULL,
-	verwaltung_objekt int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_mieteinnahmenist (
-	periode text DEFAULT '' NOT NULL,
-	preise int(11) unsigned DEFAULT '0' NOT NULL,
-	value double(11,2) DEFAULT '0.00' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_mieteinnahmensoll (
-	periode text DEFAULT '' NOT NULL,
-	preise int(11) unsigned DEFAULT '0' NOT NULL,
-	value double(11,2) DEFAULT '0.00' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_minmietdauer (
-	min_dauer text DEFAULT '' NOT NULL,
-	verwaltung_objekt int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_moebliert (
-	ausstattung int(11) unsigned DEFAULT '0' NOT NULL,
-	moeb text DEFAULT '' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_monatlichekostennetto (
-	monatlichekostenust double(11,2) DEFAULT '0.00' NOT NULL,
-	preise int(11) unsigned DEFAULT '0' NOT NULL,
-	value double(11,2) DEFAULT '0.00' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_nebenkostenprom2von (
-	nebenkostenprom2bis double(11,2) DEFAULT '0.00' NOT NULL,
-	preise int(11) unsigned DEFAULT '0' NOT NULL,
-	value double(11,2) DEFAULT '0.00' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_nettomieteprom2von (
-	nettomieteprom2bis double(11,2) DEFAULT '0.00' NOT NULL,
-	preise int(11) unsigned DEFAULT '0' NOT NULL,
-	value double(11,2) DEFAULT '0.00' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_nutzungsart (
-	anlage smallint(5) unsigned DEFAULT '0' NOT NULL,
-	gewerbe smallint(5) unsigned DEFAULT '0' NOT NULL,
-	objektkategorie int(11) unsigned DEFAULT '0' NOT NULL,
-	waz smallint(5) unsigned DEFAULT '0' NOT NULL,
-	wohnen smallint(5) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_objekttext (
-	freitexte int(11) unsigned DEFAULT '0' NOT NULL,
-	lang text DEFAULT '' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_objektart (
-	buero_praxen int(11) unsigned DEFAULT '0' NOT NULL,
-	einzelhandel int(11) unsigned DEFAULT '0' NOT NULL,
-	freizeitimmobilie_gewerblich int(11) unsigned DEFAULT '0' NOT NULL,
-	gastgewerbe int(11) unsigned DEFAULT '0' NOT NULL,
-	grundstueck int(11) unsigned DEFAULT '0' NOT NULL,
-	hallen_lager_prod int(11) unsigned DEFAULT '0' NOT NULL,
-	haus int(11) unsigned DEFAULT '0' NOT NULL,
-	land_und_forstwirtschaft int(11) unsigned DEFAULT '0' NOT NULL,
-	objektart_zusatz text DEFAULT '' NOT NULL,
-	objektkategorie int(11) unsigned DEFAULT '0' NOT NULL,
-	parken int(11) unsigned DEFAULT '0' NOT NULL,
-	sonstige int(11) unsigned DEFAULT '0' NOT NULL,
-	wohnung int(11) unsigned DEFAULT '0' NOT NULL,
-	zimmer int(11) unsigned DEFAULT '0' NOT NULL,
-	zinshaus_renditeobjekt int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_objektkategorie (
-	immobilie int(11) unsigned DEFAULT '0' NOT NULL,
-	nutzungsart int(11) unsigned DEFAULT '0' NOT NULL,
-	objektart int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_anyfield int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_extend int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_simplefield int(11) unsigned DEFAULT '0' NOT NULL,
-	vermarktungsart int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_openimmo (
-	anbieter int(11) unsigned DEFAULT '0' NOT NULL,
-	uebertragung int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_anyfield int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_simplefield int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_parken (
-	objektart int(11) unsigned DEFAULT '0' NOT NULL,
-	parken_typ text DEFAULT '' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_preiszeiteinheit (
-	preise int(11) unsigned DEFAULT '0' NOT NULL,
-	zeiteinheit text DEFAULT '' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_preise (
-	abstand double(11,2) DEFAULT '0.00' NOT NULL,
-	aussen_courtage int(11) unsigned DEFAULT '0' NOT NULL,
-	betriebskostennetto int(11) unsigned DEFAULT '0' NOT NULL,
-	courtage_hinweis text DEFAULT '' NOT NULL,
-	erbpacht double(11,2) DEFAULT '0.00' NOT NULL,
-	erschliessungskosten double(11,2) DEFAULT '0.00' NOT NULL,
-	evbnetto int(11) unsigned DEFAULT '0' NOT NULL,
-	freitext_preis text DEFAULT '' NOT NULL,
-	gesamtbelastungbrutto double(11,2) DEFAULT '0.00' NOT NULL,
-	gesamtbelastungnetto int(11) unsigned DEFAULT '0' NOT NULL,
-	gesamtkostenprom2von int(11) unsigned DEFAULT '0' NOT NULL,
-	gesamtmietebrutto double(11,2) DEFAULT '0.00' NOT NULL,
-	gesamtmietenetto int(11) unsigned DEFAULT '0' NOT NULL,
-	geschaeftsguthaben double(11,2) DEFAULT '0.00' NOT NULL,
-	hauptmietzinsnetto int(11) unsigned DEFAULT '0' NOT NULL,
-	hausgeld double(11,2) DEFAULT '0.00' NOT NULL,
-	heizkosten double(11,2) DEFAULT '0.00' NOT NULL,
-	heizkosten_enthalten smallint(5) unsigned DEFAULT '0' NOT NULL,
-	heizkostennetto int(11) unsigned DEFAULT '0' NOT NULL,
-	immobilie int(11) unsigned DEFAULT '0' NOT NULL,
-	innen_courtage int(11) unsigned DEFAULT '0' NOT NULL,
-	kaltmiete double(11,2) DEFAULT '0.00' NOT NULL,
-	kaufpreis int(11) unsigned DEFAULT '0' NOT NULL,
-	kaufpreisbrutto double(11,2) DEFAULT '0.00' NOT NULL,
-	kaufpreisnetto int(11) unsigned DEFAULT '0' NOT NULL,
-	kaufpreis_pro_qm double(11,2) DEFAULT '0.00' NOT NULL,
-	kaution double(11,2) DEFAULT '0.00' NOT NULL,
-	kaution_text text DEFAULT '' NOT NULL,
-	mieteinnahmen_ist int(11) unsigned DEFAULT '0' NOT NULL,
-	mieteinnahmen_soll int(11) unsigned DEFAULT '0' NOT NULL,
-	mietpreis_pro_qm double(11,2) DEFAULT '0.00' NOT NULL,
-	mietzuschlaege double(11,2) DEFAULT '0.00' NOT NULL,
-	monatlichekostenbrutto double(11,2) DEFAULT '0.00' NOT NULL,
-	monatlichekostennetto int(11) unsigned DEFAULT '0' NOT NULL,
-	mwst_gesamt double(11,2) DEFAULT '0.00' NOT NULL,
-	mwst_satz double(11,2) DEFAULT '0.00' NOT NULL,
-	nebenkosten double(11,2) DEFAULT '0.00' NOT NULL,
-	nebenkostenprom2von int(11) unsigned DEFAULT '0' NOT NULL,
-	nettokaltmiete double(11,2) DEFAULT '0.00' NOT NULL,
-	nettomieteprom2von int(11) unsigned DEFAULT '0' NOT NULL,
-	nettorendite double(11,2) DEFAULT '0.00' NOT NULL,
-	nettorendite_ist double(11,2) DEFAULT '0.00' NOT NULL,
-	nettorendite_soll double(11,2) DEFAULT '0.00' NOT NULL,
-	pacht double(11,2) DEFAULT '0.00' NOT NULL,
-	pauschalmiete double(11,2) DEFAULT '0.00' NOT NULL,
-	preis_zeiteinheit int(11) unsigned DEFAULT '0' NOT NULL,
-	preis_zeitraum_bis datetime DEFAULT NULL,
-	preis_zeitraum_von datetime DEFAULT NULL,
-	provisionbrutto double(11,2) DEFAULT '0.00' NOT NULL,
-	provisionnetto int(11) unsigned DEFAULT '0' NOT NULL,
-	provisionspflichtig smallint(5) unsigned DEFAULT '0' NOT NULL,
-	provision_teilen int(11) unsigned DEFAULT '0' NOT NULL,
-	richtpreis double(11,2) DEFAULT '0.00' NOT NULL,
-	richtpreisprom2 double(11,2) DEFAULT '0.00' NOT NULL,
-	ruecklagenetto int(11) unsigned DEFAULT '0' NOT NULL,
-	sonstigekostennetto int(11) unsigned DEFAULT '0' NOT NULL,
-	sonstigemietenetto int(11) unsigned DEFAULT '0' NOT NULL,
-	stp_carport int(11) unsigned DEFAULT '0' NOT NULL,
-	stp_duplex int(11) unsigned DEFAULT '0' NOT NULL,
-	stp_freiplatz int(11) unsigned DEFAULT '0' NOT NULL,
-	stp_garage int(11) unsigned DEFAULT '0' NOT NULL,
-	stp_parkhaus int(11) unsigned DEFAULT '0' NOT NULL,
-	stp_sonstige int(11) unsigned DEFAULT '0' NOT NULL,
-	stp_tiefgarage int(11) unsigned DEFAULT '0' NOT NULL,
-	summemietenetto int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_anyfield int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_extend int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_simplefield int(11) unsigned DEFAULT '0' NOT NULL,
-	waehrung int(11) unsigned DEFAULT '0' NOT NULL,
-	warmmiete double(11,2) DEFAULT '0.00' NOT NULL,
-	x_fache text DEFAULT '' NOT NULL,
-	zzg_mehrwertsteuer smallint(5) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_provisionteilen (
-	preise int(11) unsigned DEFAULT '0' NOT NULL,
-	wert text DEFAULT '' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_provisionnetto (
-	preise int(11) unsigned DEFAULT '0' NOT NULL,
-	provisionust double(11,2) DEFAULT '0.00' NOT NULL,
-	value double(11,2) DEFAULT '0.00' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_ruecklagenetto (
-	preise int(11) unsigned DEFAULT '0' NOT NULL,
-	ruecklageust double(11,2) DEFAULT '0.00' NOT NULL,
-	value double(11,2) DEFAULT '0.00' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_serviceleistungen (
-	ausstattung int(11) unsigned DEFAULT '0' NOT NULL,
-	betreutes_wohnen smallint(5) unsigned DEFAULT '0' NOT NULL,
-	catering smallint(5) unsigned DEFAULT '0' NOT NULL,
-	einkauf smallint(5) unsigned DEFAULT '0' NOT NULL,
-	reinigung smallint(5) unsigned DEFAULT '0' NOT NULL,
-	wachdienst smallint(5) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_sicherheitstechnik (
-	alarmanlage smallint(5) unsigned DEFAULT '0' NOT NULL,
-	ausstattung int(11) unsigned DEFAULT '0' NOT NULL,
-	kamera smallint(5) unsigned DEFAULT '0' NOT NULL,
-	polizeiruf smallint(5) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_sonstige (
-	objektart int(11) unsigned DEFAULT '0' NOT NULL,
-	sonstige_typ text DEFAULT '' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_sonstigekostennetto (
-	preise int(11) unsigned DEFAULT '0' NOT NULL,
-	sonstigekostenust double(11,2) DEFAULT '0.00' NOT NULL,
-	value double(11,2) DEFAULT '0.00' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_sonstigemietenetto (
-	preise int(11) unsigned DEFAULT '0' NOT NULL,
-	sonstigemieteust double(11,2) DEFAULT '0.00' NOT NULL,
-	value double(11,2) DEFAULT '0.00' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_stellplatzart (
-	ausstattung int(11) unsigned DEFAULT '0' NOT NULL,
-	carport smallint(5) unsigned DEFAULT '0' NOT NULL,
-	duplex smallint(5) unsigned DEFAULT '0' NOT NULL,
-	freiplatz smallint(5) unsigned DEFAULT '0' NOT NULL,
-	garage smallint(5) unsigned DEFAULT '0' NOT NULL,
-	parkhaus smallint(5) unsigned DEFAULT '0' NOT NULL,
-	tiefgarage smallint(5) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_stpcarport (
-	anzahl int(11) unsigned DEFAULT '0' NOT NULL,
-	preise int(11) unsigned DEFAULT '0' NOT NULL,
-	stellplatzkaufpreis double(11,2) DEFAULT '0.00' NOT NULL,
-	stellplatzmiete double(11,2) DEFAULT '0.00' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_stpduplex (
-	anzahl int(11) unsigned DEFAULT '0' NOT NULL,
-	preise int(11) unsigned DEFAULT '0' NOT NULL,
-	stellplatzkaufpreis double(11,2) DEFAULT '0.00' NOT NULL,
-	stellplatzmiete double(11,2) DEFAULT '0.00' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_stpfreiplatz (
-	anzahl int(11) unsigned DEFAULT '0' NOT NULL,
-	preise int(11) unsigned DEFAULT '0' NOT NULL,
-	stellplatzkaufpreis double(11,2) DEFAULT '0.00' NOT NULL,
-	stellplatzmiete double(11,2) DEFAULT '0.00' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_stpgarage (
-	anzahl int(11) unsigned DEFAULT '0' NOT NULL,
-	preise int(11) unsigned DEFAULT '0' NOT NULL,
-	stellplatzkaufpreis double(11,2) DEFAULT '0.00' NOT NULL,
-	stellplatzmiete double(11,2) DEFAULT '0.00' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_stpparkhaus (
-	anzahl int(11) unsigned DEFAULT '0' NOT NULL,
-	preise int(11) unsigned DEFAULT '0' NOT NULL,
-	stellplatzkaufpreis double(11,2) DEFAULT '0.00' NOT NULL,
-	stellplatzmiete double(11,2) DEFAULT '0.00' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_stpsonstige (
-	bemerkung text DEFAULT '' NOT NULL,
-	platzart text DEFAULT '' NOT NULL,
-	preise int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_stptiefgarage (
-	anzahl int(11) unsigned DEFAULT '0' NOT NULL,
-	preise int(11) unsigned DEFAULT '0' NOT NULL,
-	stellplatzkaufpreis double(11,2) DEFAULT '0.00' NOT NULL,
-	stellplatzmiete double(11,2) DEFAULT '0.00' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_summemietenetto (
-	preise int(11) unsigned DEFAULT '0' NOT NULL,
-	summemieteust double(11,2) DEFAULT '0.00' NOT NULL,
-	value double(11,2) DEFAULT '0.00' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_telsonstige (
-	bemerkung text DEFAULT '' NOT NULL,
-	kontaktperson int(11) unsigned DEFAULT '0' NOT NULL,
-	telefonart text DEFAULT '' NOT NULL,
-	value text DEFAULT '' NOT NULL,
-	weitere_adresse int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_uebertragung (
-	art text DEFAULT '' NOT NULL,
-	modus text DEFAULT '' NOT NULL,
-	openimmo int(11) unsigned DEFAULT '0' NOT NULL,
-	regi_id text DEFAULT '' NOT NULL,
-	sendersoftware text DEFAULT '' NOT NULL,
-	senderversion text DEFAULT '' NOT NULL,
-	techn_email text DEFAULT '' NOT NULL,
-	timestamp int(11) unsigned DEFAULT '0' NOT NULL,
-	umfang text DEFAULT '' NOT NULL,
-	version text DEFAULT '' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_unterkellert (
-	ausstattung int(11) unsigned DEFAULT '0' NOT NULL,
-	keller text DEFAULT '' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedanyfield (
-	anbieter int(11) unsigned DEFAULT '0' NOT NULL,
-	anhaenge int(11) unsigned DEFAULT '0' NOT NULL,
-	ausstattung int(11) unsigned DEFAULT '0' NOT NULL,
-	bieterverfahren int(11) unsigned DEFAULT '0' NOT NULL,
-	flaechen int(11) unsigned DEFAULT '0' NOT NULL,
-	freitexte int(11) unsigned DEFAULT '0' NOT NULL,
-	geo int(11) unsigned DEFAULT '0' NOT NULL,
-	immobilie int(11) unsigned DEFAULT '0' NOT NULL,
-	infrastruktur int(11) unsigned DEFAULT '0' NOT NULL,
-	kontaktperson int(11) unsigned DEFAULT '0' NOT NULL,
-	objektkategorie int(11) unsigned DEFAULT '0' NOT NULL,
-	openimmo int(11) unsigned DEFAULT '0' NOT NULL,
-	preise int(11) unsigned DEFAULT '0' NOT NULL,
-	verwaltung_objekt int(11) unsigned DEFAULT '0' NOT NULL,
-	verwaltung_techn int(11) unsigned DEFAULT '0' NOT NULL,
-	weitere_adresse int(11) unsigned DEFAULT '0' NOT NULL,
-	zustand_angaben int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedextend (
-	anbieter int(11) unsigned DEFAULT '0' NOT NULL,
-	anhaenge int(11) unsigned DEFAULT '0' NOT NULL,
-	ausstattung int(11) unsigned DEFAULT '0' NOT NULL,
-	bieterverfahren int(11) unsigned DEFAULT '0' NOT NULL,
-	feld text DEFAULT '' NOT NULL,
-	flaechen int(11) unsigned DEFAULT '0' NOT NULL,
-	freitexte int(11) unsigned DEFAULT '0' NOT NULL,
-	geo int(11) unsigned DEFAULT '0' NOT NULL,
-	immobilie int(11) unsigned DEFAULT '0' NOT NULL,
-	infrastruktur int(11) unsigned DEFAULT '0' NOT NULL,
-	kontaktperson int(11) unsigned DEFAULT '0' NOT NULL,
-	objektkategorie int(11) unsigned DEFAULT '0' NOT NULL,
-	preise int(11) unsigned DEFAULT '0' NOT NULL,
-	verwaltung_objekt int(11) unsigned DEFAULT '0' NOT NULL,
-	verwaltung_techn int(11) unsigned DEFAULT '0' NOT NULL,
-	weitere_adresse int(11) unsigned DEFAULT '0' NOT NULL,
-	zustand_angaben int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedsimplefield (
-	anbieter int(11) unsigned DEFAULT '0' NOT NULL,
-	anhaenge int(11) unsigned DEFAULT '0' NOT NULL,
-	ausstattung int(11) unsigned DEFAULT '0' NOT NULL,
-	bieterverfahren int(11) unsigned DEFAULT '0' NOT NULL,
-	feldname text DEFAULT '' NOT NULL,
-	flaechen int(11) unsigned DEFAULT '0' NOT NULL,
-	freitexte int(11) unsigned DEFAULT '0' NOT NULL,
-	geo int(11) unsigned DEFAULT '0' NOT NULL,
-	immobilie int(11) unsigned DEFAULT '0' NOT NULL,
-	infrastruktur int(11) unsigned DEFAULT '0' NOT NULL,
-	kontaktperson int(11) unsigned DEFAULT '0' NOT NULL,
-	objektkategorie int(11) unsigned DEFAULT '0' NOT NULL,
-	openimmo int(11) unsigned DEFAULT '0' NOT NULL,
-	preise int(11) unsigned DEFAULT '0' NOT NULL,
-	verwaltung_objekt int(11) unsigned DEFAULT '0' NOT NULL,
-	verwaltung_techn int(11) unsigned DEFAULT '0' NOT NULL,
-	weitere_adresse int(11) unsigned DEFAULT '0' NOT NULL,
-	zustand_angaben int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_verkaufstatus (
-	stand text DEFAULT '' NOT NULL,
-	zustand_angaben int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_vermarktungsart (
-	erbpacht smallint(5) unsigned DEFAULT '0' NOT NULL,
-	kauf smallint(5) unsigned DEFAULT '0' NOT NULL,
-	leasing smallint(5) unsigned DEFAULT '0' NOT NULL,
-	miete_pacht smallint(5) unsigned DEFAULT '0' NOT NULL,
-	objektkategorie int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_versteigerung (
-	aktenzeichen text DEFAULT '' NOT NULL,
-	amtsgericht text DEFAULT '' NOT NULL,
-	immobilie int(11) unsigned DEFAULT '0' NOT NULL,
-	verkehrswert double(11,2) DEFAULT '0.00' NOT NULL,
-	zusatztermin int(11) unsigned DEFAULT '0' NOT NULL,
-	zvtermin int(11) unsigned DEFAULT '0' NOT NULL,
-	zwangsversteigerung smallint(5) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_verwaltungobjekt (
-	abdatum datetime DEFAULT NULL,
-	als_ferien smallint(5) unsigned DEFAULT '0' NOT NULL,
-	bisdatum datetime DEFAULT NULL,
-	branchen text DEFAULT '' NOT NULL,
-	denkmalgeschuetzt smallint(5) unsigned DEFAULT '0' NOT NULL,
-	geschlecht int(11) unsigned DEFAULT '0' NOT NULL,
-	gewerbliche_nutzung smallint(5) unsigned DEFAULT '0' NOT NULL,
-	gruppennummer text DEFAULT '' NOT NULL,
-	haustiere smallint(5) unsigned DEFAULT '0' NOT NULL,
-	hochhaus smallint(5) unsigned DEFAULT '0' NOT NULL,
-	immobilie int(11) unsigned DEFAULT '0' NOT NULL,
-	laufzeit double(11,2) DEFAULT '0.00' NOT NULL,
-	max_mietdauer int(11) unsigned DEFAULT '0' NOT NULL,
-	max_personen int(11) unsigned DEFAULT '0' NOT NULL,
-	min_mietdauer int(11) unsigned DEFAULT '0' NOT NULL,
-	nichtraucher smallint(5) unsigned DEFAULT '0' NOT NULL,
-	objektadresse_freigeben smallint(5) unsigned DEFAULT '0' NOT NULL,
-	user_defined_anyfield int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_extend int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_simplefield int(11) unsigned DEFAULT '0' NOT NULL,
-	verfuegbar_ab text DEFAULT '' NOT NULL,
-	vermietet smallint(5) unsigned DEFAULT '0' NOT NULL,
-	versteigerungstermin datetime DEFAULT NULL,
-	wbs_sozialwohnung smallint(5) unsigned DEFAULT '0' NOT NULL,
-	zugang text DEFAULT '' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_verwaltungtechn (
-	aktion int(11) unsigned DEFAULT '0' NOT NULL,
-	aktiv_bis datetime DEFAULT NULL,
-	aktiv_von datetime DEFAULT NULL,
-	gruppen_kennung text DEFAULT '' NOT NULL,
-	immobilie int(11) unsigned DEFAULT '0' NOT NULL,
-	kennung_ursprung text DEFAULT '' NOT NULL,
-	master int(11) unsigned DEFAULT '0' NOT NULL,
-	objektnr_extern text DEFAULT '' NOT NULL,
-	objektnr_intern text DEFAULT '' NOT NULL,
-	openimmo_obid text DEFAULT '' NOT NULL,
-	sprache text DEFAULT '' NOT NULL,
-	stand_vom datetime DEFAULT NULL,
-	user_defined_anyfield int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_extend int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_simplefield int(11) unsigned DEFAULT '0' NOT NULL,
-	weitergabe_generell smallint(5) unsigned DEFAULT '0' NOT NULL,
-	weitergabe_negativ text DEFAULT '' NOT NULL,
-	weitergabe_positiv text DEFAULT '' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_waehrung (
-	iso_waehrung text DEFAULT '' NOT NULL,
-	preise int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_weitereadresse (
-	adressart text DEFAULT '' NOT NULL,
-	adressfreigabe smallint(5) unsigned DEFAULT '0' NOT NULL,
-	anrede text DEFAULT '' NOT NULL,
-	anrede_brief text DEFAULT '' NOT NULL,
-	email_direkt text DEFAULT '' NOT NULL,
-	email_privat text DEFAULT '' NOT NULL,
-	email_sonstige int(11) unsigned DEFAULT '0' NOT NULL,
-	email_zentrale text DEFAULT '' NOT NULL,
-	firma text DEFAULT '' NOT NULL,
-	freitextfeld text DEFAULT '' NOT NULL,
-	hausnummer text DEFAULT '' NOT NULL,
-	immobilie int(11) unsigned DEFAULT '0' NOT NULL,
-	land int(11) unsigned DEFAULT '0' NOT NULL,
-	name text DEFAULT '' NOT NULL,
-	ort text DEFAULT '' NOT NULL,
-	personennummer text DEFAULT '' NOT NULL,
-	plz text DEFAULT '' NOT NULL,
-	postfach text DEFAULT '' NOT NULL,
-	postf_ort text DEFAULT '' NOT NULL,
-	postf_plz text DEFAULT '' NOT NULL,
-	strasse text DEFAULT '' NOT NULL,
-	tel_durchw text DEFAULT '' NOT NULL,
-	tel_fax text DEFAULT '' NOT NULL,
-	tel_handy text DEFAULT '' NOT NULL,
-	tel_privat text DEFAULT '' NOT NULL,
-	tel_sonstige int(11) unsigned DEFAULT '0' NOT NULL,
-	tel_zentrale text DEFAULT '' NOT NULL,
-	titel text DEFAULT '' NOT NULL,
-	url text DEFAULT '' NOT NULL,
-	user_defined_anyfield int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_extend int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_simplefield int(11) unsigned DEFAULT '0' NOT NULL,
-	vorname text DEFAULT '' NOT NULL,
-	zusatzfeld text DEFAULT '' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_wohnung (
-	objektart int(11) unsigned DEFAULT '0' NOT NULL,
-	wohnungtyp text DEFAULT '' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_zimmer (
-	objektart int(11) unsigned DEFAULT '0' NOT NULL,
-	zimmertyp text DEFAULT '' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_zinshausrenditeobjekt (
-	objektart int(11) unsigned DEFAULT '0' NOT NULL,
-	zins_typ text DEFAULT '' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_zustand (
-	zustand_angaben int(11) unsigned DEFAULT '0' NOT NULL,
-	zustand_art text DEFAULT '' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_zustandangaben (
-	sqlsafe_alter int(11) unsigned DEFAULT '0' NOT NULL,
-	altlasten text DEFAULT '' NOT NULL,
-	baujahr text DEFAULT '' NOT NULL,
-	bauzone text DEFAULT '' NOT NULL,
-	bebaubar_nach int(11) unsigned DEFAULT '0' NOT NULL,
-	energiepass int(11) unsigned DEFAULT '0' NOT NULL,
-	erschliessung int(11) unsigned DEFAULT '0' NOT NULL,
-	erschliessung_umfang int(11) unsigned DEFAULT '0' NOT NULL,
-	immobilie int(11) unsigned DEFAULT '0' NOT NULL,
-	letztemodernisierung text DEFAULT '' NOT NULL,
-	user_defined_anyfield int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_extend int(11) unsigned DEFAULT '0' NOT NULL,
-	user_defined_simplefield int(11) unsigned DEFAULT '0' NOT NULL,
-	verkaufstatus int(11) unsigned DEFAULT '0' NOT NULL,
-	zustand int(11) unsigned DEFAULT '0' NOT NULL
-);
-CREATE TABLE tx_openimmotypo3_domain_model_immobilie (
-    anbieter int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedanyfield (
-    anbieter int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedextend (
-    anbieter int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedsimplefield (
-    anbieter int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_anhang (
-    anhaenge int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedanyfield (
-    anhaenge int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedextend (
-    anhaenge int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedsimplefield (
-    anhaenge int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_serviceleistungen (
-    ausstattung int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_stellplatzart (
-    ausstattung int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedanyfield (
-    ausstattung int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedextend (
-    ausstattung int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedsimplefield (
-    ausstattung int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedanyfield (
-    bieterverfahren int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedextend (
-    bieterverfahren int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedsimplefield (
-    bieterverfahren int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedanyfield (
-    flaechen int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedextend (
-    flaechen int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedsimplefield (
-    flaechen int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedanyfield (
-    freitexte int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedextend (
-    freitexte int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedsimplefield (
-    freitexte int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedanyfield (
-    geo int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedextend (
-    geo int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedsimplefield (
-    geo int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedanyfield (
-    immobilie int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedextend (
-    immobilie int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedsimplefield (
-    immobilie int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_weitereadresse (
-    immobilie int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_distanzen (
-    infrastruktur int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_distanzensport (
-    infrastruktur int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedanyfield (
-    infrastruktur int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedextend (
-    infrastruktur int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedsimplefield (
-    infrastruktur int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_emailsonstige (
-    kontaktperson int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_telsonstige (
-    kontaktperson int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedanyfield (
-    kontaktperson int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedextend (
-    kontaktperson int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedsimplefield (
-    kontaktperson int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_bueropraxen (
-    objektart int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_einzelhandel (
-    objektart int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_freizeitimmobiliegewerblich (
-    objektart int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_gastgewerbe (
-    objektart int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_grundstueck (
-    objektart int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_hallenlagerprod (
-    objektart int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_haus (
-    objektart int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_landundforstwirtschaft (
-    objektart int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_parken (
-    objektart int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_sonstige (
-    objektart int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_wohnung (
-    objektart int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_zimmer (
-    objektart int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_zinshausrenditeobjekt (
-    objektart int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedanyfield (
-    objektkategorie int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedextend (
-    objektkategorie int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedsimplefield (
-    objektkategorie int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_stpsonstige (
-    preise int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedanyfield (
-    preise int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedextend (
-    preise int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedsimplefield (
-    preise int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedanyfield (
-    verwaltung_objekt int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedextend (
-    verwaltung_objekt int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedsimplefield (
-    verwaltung_objekt int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedanyfield (
-    verwaltung_techn int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedextend (
-    verwaltung_techn int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedsimplefield (
-    verwaltung_techn int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_emailsonstige (
-    weitere_adresse int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_telsonstige (
-    weitere_adresse int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedanyfield (
-    weitere_adresse int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedextend (
-    weitere_adresse int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedsimplefield (
-    weitere_adresse int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_energiepass (
-    zustand_angaben int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedanyfield (
-    zustand_angaben int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedextend (
-    zustand_angaben int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_openimmotypo3_domain_model_userdefinedsimplefield (
-    zustand_angaben int(11) unsigned DEFAULT '0' NOT NULL
-);
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_aktion'
+CREATE TABLE `tx_openimmotypo3_domain_model_aktion` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `aktionart` text COLLATE utf8_unicode_ci NOT NULL,
+  `verwaltung_techn` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_anbieter'
+CREATE TABLE `tx_openimmotypo3_domain_model_anbieter` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `anbieternr` text COLLATE utf8_unicode_ci NOT NULL,
+  `anhang` int(10) unsigned NOT NULL DEFAULT '0',
+  `firma` text COLLATE utf8_unicode_ci NOT NULL,
+  `immobilie` int(10) unsigned NOT NULL DEFAULT '0',
+  `impressum` text COLLATE utf8_unicode_ci NOT NULL,
+  `impressum_strukt` int(10) unsigned NOT NULL DEFAULT '0',
+  `lizenzkennung` text COLLATE utf8_unicode_ci NOT NULL,
+  `openimmo_anid` text COLLATE utf8_unicode_ci NOT NULL,
+  `user_defined_anyfield` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_extend` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_simplefield` int(10) unsigned NOT NULL DEFAULT '0',
+  `openimmo` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_angeschlgastronomie'
+CREATE TABLE `tx_openimmotypo3_domain_model_angeschlgastronomie` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `bar` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hotelrestaurant` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `ausstattung` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_anhaenge'
+CREATE TABLE `tx_openimmotypo3_domain_model_anhaenge` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `anhang` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_anyfield` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_extend` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_simplefield` int(10) unsigned NOT NULL DEFAULT '0',
+  `immobilie` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_anhang'
+CREATE TABLE `tx_openimmotypo3_domain_model_anhang` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `anhangtitel` text COLLATE utf8_unicode_ci NOT NULL,
+  `sqlsafe_check` int(10) unsigned NOT NULL DEFAULT '0',
+  `daten` int(10) unsigned NOT NULL DEFAULT '0',
+  `format` text COLLATE utf8_unicode_ci NOT NULL,
+  `gruppe` text COLLATE utf8_unicode_ci NOT NULL,
+  `location` text COLLATE utf8_unicode_ci NOT NULL,
+  `anhaenge` int(10) unsigned NOT NULL DEFAULT '0',
+  `anbieter` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_ausbaustufe'
+CREATE TABLE `tx_openimmotypo3_domain_model_ausbaustufe` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `ausbauhaus` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `bausatzhaus` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `schluesselfertigmitbodenplatte` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `schluesselfertigmitkeller` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `schluesselfertigohnebodenplatte` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `ausstattung` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_ausblick'
+CREATE TABLE `tx_openimmotypo3_domain_model_ausblick` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `blick` text COLLATE utf8_unicode_ci NOT NULL,
+  `infrastruktur` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_ausrichtbalkonterrasse'
+CREATE TABLE `tx_openimmotypo3_domain_model_ausrichtbalkonterrasse` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `nord` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `nordost` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `nordwest` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `ost` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `sued` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `suedost` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `suedwest` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `west` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `ausstattung` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_aussencourtage'
+CREATE TABLE `tx_openimmotypo3_domain_model_aussencourtage` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `mit_mwst` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_ausstattung'
+CREATE TABLE `tx_openimmotypo3_domain_model_ausstattung` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `abstellraum` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `angeschl_gastronomie` int(10) unsigned NOT NULL DEFAULT '0',
+  `ausbaustufe` int(10) unsigned NOT NULL DEFAULT '0',
+  `ausricht_balkon_terrasse` int(10) unsigned NOT NULL DEFAULT '0',
+  `ausstatt_kategorie` text COLLATE utf8_unicode_ci NOT NULL,
+  `bad` int(10) unsigned NOT NULL DEFAULT '0',
+  `barrierefrei` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `bauweise` int(10) unsigned NOT NULL DEFAULT '0',
+  `befeuerung` int(10) unsigned NOT NULL DEFAULT '0',
+  `bibliothek` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `boden` int(10) unsigned NOT NULL DEFAULT '0',
+  `brauereibindung` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `breitband_zugang` int(10) unsigned NOT NULL DEFAULT '0',
+  `dachboden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `dachform` int(10) unsigned NOT NULL DEFAULT '0',
+  `dvbt` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `dv_verkabelung` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `energietyp` int(10) unsigned NOT NULL DEFAULT '0',
+  `fahrradraum` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `fahrstuhl` int(10) unsigned NOT NULL DEFAULT '0',
+  `gaestewc` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `gartennutzung` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `gastterrasse` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hallenhoehe` double NOT NULL DEFAULT '0',
+  `hebebuehne` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `heizungsart` int(10) unsigned NOT NULL DEFAULT '0',
+  `kabelkanaele` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `kabel_sat_tv` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `kamin` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `kantine_cafeteria` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `klimatisiert` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `kran` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `kueche` int(10) unsigned NOT NULL DEFAULT '0',
+  `moebliert` int(10) unsigned NOT NULL DEFAULT '0',
+  `raeume_veraenderbar` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `rampe` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `rolladen` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `rollstuhlgerecht` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `sauna` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `seniorengerecht` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `serviceleistungen` int(10) unsigned NOT NULL DEFAULT '0',
+  `sicherheitstechnik` int(10) unsigned NOT NULL DEFAULT '0',
+  `sporteinrichtungen` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `stellplatzart` int(10) unsigned NOT NULL DEFAULT '0',
+  `stromanschlusswert` text COLLATE utf8_unicode_ci NOT NULL,
+  `swimmingpool` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `teekueche` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `telefon_ferienimmobilie` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `umts_empfang` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `unterkellert` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_anyfield` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_extend` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_simplefield` int(10) unsigned NOT NULL DEFAULT '0',
+  `wasch_trockenraum` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `wellnessbereich` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `wg_geeignet` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `wintergarten` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `immobilie` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_bad'
+CREATE TABLE `tx_openimmotypo3_domain_model_bad` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `bidet` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `dusche` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `fenster` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `pissoir` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `wanne` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `ausstattung` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_bauweise'
+CREATE TABLE `tx_openimmotypo3_domain_model_bauweise` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `fertigteile` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `holz` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `massiv` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `ausstattung` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_bebaubarnach'
+CREATE TABLE `tx_openimmotypo3_domain_model_bebaubarnach` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `bebaubar_attr` text COLLATE utf8_unicode_ci NOT NULL,
+  `zustand_angaben` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_befeuerung'
+CREATE TABLE `tx_openimmotypo3_domain_model_befeuerung` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `alternativ` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `block` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `elektro` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `erdwaerme` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `fern` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `fluessiggas` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `gas` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `holz` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `kohle` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `luftwp` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `oel` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `pellet` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `solar` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `wasser_elektro` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `ausstattung` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_betriebskostennetto'
+CREATE TABLE `tx_openimmotypo3_domain_model_betriebskostennetto` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `betriebskostenust` double NOT NULL DEFAULT '0',
+  `value` double NOT NULL DEFAULT '0',
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_bewertung'
+CREATE TABLE `tx_openimmotypo3_domain_model_bewertung` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `feld` text COLLATE utf8_unicode_ci NOT NULL,
+  `immobilie` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_bieterverfahren'
+CREATE TABLE `tx_openimmotypo3_domain_model_bieterverfahren` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `beginn_angebotsphase` datetime DEFAULT NULL,
+  `beginn_bietzeit` int(10) unsigned NOT NULL DEFAULT '0',
+  `besichtigungstermin` datetime DEFAULT NULL,
+  `besichtigungstermin2` datetime DEFAULT NULL,
+  `ende_bietzeit` datetime DEFAULT NULL,
+  `hoechstgebot_zeigen` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `mindestpreis` double NOT NULL DEFAULT '0',
+  `user_defined_anyfield` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_extend` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_simplefield` int(10) unsigned NOT NULL DEFAULT '0',
+  `immobilie` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_boden'
+CREATE TABLE `tx_openimmotypo3_domain_model_boden` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `dielen` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `doppelboden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `estrich` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `fertigparkett` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `fliesen` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `granit` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `kunststoff` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `laminat` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `linoleum` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `marmor` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `parkett` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `stein` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `teppich` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `terrakotta` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `ausstattung` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_breitbandzugang'
+CREATE TABLE `tx_openimmotypo3_domain_model_breitbandzugang` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `art` text COLLATE utf8_unicode_ci NOT NULL,
+  `speed` double NOT NULL DEFAULT '0',
+  `ausstattung` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_bueropraxen'
+CREATE TABLE `tx_openimmotypo3_domain_model_bueropraxen` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `buero_typ` text COLLATE utf8_unicode_ci NOT NULL,
+  `objektart` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_dachform'
+CREATE TABLE `tx_openimmotypo3_domain_model_dachform` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `flachdach` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `krueppelwalmdach` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `mansarddach` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `pultdach` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `pyramidendach` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `satteldach` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `walmdach` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `ausstattung` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_daten'
+CREATE TABLE `tx_openimmotypo3_domain_model_daten` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `anhanginhalt` text COLLATE utf8_unicode_ci NOT NULL,
+  `pfad` text COLLATE utf8_unicode_ci NOT NULL,
+  `anhang` int(10) unsigned NOT NULL DEFAULT '0',
+  `foto` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_distanzen'
+CREATE TABLE `tx_openimmotypo3_domain_model_distanzen` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `distanz_zu` text COLLATE utf8_unicode_ci NOT NULL,
+  `value` double NOT NULL DEFAULT '0',
+  `infrastruktur` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_distanzensport'
+CREATE TABLE `tx_openimmotypo3_domain_model_distanzensport` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `distanz_zu_sport` text COLLATE utf8_unicode_ci NOT NULL,
+  `value` double NOT NULL DEFAULT '0',
+  `infrastruktur` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_einzelhandel'
+CREATE TABLE `tx_openimmotypo3_domain_model_einzelhandel` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `handel_typ` text COLLATE utf8_unicode_ci NOT NULL,
+  `objektart` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_emailsonstige'
+CREATE TABLE `tx_openimmotypo3_domain_model_emailsonstige` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `bemerkung` text COLLATE utf8_unicode_ci NOT NULL,
+  `emailart` text COLLATE utf8_unicode_ci NOT NULL,
+  `value` text COLLATE utf8_unicode_ci NOT NULL,
+  `kontaktperson` int(10) unsigned NOT NULL DEFAULT '0',
+  `weitere_adresse` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_energiepass'
+CREATE TABLE `tx_openimmotypo3_domain_model_energiepass` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `ausstelldatum` datetime DEFAULT NULL,
+  `baujahr` text COLLATE utf8_unicode_ci NOT NULL,
+  `endenergiebedarf` text COLLATE utf8_unicode_ci NOT NULL,
+  `energieverbrauchkennwert` text COLLATE utf8_unicode_ci NOT NULL,
+  `epart` text COLLATE utf8_unicode_ci NOT NULL,
+  `epasstext` text COLLATE utf8_unicode_ci NOT NULL,
+  `fgeeklasse` text COLLATE utf8_unicode_ci NOT NULL,
+  `fgeewert` text COLLATE utf8_unicode_ci NOT NULL,
+  `gebaeudeart` text COLLATE utf8_unicode_ci NOT NULL,
+  `geg2018` text COLLATE utf8_unicode_ci NOT NULL,
+  `gueltig_bis` text COLLATE utf8_unicode_ci NOT NULL,
+  `hwbklasse` text COLLATE utf8_unicode_ci NOT NULL,
+  `hwbwert` text COLLATE utf8_unicode_ci NOT NULL,
+  `jahrgang` text COLLATE utf8_unicode_ci NOT NULL,
+  `mitwarmwasser` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `primaerenergietraeger` text COLLATE utf8_unicode_ci NOT NULL,
+  `stromwert` text COLLATE utf8_unicode_ci NOT NULL,
+  `waermewert` text COLLATE utf8_unicode_ci NOT NULL,
+  `wertklasse` text COLLATE utf8_unicode_ci NOT NULL,
+  `zustand_angaben` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_energietyp'
+CREATE TABLE `tx_openimmotypo3_domain_model_energietyp` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `kfw40` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `kfw55` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `kfw60` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `kfw70` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `minergiebauweise` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `minergie_zertifiziert` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `neubaustandard` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `niedrigenergie` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `passivhaus` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `ausstattung` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_erschliessung'
+CREATE TABLE `tx_openimmotypo3_domain_model_erschliessung` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `erschl_attr` text COLLATE utf8_unicode_ci NOT NULL,
+  `zustand_angaben` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_erschliessungumfang'
+CREATE TABLE `tx_openimmotypo3_domain_model_erschliessungumfang` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `erschl_attr` text COLLATE utf8_unicode_ci NOT NULL,
+  `zustand_angaben` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_evbnetto'
+CREATE TABLE `tx_openimmotypo3_domain_model_evbnetto` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `evbust` double NOT NULL DEFAULT '0',
+  `value` double NOT NULL DEFAULT '0',
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_fahrstuhl'
+CREATE TABLE `tx_openimmotypo3_domain_model_fahrstuhl` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `lasten` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `personen` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `ausstattung` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_flaechen'
+CREATE TABLE `tx_openimmotypo3_domain_model_flaechen` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `anzahl_badezimmer` double NOT NULL DEFAULT '0',
+  `anzahl_balkone` double NOT NULL DEFAULT '0',
+  `anzahl_betten` double NOT NULL DEFAULT '0',
+  `anzahl_gewerbeeinheiten` double NOT NULL DEFAULT '0',
+  `anzahl_logia` double NOT NULL DEFAULT '0',
+  `anzahl_schlafzimmer` double NOT NULL DEFAULT '0',
+  `anzahl_sep_wc` double NOT NULL DEFAULT '0',
+  `anzahl_stellplaetze` int(10) unsigned NOT NULL DEFAULT '0',
+  `anzahl_tagungsraeume` double NOT NULL DEFAULT '0',
+  `anzahl_terrassen` double NOT NULL DEFAULT '0',
+  `anzahl_wohneinheiten` double NOT NULL DEFAULT '0',
+  `anzahl_wohn_schlafzimmer` double NOT NULL DEFAULT '0',
+  `anzahl_zimmer` double NOT NULL DEFAULT '0',
+  `ausnuetzungsziffer` double NOT NULL DEFAULT '0',
+  `balkon_terrasse_flaeche` double NOT NULL DEFAULT '0',
+  `beheizbare_flaeche` double NOT NULL DEFAULT '0',
+  `bgf` text COLLATE utf8_unicode_ci NOT NULL,
+  `bmz` text COLLATE utf8_unicode_ci NOT NULL,
+  `bueroflaeche` double NOT NULL DEFAULT '0',
+  `bueroteilflaeche` double NOT NULL DEFAULT '0',
+  `dachbodenflaeche` double NOT NULL DEFAULT '0',
+  `einliegerwohnung` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `fensterfront` double NOT NULL DEFAULT '0',
+  `fensterfront_qm` double NOT NULL DEFAULT '0',
+  `flaechebis` double NOT NULL DEFAULT '0',
+  `flaechevon` double NOT NULL DEFAULT '0',
+  `freiflaeche` double NOT NULL DEFAULT '0',
+  `gartenflaeche` double NOT NULL DEFAULT '0',
+  `gastroflaeche` double NOT NULL DEFAULT '0',
+  `gesamtflaeche` double NOT NULL DEFAULT '0',
+  `gfz` text COLLATE utf8_unicode_ci NOT NULL,
+  `grundstuecksflaeche` double NOT NULL DEFAULT '0',
+  `grundstuecksfront` double NOT NULL DEFAULT '0',
+  `grz` text COLLATE utf8_unicode_ci NOT NULL,
+  `kellerflaeche` double NOT NULL DEFAULT '0',
+  `kubatur` double NOT NULL DEFAULT '0',
+  `ladenflaeche` double NOT NULL DEFAULT '0',
+  `lagerflaeche` double NOT NULL DEFAULT '0',
+  `nutzflaeche` double NOT NULL DEFAULT '0',
+  `plaetze_gastraum` double NOT NULL DEFAULT '0',
+  `sonstflaeche` double NOT NULL DEFAULT '0',
+  `teilbar_ab` double NOT NULL DEFAULT '0',
+  `user_defined_anyfield` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_extend` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_simplefield` int(10) unsigned NOT NULL DEFAULT '0',
+  `verkaufsflaeche` double NOT NULL DEFAULT '0',
+  `vermietbare_flaeche` double NOT NULL DEFAULT '0',
+  `verwaltungsflaeche` double NOT NULL DEFAULT '0',
+  `wohnflaeche` double NOT NULL DEFAULT '0',
+  `immobilie` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_foto'
+CREATE TABLE `tx_openimmotypo3_domain_model_foto` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `daten` int(10) unsigned NOT NULL DEFAULT '0',
+  `format` text COLLATE utf8_unicode_ci NOT NULL,
+  `location` text COLLATE utf8_unicode_ci NOT NULL,
+  `kontaktperson` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_freitexte'
+CREATE TABLE `tx_openimmotypo3_domain_model_freitexte` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `ausstatt_beschr` text COLLATE utf8_unicode_ci NOT NULL,
+  `dreizeiler` text COLLATE utf8_unicode_ci NOT NULL,
+  `lage` text COLLATE utf8_unicode_ci NOT NULL,
+  `objektbeschreibung` text COLLATE utf8_unicode_ci NOT NULL,
+  `objekt_text` int(10) unsigned NOT NULL DEFAULT '0',
+  `objekttitel` text COLLATE utf8_unicode_ci NOT NULL,
+  `sonstige_angaben` text COLLATE utf8_unicode_ci NOT NULL,
+  `user_defined_anyfield` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_extend` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_simplefield` int(10) unsigned NOT NULL DEFAULT '0',
+  `immobilie` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_freizeitimmobiliegewerblich'
+CREATE TABLE `tx_openimmotypo3_domain_model_freizeitimmobiliegewerblich` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `freizeit_typ` text COLLATE utf8_unicode_ci NOT NULL,
+  `objektart` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_gastgewerbe'
+CREATE TABLE `tx_openimmotypo3_domain_model_gastgewerbe` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `gastgew_typ` text COLLATE utf8_unicode_ci NOT NULL,
+  `objektart` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_geo'
+CREATE TABLE `tx_openimmotypo3_domain_model_geo` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `anzahl_etagen` int(10) unsigned NOT NULL DEFAULT '0',
+  `bundesland` text COLLATE utf8_unicode_ci NOT NULL,
+  `etage` int(10) unsigned NOT NULL DEFAULT '0',
+  `flur` text COLLATE utf8_unicode_ci NOT NULL,
+  `flurstueck` text COLLATE utf8_unicode_ci NOT NULL,
+  `gemarkung` text COLLATE utf8_unicode_ci NOT NULL,
+  `gemeindecode` text COLLATE utf8_unicode_ci NOT NULL,
+  `geokoordinaten` int(10) unsigned NOT NULL DEFAULT '0',
+  `hausnummer` text COLLATE utf8_unicode_ci NOT NULL,
+  `karten_makro` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `karten_mikro` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `lage_gebiet` int(10) unsigned NOT NULL DEFAULT '0',
+  `lage_im_bau` int(10) unsigned NOT NULL DEFAULT '0',
+  `land` int(10) unsigned NOT NULL DEFAULT '0',
+  `luftbildern` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `ort` text COLLATE utf8_unicode_ci NOT NULL,
+  `plz` text COLLATE utf8_unicode_ci NOT NULL,
+  `regionaler_zusatz` text COLLATE utf8_unicode_ci NOT NULL,
+  `strasse` text COLLATE utf8_unicode_ci NOT NULL,
+  `user_defined_anyfield` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_extend` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_simplefield` int(10) unsigned NOT NULL DEFAULT '0',
+  `virtuelletour` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `wohnungsnr` text COLLATE utf8_unicode_ci NOT NULL,
+  `immobilie` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_geokoordinaten'
+CREATE TABLE `tx_openimmotypo3_domain_model_geokoordinaten` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `breitengrad` double NOT NULL DEFAULT '0',
+  `laengengrad` double NOT NULL DEFAULT '0',
+  `geo` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_gesamtbelastungnetto'
+CREATE TABLE `tx_openimmotypo3_domain_model_gesamtbelastungnetto` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `gesamtbelastungust` double NOT NULL DEFAULT '0',
+  `value` double NOT NULL DEFAULT '0',
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_gesamtkostenprom2von'
+CREATE TABLE `tx_openimmotypo3_domain_model_gesamtkostenprom2von` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `gesamtkostenprom2bis` double NOT NULL DEFAULT '0',
+  `value` double NOT NULL DEFAULT '0',
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_gesamtmietenetto'
+CREATE TABLE `tx_openimmotypo3_domain_model_gesamtmietenetto` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `gesamtmieteust` double NOT NULL DEFAULT '0',
+  `value` double NOT NULL DEFAULT '0',
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_geschlecht'
+CREATE TABLE `tx_openimmotypo3_domain_model_geschlecht` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `geschl_attr` text COLLATE utf8_unicode_ci NOT NULL,
+  `verwaltung_objekt` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_grundstueck'
+CREATE TABLE `tx_openimmotypo3_domain_model_grundstueck` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `grundst_typ` text COLLATE utf8_unicode_ci NOT NULL,
+  `objektart` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_hallenlagerprod'
+CREATE TABLE `tx_openimmotypo3_domain_model_hallenlagerprod` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `hallen_typ` text COLLATE utf8_unicode_ci NOT NULL,
+  `objektart` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_hauptmietzinsnetto'
+CREATE TABLE `tx_openimmotypo3_domain_model_hauptmietzinsnetto` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `hauptmietzinsust` double NOT NULL DEFAULT '0',
+  `value` double NOT NULL DEFAULT '0',
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_haus'
+CREATE TABLE `tx_openimmotypo3_domain_model_haus` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `haustyp` text COLLATE utf8_unicode_ci NOT NULL,
+  `objektart` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_heizkostennetto'
+CREATE TABLE `tx_openimmotypo3_domain_model_heizkostennetto` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `heizkostenust` double NOT NULL DEFAULT '0',
+  `value` double NOT NULL DEFAULT '0',
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_heizungsart'
+CREATE TABLE `tx_openimmotypo3_domain_model_heizungsart` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `etage` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `fern` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `fussboden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `ofen` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `zentral` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `ausstattung` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_immobilie'
+CREATE TABLE `tx_openimmotypo3_domain_model_immobilie` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `anhaenge` int(10) unsigned NOT NULL DEFAULT '0',
+  `ausstattung` int(10) unsigned NOT NULL DEFAULT '0',
+  `bewertung` int(10) unsigned NOT NULL DEFAULT '0',
+  `bieterverfahren` int(10) unsigned NOT NULL DEFAULT '0',
+  `flaechen` int(10) unsigned NOT NULL DEFAULT '0',
+  `freitexte` int(10) unsigned NOT NULL DEFAULT '0',
+  `geo` int(10) unsigned NOT NULL DEFAULT '0',
+  `infrastruktur` int(10) unsigned NOT NULL DEFAULT '0',
+  `kontaktperson` int(10) unsigned NOT NULL DEFAULT '0',
+  `objektkategorie` int(10) unsigned NOT NULL DEFAULT '0',
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_anyfield` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_extend` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_simplefield` int(10) unsigned NOT NULL DEFAULT '0',
+  `versteigerung` int(10) unsigned NOT NULL DEFAULT '0',
+  `verwaltung_objekt` int(10) unsigned NOT NULL DEFAULT '0',
+  `verwaltung_techn` int(10) unsigned NOT NULL DEFAULT '0',
+  `weitere_adresse` int(10) unsigned NOT NULL DEFAULT '0',
+  `zustand_angaben` int(10) unsigned NOT NULL DEFAULT '0',
+  `anbieter` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_impressumstrukt'
+CREATE TABLE `tx_openimmotypo3_domain_model_impressumstrukt` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `berufsaufsichtsbehoerde` text COLLATE utf8_unicode_ci NOT NULL,
+  `firmenanschrift` text COLLATE utf8_unicode_ci NOT NULL,
+  `firmenname` text COLLATE utf8_unicode_ci NOT NULL,
+  `handelsregister` text COLLATE utf8_unicode_ci NOT NULL,
+  `handelsregister_nr` text COLLATE utf8_unicode_ci NOT NULL,
+  `steuernummer` text COLLATE utf8_unicode_ci NOT NULL,
+  `telefon` text COLLATE utf8_unicode_ci NOT NULL,
+  `umsst_id` text COLLATE utf8_unicode_ci NOT NULL,
+  `vertretungsberechtigter` text COLLATE utf8_unicode_ci NOT NULL,
+  `weiteres` text COLLATE utf8_unicode_ci NOT NULL,
+  `anbieter` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_infrastruktur'
+CREATE TABLE `tx_openimmotypo3_domain_model_infrastruktur` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `ausblick` int(10) unsigned NOT NULL DEFAULT '0',
+  `distanzen` int(10) unsigned NOT NULL DEFAULT '0',
+  `distanzen_sport` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_anyfield` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_extend` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_simplefield` int(10) unsigned NOT NULL DEFAULT '0',
+  `zulieferung` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `immobilie` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_innencourtage'
+CREATE TABLE `tx_openimmotypo3_domain_model_innencourtage` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `mit_mwst` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_kaufpreis'
+CREATE TABLE `tx_openimmotypo3_domain_model_kaufpreis` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `auf_anfrage` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `value` double NOT NULL DEFAULT '0',
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_kaufpreisnetto'
+CREATE TABLE `tx_openimmotypo3_domain_model_kaufpreisnetto` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `kaufpreisust` double NOT NULL DEFAULT '0',
+  `value` double NOT NULL DEFAULT '0',
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_kontaktperson'
+CREATE TABLE `tx_openimmotypo3_domain_model_kontaktperson` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `adressfreigabe` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `anrede` text COLLATE utf8_unicode_ci NOT NULL,
+  `anrede_brief` text COLLATE utf8_unicode_ci NOT NULL,
+  `email_direkt` text COLLATE utf8_unicode_ci NOT NULL,
+  `email_feedback` text COLLATE utf8_unicode_ci NOT NULL,
+  `email_privat` text COLLATE utf8_unicode_ci NOT NULL,
+  `email_sonstige` int(10) unsigned NOT NULL DEFAULT '0',
+  `email_zentrale` text COLLATE utf8_unicode_ci NOT NULL,
+  `firma` text COLLATE utf8_unicode_ci NOT NULL,
+  `foto` int(10) unsigned NOT NULL DEFAULT '0',
+  `freitextfeld` text COLLATE utf8_unicode_ci NOT NULL,
+  `hausnummer` text COLLATE utf8_unicode_ci NOT NULL,
+  `immobilientreuhaenderid` text COLLATE utf8_unicode_ci NOT NULL,
+  `land` int(10) unsigned NOT NULL DEFAULT '0',
+  `name` text COLLATE utf8_unicode_ci NOT NULL,
+  `ort` text COLLATE utf8_unicode_ci NOT NULL,
+  `personennummer` text COLLATE utf8_unicode_ci NOT NULL,
+  `plz` text COLLATE utf8_unicode_ci NOT NULL,
+  `position` text COLLATE utf8_unicode_ci NOT NULL,
+  `postfach` text COLLATE utf8_unicode_ci NOT NULL,
+  `postf_ort` text COLLATE utf8_unicode_ci NOT NULL,
+  `postf_plz` text COLLATE utf8_unicode_ci NOT NULL,
+  `referenz_id` text COLLATE utf8_unicode_ci NOT NULL,
+  `strasse` text COLLATE utf8_unicode_ci NOT NULL,
+  `tel_durchw` text COLLATE utf8_unicode_ci NOT NULL,
+  `tel_fax` text COLLATE utf8_unicode_ci NOT NULL,
+  `tel_handy` text COLLATE utf8_unicode_ci NOT NULL,
+  `tel_privat` text COLLATE utf8_unicode_ci NOT NULL,
+  `tel_sonstige` int(10) unsigned NOT NULL DEFAULT '0',
+  `tel_zentrale` text COLLATE utf8_unicode_ci NOT NULL,
+  `titel` text COLLATE utf8_unicode_ci NOT NULL,
+  `url` text COLLATE utf8_unicode_ci NOT NULL,
+  `user_defined_anyfield` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_extend` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_simplefield` int(10) unsigned NOT NULL DEFAULT '0',
+  `vorname` text COLLATE utf8_unicode_ci NOT NULL,
+  `zusatzfeld` text COLLATE utf8_unicode_ci NOT NULL,
+  `immobilie` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_kueche'
+CREATE TABLE `tx_openimmotypo3_domain_model_kueche` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `ebk` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `offen` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `pantry` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `ausstattung` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_lagegebiet'
+CREATE TABLE `tx_openimmotypo3_domain_model_lagegebiet` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `gebiete` text COLLATE utf8_unicode_ci NOT NULL,
+  `geo` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_lageimbau'
+CREATE TABLE `tx_openimmotypo3_domain_model_lageimbau` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `hinten` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `links` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `rechts` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `vorne` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `geo` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_land'
+CREATE TABLE `tx_openimmotypo3_domain_model_land` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `iso_land` text COLLATE utf8_unicode_ci NOT NULL,
+  `geo` int(10) unsigned NOT NULL DEFAULT '0',
+  `kontaktperson` int(10) unsigned NOT NULL DEFAULT '0',
+  `weitere_adresse` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_landundforstwirtschaft'
+CREATE TABLE `tx_openimmotypo3_domain_model_landundforstwirtschaft` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `land_typ` text COLLATE utf8_unicode_ci NOT NULL,
+  `objektart` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_master'
+CREATE TABLE `tx_openimmotypo3_domain_model_master` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `visible` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `verwaltung_techn` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_maxmietdauer'
+CREATE TABLE `tx_openimmotypo3_domain_model_maxmietdauer` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `max_dauer` text COLLATE utf8_unicode_ci NOT NULL,
+  `verwaltung_objekt` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_mieteinnahmenist'
+CREATE TABLE `tx_openimmotypo3_domain_model_mieteinnahmenist` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `periode` text COLLATE utf8_unicode_ci NOT NULL,
+  `value` double NOT NULL DEFAULT '0',
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_mieteinnahmensoll'
+CREATE TABLE `tx_openimmotypo3_domain_model_mieteinnahmensoll` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `periode` text COLLATE utf8_unicode_ci NOT NULL,
+  `value` double NOT NULL DEFAULT '0',
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_minmietdauer'
+CREATE TABLE `tx_openimmotypo3_domain_model_minmietdauer` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `min_dauer` text COLLATE utf8_unicode_ci NOT NULL,
+  `verwaltung_objekt` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_moebliert'
+CREATE TABLE `tx_openimmotypo3_domain_model_moebliert` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `moeb` text COLLATE utf8_unicode_ci NOT NULL,
+  `ausstattung` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_monatlichekostennetto'
+CREATE TABLE `tx_openimmotypo3_domain_model_monatlichekostennetto` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `monatlichekostenust` double NOT NULL DEFAULT '0',
+  `value` double NOT NULL DEFAULT '0',
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_nebenkostenprom2von'
+CREATE TABLE `tx_openimmotypo3_domain_model_nebenkostenprom2von` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `nebenkostenprom2bis` double NOT NULL DEFAULT '0',
+  `value` double NOT NULL DEFAULT '0',
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_nettomieteprom2von'
+CREATE TABLE `tx_openimmotypo3_domain_model_nettomieteprom2von` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `nettomieteprom2bis` double NOT NULL DEFAULT '0',
+  `value` double NOT NULL DEFAULT '0',
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_nutzungsart'
+CREATE TABLE `tx_openimmotypo3_domain_model_nutzungsart` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `anlage` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `gewerbe` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `waz` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `wohnen` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `objektkategorie` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_objektart'
+CREATE TABLE `tx_openimmotypo3_domain_model_objektart` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `buero_praxen` int(10) unsigned NOT NULL DEFAULT '0',
+  `einzelhandel` int(10) unsigned NOT NULL DEFAULT '0',
+  `freizeitimmobilie_gewerblich` int(10) unsigned NOT NULL DEFAULT '0',
+  `gastgewerbe` int(10) unsigned NOT NULL DEFAULT '0',
+  `grundstueck` int(10) unsigned NOT NULL DEFAULT '0',
+  `hallen_lager_prod` int(10) unsigned NOT NULL DEFAULT '0',
+  `haus` int(10) unsigned NOT NULL DEFAULT '0',
+  `land_und_forstwirtschaft` int(10) unsigned NOT NULL DEFAULT '0',
+  `objektart_zusatz` text COLLATE utf8_unicode_ci NOT NULL,
+  `parken` int(10) unsigned NOT NULL DEFAULT '0',
+  `sonstige` int(10) unsigned NOT NULL DEFAULT '0',
+  `wohnung` int(10) unsigned NOT NULL DEFAULT '0',
+  `zimmer` int(10) unsigned NOT NULL DEFAULT '0',
+  `zinshaus_renditeobjekt` int(10) unsigned NOT NULL DEFAULT '0',
+  `objektkategorie` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_objektkategorie'
+CREATE TABLE `tx_openimmotypo3_domain_model_objektkategorie` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `nutzungsart` int(10) unsigned NOT NULL DEFAULT '0',
+  `objektart` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_anyfield` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_extend` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_simplefield` int(10) unsigned NOT NULL DEFAULT '0',
+  `vermarktungsart` int(10) unsigned NOT NULL DEFAULT '0',
+  `immobilie` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_objekttext'
+CREATE TABLE `tx_openimmotypo3_domain_model_objekttext` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `lang` text COLLATE utf8_unicode_ci NOT NULL,
+  `freitexte` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_openimmo'
+CREATE TABLE `tx_openimmotypo3_domain_model_openimmo` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `anbieter` int(10) unsigned NOT NULL DEFAULT '0',
+  `uebertragung` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_anyfield` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_simplefield` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_parken'
+CREATE TABLE `tx_openimmotypo3_domain_model_parken` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `parken_typ` text COLLATE utf8_unicode_ci NOT NULL,
+  `objektart` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_preise'
+CREATE TABLE `tx_openimmotypo3_domain_model_preise` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `abstand` double NOT NULL DEFAULT '0',
+  `aussen_courtage` int(10) unsigned NOT NULL DEFAULT '0',
+  `betriebskostennetto` int(10) unsigned NOT NULL DEFAULT '0',
+  `courtage_hinweis` text COLLATE utf8_unicode_ci NOT NULL,
+  `erbpacht` double NOT NULL DEFAULT '0',
+  `erschliessungskosten` double NOT NULL DEFAULT '0',
+  `evbnetto` int(10) unsigned NOT NULL DEFAULT '0',
+  `freitext_preis` text COLLATE utf8_unicode_ci NOT NULL,
+  `gesamtbelastungbrutto` double NOT NULL DEFAULT '0',
+  `gesamtbelastungnetto` int(10) unsigned NOT NULL DEFAULT '0',
+  `gesamtkostenprom2von` int(10) unsigned NOT NULL DEFAULT '0',
+  `gesamtmietebrutto` double NOT NULL DEFAULT '0',
+  `gesamtmietenetto` int(10) unsigned NOT NULL DEFAULT '0',
+  `geschaeftsguthaben` double NOT NULL DEFAULT '0',
+  `hauptmietzinsnetto` int(10) unsigned NOT NULL DEFAULT '0',
+  `hausgeld` double NOT NULL DEFAULT '0',
+  `heizkosten` double NOT NULL DEFAULT '0',
+  `heizkosten_enthalten` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `heizkostennetto` int(10) unsigned NOT NULL DEFAULT '0',
+  `innen_courtage` int(10) unsigned NOT NULL DEFAULT '0',
+  `kaltmiete` double NOT NULL DEFAULT '0',
+  `kaufpreis` int(10) unsigned NOT NULL DEFAULT '0',
+  `kaufpreisbrutto` double NOT NULL DEFAULT '0',
+  `kaufpreisnetto` int(10) unsigned NOT NULL DEFAULT '0',
+  `kaufpreis_pro_qm` double NOT NULL DEFAULT '0',
+  `kaution` double NOT NULL DEFAULT '0',
+  `kaution_text` text COLLATE utf8_unicode_ci NOT NULL,
+  `mieteinnahmen_ist` int(10) unsigned NOT NULL DEFAULT '0',
+  `mieteinnahmen_soll` int(10) unsigned NOT NULL DEFAULT '0',
+  `mietpreis_pro_qm` double NOT NULL DEFAULT '0',
+  `mietzuschlaege` double NOT NULL DEFAULT '0',
+  `monatlichekostenbrutto` double NOT NULL DEFAULT '0',
+  `monatlichekostennetto` int(10) unsigned NOT NULL DEFAULT '0',
+  `mwst_gesamt` double NOT NULL DEFAULT '0',
+  `mwst_satz` double NOT NULL DEFAULT '0',
+  `nebenkosten` double NOT NULL DEFAULT '0',
+  `nebenkostenprom2von` int(10) unsigned NOT NULL DEFAULT '0',
+  `nettokaltmiete` double NOT NULL DEFAULT '0',
+  `nettomieteprom2von` int(10) unsigned NOT NULL DEFAULT '0',
+  `nettorendite` double NOT NULL DEFAULT '0',
+  `nettorendite_ist` double NOT NULL DEFAULT '0',
+  `nettorendite_soll` double NOT NULL DEFAULT '0',
+  `pacht` double NOT NULL DEFAULT '0',
+  `pauschalmiete` double NOT NULL DEFAULT '0',
+  `preis_zeiteinheit` int(10) unsigned NOT NULL DEFAULT '0',
+  `preis_zeitraum_bis` datetime DEFAULT NULL,
+  `preis_zeitraum_von` datetime DEFAULT NULL,
+  `provisionbrutto` double NOT NULL DEFAULT '0',
+  `provisionnetto` int(10) unsigned NOT NULL DEFAULT '0',
+  `provisionspflichtig` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `provision_teilen` int(10) unsigned NOT NULL DEFAULT '0',
+  `richtpreis` double NOT NULL DEFAULT '0',
+  `richtpreisprom2` double NOT NULL DEFAULT '0',
+  `ruecklagenetto` int(10) unsigned NOT NULL DEFAULT '0',
+  `sonstigekostennetto` int(10) unsigned NOT NULL DEFAULT '0',
+  `sonstigemietenetto` int(10) unsigned NOT NULL DEFAULT '0',
+  `stp_carport` int(10) unsigned NOT NULL DEFAULT '0',
+  `stp_duplex` int(10) unsigned NOT NULL DEFAULT '0',
+  `stp_freiplatz` int(10) unsigned NOT NULL DEFAULT '0',
+  `stp_garage` int(10) unsigned NOT NULL DEFAULT '0',
+  `stp_parkhaus` int(10) unsigned NOT NULL DEFAULT '0',
+  `stp_sonstige` int(10) unsigned NOT NULL DEFAULT '0',
+  `stp_tiefgarage` int(10) unsigned NOT NULL DEFAULT '0',
+  `summemietenetto` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_anyfield` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_extend` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_simplefield` int(10) unsigned NOT NULL DEFAULT '0',
+  `waehrung` int(10) unsigned NOT NULL DEFAULT '0',
+  `warmmiete` double NOT NULL DEFAULT '0',
+  `x_fache` text COLLATE utf8_unicode_ci NOT NULL,
+  `zzg_mehrwertsteuer` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `immobilie` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_preiszeiteinheit'
+CREATE TABLE `tx_openimmotypo3_domain_model_preiszeiteinheit` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `zeiteinheit` text COLLATE utf8_unicode_ci NOT NULL,
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_provisionnetto'
+CREATE TABLE `tx_openimmotypo3_domain_model_provisionnetto` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `provisionust` double NOT NULL DEFAULT '0',
+  `value` double NOT NULL DEFAULT '0',
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_provisionteilen'
+CREATE TABLE `tx_openimmotypo3_domain_model_provisionteilen` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `wert` text COLLATE utf8_unicode_ci NOT NULL,
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_ruecklagenetto'
+CREATE TABLE `tx_openimmotypo3_domain_model_ruecklagenetto` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `ruecklageust` double NOT NULL DEFAULT '0',
+  `value` double NOT NULL DEFAULT '0',
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_serviceleistungen'
+CREATE TABLE `tx_openimmotypo3_domain_model_serviceleistungen` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `betreutes_wohnen` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `catering` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `einkauf` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `reinigung` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `wachdienst` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `ausstattung` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_sicherheitstechnik'
+CREATE TABLE `tx_openimmotypo3_domain_model_sicherheitstechnik` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `alarmanlage` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `kamera` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `polizeiruf` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `ausstattung` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_sonstige'
+CREATE TABLE `tx_openimmotypo3_domain_model_sonstige` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `sonstige_typ` text COLLATE utf8_unicode_ci NOT NULL,
+  `objektart` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_sonstigekostennetto'
+CREATE TABLE `tx_openimmotypo3_domain_model_sonstigekostennetto` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `sonstigekostenust` double NOT NULL DEFAULT '0',
+  `value` double NOT NULL DEFAULT '0',
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_sonstigemietenetto'
+CREATE TABLE `tx_openimmotypo3_domain_model_sonstigemietenetto` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `sonstigemieteust` double NOT NULL DEFAULT '0',
+  `value` double NOT NULL DEFAULT '0',
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_sqlsafealter'
+CREATE TABLE `tx_openimmotypo3_domain_model_sqlsafealter` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `alter_attr` text COLLATE utf8_unicode_ci NOT NULL,
+  `zustand_angaben` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_sqlsafecheck'
+CREATE TABLE `tx_openimmotypo3_domain_model_sqlsafecheck` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `ctype` text COLLATE utf8_unicode_ci NOT NULL,
+  `value` int(10) unsigned NOT NULL DEFAULT '0',
+  `anhang` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_stellplatzart'
+CREATE TABLE `tx_openimmotypo3_domain_model_stellplatzart` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `carport` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `duplex` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `freiplatz` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `garage` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `parkhaus` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `tiefgarage` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `ausstattung` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_stpcarport'
+CREATE TABLE `tx_openimmotypo3_domain_model_stpcarport` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `anzahl` int(10) unsigned NOT NULL DEFAULT '0',
+  `stellplatzkaufpreis` double NOT NULL DEFAULT '0',
+  `stellplatzmiete` double NOT NULL DEFAULT '0',
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_stpduplex'
+CREATE TABLE `tx_openimmotypo3_domain_model_stpduplex` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `anzahl` int(10) unsigned NOT NULL DEFAULT '0',
+  `stellplatzkaufpreis` double NOT NULL DEFAULT '0',
+  `stellplatzmiete` double NOT NULL DEFAULT '0',
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_stpfreiplatz'
+CREATE TABLE `tx_openimmotypo3_domain_model_stpfreiplatz` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `anzahl` int(10) unsigned NOT NULL DEFAULT '0',
+  `stellplatzkaufpreis` double NOT NULL DEFAULT '0',
+  `stellplatzmiete` double NOT NULL DEFAULT '0',
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_stpgarage'
+CREATE TABLE `tx_openimmotypo3_domain_model_stpgarage` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `anzahl` int(10) unsigned NOT NULL DEFAULT '0',
+  `stellplatzkaufpreis` double NOT NULL DEFAULT '0',
+  `stellplatzmiete` double NOT NULL DEFAULT '0',
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_stpparkhaus'
+CREATE TABLE `tx_openimmotypo3_domain_model_stpparkhaus` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `anzahl` int(10) unsigned NOT NULL DEFAULT '0',
+  `stellplatzkaufpreis` double NOT NULL DEFAULT '0',
+  `stellplatzmiete` double NOT NULL DEFAULT '0',
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_stpsonstige'
+CREATE TABLE `tx_openimmotypo3_domain_model_stpsonstige` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `bemerkung` text COLLATE utf8_unicode_ci NOT NULL,
+  `platzart` text COLLATE utf8_unicode_ci NOT NULL,
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_stptiefgarage'
+CREATE TABLE `tx_openimmotypo3_domain_model_stptiefgarage` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `anzahl` int(10) unsigned NOT NULL DEFAULT '0',
+  `stellplatzkaufpreis` double NOT NULL DEFAULT '0',
+  `stellplatzmiete` double NOT NULL DEFAULT '0',
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_summemietenetto'
+CREATE TABLE `tx_openimmotypo3_domain_model_summemietenetto` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `summemieteust` double NOT NULL DEFAULT '0',
+  `value` double NOT NULL DEFAULT '0',
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_telsonstige'
+CREATE TABLE `tx_openimmotypo3_domain_model_telsonstige` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `bemerkung` text COLLATE utf8_unicode_ci NOT NULL,
+  `telefonart` text COLLATE utf8_unicode_ci NOT NULL,
+  `value` text COLLATE utf8_unicode_ci NOT NULL,
+  `kontaktperson` int(10) unsigned NOT NULL DEFAULT '0',
+  `weitere_adresse` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_uebertragung'
+CREATE TABLE `tx_openimmotypo3_domain_model_uebertragung` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `art` text COLLATE utf8_unicode_ci NOT NULL,
+  `modus` text COLLATE utf8_unicode_ci NOT NULL,
+  `regi_id` text COLLATE utf8_unicode_ci NOT NULL,
+  `sendersoftware` text COLLATE utf8_unicode_ci NOT NULL,
+  `senderversion` text COLLATE utf8_unicode_ci NOT NULL,
+  `techn_email` text COLLATE utf8_unicode_ci NOT NULL,
+  `timestamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `umfang` text COLLATE utf8_unicode_ci NOT NULL,
+  `version` text COLLATE utf8_unicode_ci NOT NULL,
+  `openimmo` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_unterkellert'
+CREATE TABLE `tx_openimmotypo3_domain_model_unterkellert` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `keller` text COLLATE utf8_unicode_ci NOT NULL,
+  `ausstattung` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_userdefinedanyfield'
+CREATE TABLE `tx_openimmotypo3_domain_model_userdefinedanyfield` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `anbieter` int(10) unsigned NOT NULL DEFAULT '0',
+  `anhaenge` int(10) unsigned NOT NULL DEFAULT '0',
+  `ausstattung` int(10) unsigned NOT NULL DEFAULT '0',
+  `bieterverfahren` int(10) unsigned NOT NULL DEFAULT '0',
+  `flaechen` int(10) unsigned NOT NULL DEFAULT '0',
+  `freitexte` int(10) unsigned NOT NULL DEFAULT '0',
+  `geo` int(10) unsigned NOT NULL DEFAULT '0',
+  `immobilie` int(10) unsigned NOT NULL DEFAULT '0',
+  `infrastruktur` int(10) unsigned NOT NULL DEFAULT '0',
+  `kontaktperson` int(10) unsigned NOT NULL DEFAULT '0',
+  `objektkategorie` int(10) unsigned NOT NULL DEFAULT '0',
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  `verwaltung_objekt` int(10) unsigned NOT NULL DEFAULT '0',
+  `verwaltung_techn` int(10) unsigned NOT NULL DEFAULT '0',
+  `weitere_adresse` int(10) unsigned NOT NULL DEFAULT '0',
+  `zustand_angaben` int(10) unsigned NOT NULL DEFAULT '0',
+  `openimmo` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_userdefinedextend'
+CREATE TABLE `tx_openimmotypo3_domain_model_userdefinedextend` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `feld` text COLLATE utf8_unicode_ci NOT NULL,
+  `anbieter` int(10) unsigned NOT NULL DEFAULT '0',
+  `anhaenge` int(10) unsigned NOT NULL DEFAULT '0',
+  `ausstattung` int(10) unsigned NOT NULL DEFAULT '0',
+  `bieterverfahren` int(10) unsigned NOT NULL DEFAULT '0',
+  `flaechen` int(10) unsigned NOT NULL DEFAULT '0',
+  `freitexte` int(10) unsigned NOT NULL DEFAULT '0',
+  `geo` int(10) unsigned NOT NULL DEFAULT '0',
+  `immobilie` int(10) unsigned NOT NULL DEFAULT '0',
+  `infrastruktur` int(10) unsigned NOT NULL DEFAULT '0',
+  `kontaktperson` int(10) unsigned NOT NULL DEFAULT '0',
+  `objektkategorie` int(10) unsigned NOT NULL DEFAULT '0',
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  `verwaltung_objekt` int(10) unsigned NOT NULL DEFAULT '0',
+  `verwaltung_techn` int(10) unsigned NOT NULL DEFAULT '0',
+  `weitere_adresse` int(10) unsigned NOT NULL DEFAULT '0',
+  `zustand_angaben` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_userdefinedsimplefield'
+CREATE TABLE `tx_openimmotypo3_domain_model_userdefinedsimplefield` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `feldname` text COLLATE utf8_unicode_ci NOT NULL,
+  `anbieter` int(10) unsigned NOT NULL DEFAULT '0',
+  `anhaenge` int(10) unsigned NOT NULL DEFAULT '0',
+  `ausstattung` int(10) unsigned NOT NULL DEFAULT '0',
+  `bieterverfahren` int(10) unsigned NOT NULL DEFAULT '0',
+  `flaechen` int(10) unsigned NOT NULL DEFAULT '0',
+  `freitexte` int(10) unsigned NOT NULL DEFAULT '0',
+  `geo` int(10) unsigned NOT NULL DEFAULT '0',
+  `immobilie` int(10) unsigned NOT NULL DEFAULT '0',
+  `infrastruktur` int(10) unsigned NOT NULL DEFAULT '0',
+  `kontaktperson` int(10) unsigned NOT NULL DEFAULT '0',
+  `objektkategorie` int(10) unsigned NOT NULL DEFAULT '0',
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  `verwaltung_objekt` int(10) unsigned NOT NULL DEFAULT '0',
+  `verwaltung_techn` int(10) unsigned NOT NULL DEFAULT '0',
+  `weitere_adresse` int(10) unsigned NOT NULL DEFAULT '0',
+  `zustand_angaben` int(10) unsigned NOT NULL DEFAULT '0',
+  `openimmo` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_verkaufstatus'
+CREATE TABLE `tx_openimmotypo3_domain_model_verkaufstatus` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `stand` text COLLATE utf8_unicode_ci NOT NULL,
+  `zustand_angaben` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_vermarktungsart'
+CREATE TABLE `tx_openimmotypo3_domain_model_vermarktungsart` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `erbpacht` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `kauf` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `leasing` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `miete_pacht` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `objektkategorie` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_versteigerung'
+CREATE TABLE `tx_openimmotypo3_domain_model_versteigerung` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `aktenzeichen` text COLLATE utf8_unicode_ci NOT NULL,
+  `amtsgericht` text COLLATE utf8_unicode_ci NOT NULL,
+  `verkehrswert` double NOT NULL DEFAULT '0',
+  `zusatztermin` int(10) unsigned NOT NULL DEFAULT '0',
+  `zvtermin` int(10) unsigned NOT NULL DEFAULT '0',
+  `zwangsversteigerung` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `immobilie` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_verwaltungobjekt'
+CREATE TABLE `tx_openimmotypo3_domain_model_verwaltungobjekt` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `abdatum` datetime DEFAULT NULL,
+  `als_ferien` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `bisdatum` datetime DEFAULT NULL,
+  `branchen` text COLLATE utf8_unicode_ci NOT NULL,
+  `denkmalgeschuetzt` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `geschlecht` int(10) unsigned NOT NULL DEFAULT '0',
+  `gewerbliche_nutzung` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `gruppennummer` text COLLATE utf8_unicode_ci NOT NULL,
+  `haustiere` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hochhaus` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `laufzeit` double NOT NULL DEFAULT '0',
+  `max_mietdauer` int(10) unsigned NOT NULL DEFAULT '0',
+  `max_personen` int(10) unsigned NOT NULL DEFAULT '0',
+  `min_mietdauer` int(10) unsigned NOT NULL DEFAULT '0',
+  `nichtraucher` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `objektadresse_freigeben` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `user_defined_anyfield` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_extend` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_simplefield` int(10) unsigned NOT NULL DEFAULT '0',
+  `verfuegbar_ab` text COLLATE utf8_unicode_ci NOT NULL,
+  `vermietet` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `versteigerungstermin` datetime DEFAULT NULL,
+  `wbs_sozialwohnung` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `zugang` text COLLATE utf8_unicode_ci NOT NULL,
+  `immobilie` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_verwaltungtechn'
+CREATE TABLE `tx_openimmotypo3_domain_model_verwaltungtechn` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `aktion` int(10) unsigned NOT NULL DEFAULT '0',
+  `aktiv_bis` datetime DEFAULT NULL,
+  `aktiv_von` datetime DEFAULT NULL,
+  `gruppen_kennung` text COLLATE utf8_unicode_ci NOT NULL,
+  `kennung_ursprung` text COLLATE utf8_unicode_ci NOT NULL,
+  `master` int(10) unsigned NOT NULL DEFAULT '0',
+  `objektnr_extern` text COLLATE utf8_unicode_ci NOT NULL,
+  `objektnr_intern` text COLLATE utf8_unicode_ci NOT NULL,
+  `openimmo_obid` text COLLATE utf8_unicode_ci NOT NULL,
+  `sprache` text COLLATE utf8_unicode_ci NOT NULL,
+  `stand_vom` datetime DEFAULT NULL,
+  `user_defined_anyfield` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_extend` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_simplefield` int(10) unsigned NOT NULL DEFAULT '0',
+  `weitergabe_generell` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `weitergabe_negativ` text COLLATE utf8_unicode_ci NOT NULL,
+  `weitergabe_positiv` text COLLATE utf8_unicode_ci NOT NULL,
+  `immobilie` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_waehrung'
+CREATE TABLE `tx_openimmotypo3_domain_model_waehrung` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `iso_waehrung` text COLLATE utf8_unicode_ci NOT NULL,
+  `preise` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_weitereadresse'
+CREATE TABLE `tx_openimmotypo3_domain_model_weitereadresse` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `adressart` text COLLATE utf8_unicode_ci NOT NULL,
+  `adressfreigabe` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `anrede` text COLLATE utf8_unicode_ci NOT NULL,
+  `anrede_brief` text COLLATE utf8_unicode_ci NOT NULL,
+  `email_direkt` text COLLATE utf8_unicode_ci NOT NULL,
+  `email_privat` text COLLATE utf8_unicode_ci NOT NULL,
+  `email_sonstige` int(10) unsigned NOT NULL DEFAULT '0',
+  `email_zentrale` text COLLATE utf8_unicode_ci NOT NULL,
+  `firma` text COLLATE utf8_unicode_ci NOT NULL,
+  `freitextfeld` text COLLATE utf8_unicode_ci NOT NULL,
+  `hausnummer` text COLLATE utf8_unicode_ci NOT NULL,
+  `land` int(10) unsigned NOT NULL DEFAULT '0',
+  `name` text COLLATE utf8_unicode_ci NOT NULL,
+  `ort` text COLLATE utf8_unicode_ci NOT NULL,
+  `personennummer` text COLLATE utf8_unicode_ci NOT NULL,
+  `plz` text COLLATE utf8_unicode_ci NOT NULL,
+  `postfach` text COLLATE utf8_unicode_ci NOT NULL,
+  `postf_ort` text COLLATE utf8_unicode_ci NOT NULL,
+  `postf_plz` text COLLATE utf8_unicode_ci NOT NULL,
+  `strasse` text COLLATE utf8_unicode_ci NOT NULL,
+  `tel_durchw` text COLLATE utf8_unicode_ci NOT NULL,
+  `tel_fax` text COLLATE utf8_unicode_ci NOT NULL,
+  `tel_handy` text COLLATE utf8_unicode_ci NOT NULL,
+  `tel_privat` text COLLATE utf8_unicode_ci NOT NULL,
+  `tel_sonstige` int(10) unsigned NOT NULL DEFAULT '0',
+  `tel_zentrale` text COLLATE utf8_unicode_ci NOT NULL,
+  `titel` text COLLATE utf8_unicode_ci NOT NULL,
+  `url` text COLLATE utf8_unicode_ci NOT NULL,
+  `user_defined_anyfield` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_extend` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_simplefield` int(10) unsigned NOT NULL DEFAULT '0',
+  `vorname` text COLLATE utf8_unicode_ci NOT NULL,
+  `zusatzfeld` text COLLATE utf8_unicode_ci NOT NULL,
+  `immobilie` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_wohnung'
+CREATE TABLE `tx_openimmotypo3_domain_model_wohnung` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `wohnungtyp` text COLLATE utf8_unicode_ci NOT NULL,
+  `objektart` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_zimmer'
+CREATE TABLE `tx_openimmotypo3_domain_model_zimmer` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `zimmertyp` text COLLATE utf8_unicode_ci NOT NULL,
+  `objektart` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_zinshausrenditeobjekt'
+CREATE TABLE `tx_openimmotypo3_domain_model_zinshausrenditeobjekt` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `zins_typ` text COLLATE utf8_unicode_ci NOT NULL,
+  `objektart` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_zustand'
+CREATE TABLE `tx_openimmotypo3_domain_model_zustand` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `zustand_art` text COLLATE utf8_unicode_ci NOT NULL,
+  `zustand_angaben` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Create syntax for TABLE 'tx_openimmotypo3_domain_model_zustandangaben'
+CREATE TABLE `tx_openimmotypo3_domain_model_zustandangaben` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(10) unsigned NOT NULL DEFAULT '0',
+  `l10n_state` text COLLATE utf8_unicode_ci,
+  `l10n_diffsource` mediumblob,
+  `t3ver_oid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_wsid` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `sqlsafe_alter` int(10) unsigned NOT NULL DEFAULT '0',
+  `altlasten` text COLLATE utf8_unicode_ci NOT NULL,
+  `baujahr` text COLLATE utf8_unicode_ci NOT NULL,
+  `bauzone` text COLLATE utf8_unicode_ci NOT NULL,
+  `bebaubar_nach` int(10) unsigned NOT NULL DEFAULT '0',
+  `energiepass` int(10) unsigned NOT NULL DEFAULT '0',
+  `erschliessung` int(10) unsigned NOT NULL DEFAULT '0',
+  `erschliessung_umfang` int(10) unsigned NOT NULL DEFAULT '0',
+  `letztemodernisierung` text COLLATE utf8_unicode_ci NOT NULL,
+  `user_defined_anyfield` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_extend` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_defined_simplefield` int(10) unsigned NOT NULL DEFAULT '0',
+  `verkaufstatus` int(10) unsigned NOT NULL DEFAULT '0',
+  `zustand` int(10) unsigned NOT NULL DEFAULT '0',
+  `immobilie` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`,`deleted`,`hidden`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

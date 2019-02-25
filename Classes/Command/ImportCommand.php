@@ -3,13 +3,10 @@
 namespace Ujamii\OpenImmoTypo3\Command;
 
 use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Filesystem\Exception\FileNotFoundException;
-use TYPO3\CMS\Core\Core\Environment;
-use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Database\DatabaseConnection;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\StringUtility;
@@ -24,7 +21,7 @@ use Ujamii\OpenImmoTypo3\Domain\Model\Openimmo;
  * Class ImportCommand
  * @package Ujamii\OpenImmoTypo3\Command
  */
-class ImportCommand  extends Command
+class ImportCommand extends Command
 {
 
     const ASSET_TABLE_NAME = 'tx_openimmotypo3_domain_model_daten';
@@ -51,11 +48,16 @@ class ImportCommand  extends Command
      */
     protected function configure()
     {
+        $this->setName('openimmo:import');
+
         $this->setDescription('Imports openimmo xml data into the local database.');
+
         $this->addOption('pid', null, InputOption::VALUE_REQUIRED, 'Target pid where the data shall be stored.');
-        $this->addOption('sourceFolder', null, InputOption::VALUE_OPTIONAL, 'Source folder where the *.zip file will be searched in.', 'public/uploads/tx_openimmo/');
+        $this->addOption('sourceFolder', null, InputOption::VALUE_OPTIONAL, 'Source folder where the *.zip file will be searched in.',
+            'public/uploads/tx_openimmo/');
         $this->addOption('targetFolder', null, InputOption::VALUE_OPTIONAL, 'Target folder where data will be extrcated to.', 'public/uploads/tx_openimmo/');
-        $this->addOption('truncateTables', 'truncate', InputOption::VALUE_OPTIONAL, 'Whether the openimmo db tables shall be truncated before the import.', true);
+        $this->addOption('truncateTables', 'truncate', InputOption::VALUE_OPTIONAL, 'Whether the openimmo db tables shall be truncated before the import.',
+            true);
         $this->addOption('adjustAssetPaths', 'paths', InputOption::VALUE_OPTIONAL, 'Whether the paths of the binary files shall be set.', true);
         $this->addOption('removeZipfile', 'cleanup', InputOption::VALUE_OPTIONAL, 'Whether the zip file shall be deleted after the import.', true);
     }
@@ -74,27 +76,27 @@ class ImportCommand  extends Command
         $this->output = $output;
 
         // find and extract zip file
-        $sourceFolder = \TYPO3\CMS\Core\Core\Environment::getProjectPath() . DIRECTORY_SEPARATOR. $this->input->getOption('sourceFolder');
-        $zipFile = $this->getFileInFolder($sourceFolder, 'zip');
+        $sourceFolder = PATH_site . $this->input->getOption('sourceFolder');
+        $zipFile      = $this->getFileInFolder($sourceFolder, 'zip');
         if ($zipFile !== false) {
             $this->output->writeln('Found zipfile: ' . $zipFile);
 
-            $filename = basename($zipFile, '.zip');
-            $targetFolder = \TYPO3\CMS\Core\Core\Environment::getProjectPath() . DIRECTORY_SEPARATOR. $this->input->getOption('targetFolder') . $filename . DIRECTORY_SEPARATOR;
+            $filename     = basename($zipFile, '.zip');
+            $targetFolder = PATH_site . $this->input->getOption('targetFolder') . $filename . DIRECTORY_SEPARATOR;
 
             $this->prepareTargetFolder($targetFolder);
             $this->output->writeln('Extracting ' . $zipFile . ' to ' . $targetFolder);
 
             $zipArchive = new \ZipArchive();
             if ($zipArchive->open($zipFile) === true) {
-                if (!$zipArchive->extractTo($targetFolder)) {
+                if ( ! $zipArchive->extractTo($targetFolder)) {
                     throw new \Exception($zipFile . ' could not be extracted to ' . $targetFolder);
                 }
                 $zipArchive->close();
 
                 $xmlFilename = $this->getFileInFolder($targetFolder, 'xml');
-                if (!is_file($xmlFilename)) {
-                    throw new FileNotFoundException($xmlFilename . ' could not be found.');
+                if ( ! is_file($xmlFilename)) {
+                    throw new \Exception($xmlFilename . ' could not be found.');
                 } else {
                     // truncate tables if set
                     if ($this->input->getOption('truncateTables')) {
@@ -126,17 +128,17 @@ class ImportCommand  extends Command
      */
     protected function truncateOpenImmoTables()
     {
-        /* @var $connectionPool ConnectionPool */
-        $connectionPool = $this->getObjectManager()->get(ConnectionPool::class);
+        /* @var $db DatabaseConnection */
+        $db = $GLOBALS['TYPO3_DB'];
 
         // get list of tables by scanning tca folder, including only .php and prefixed files
         $tcaFolder = ExtensionManagementUtility::extPath('openimmo', 'Configuration/TCA/');
-        $tcaFiles = GeneralUtility::getAllFilesAndFoldersInPath([], $tcaFolder, 'php');
+        $tcaFiles  = GeneralUtility::getAllFilesAndFoldersInPath([], $tcaFolder, 'php');
         foreach ($tcaFiles as $filename) {
             $tablename = basename($filename, '.php');
             if (StringUtility::beginsWith($tablename, GenerateTypo3WrapperCommand::SQL_TABLE_PREFIX)) {
                 $this->output->writeln('Truncating ' . $tablename);
-                $connectionPool->getConnectionForTable($tablename)->truncate($tablename);
+                $db->exec_TRUNCATEquery($tablename);
             }
         }
     }
@@ -145,24 +147,16 @@ class ImportCommand  extends Command
      * Adds the path prefix to the filename.
      *
      * @param string $targetFolder
-     *
-     * @throws \Doctrine\DBAL\DBALException
      */
     protected function adjustAssetPaths(string $targetFolder)
     {
-        $targetFolder = str_replace(Environment::getPublicPath(), '', $targetFolder);
+        $targetFolder = str_replace(PATH_site, '', $targetFolder);
 
         $this->output->writeln('Adjusting asset path to ' . $targetFolder);
-        /* @var $pool ConnectionPool */
-        $pool = $this->getObjectManager()->get(ConnectionPool::class);
+        /* @var $db DatabaseConnection */
+        $db = $GLOBALS['TYPO3_DB'];
 
-        $qb = $pool->getQueryBuilderForTable(self::ASSET_TABLE_NAME);
-        $qb
-            ->update(self::ASSET_TABLE_NAME)
-            // TODO: normally, we would just $qb->expr()->concat() here, but that doesn't work
-            ->set(self::ASSET_FIELD_NAME, $targetFolder)
-            ->execute()
-        ;
+        $db->exec_UPDATEquery(self::ASSET_TABLE_NAME, '1=1', [self::ASSET_FIELD_NAME => $targetFolder]);
     }
 
     /**
@@ -188,7 +182,8 @@ class ImportCommand  extends Command
      *
      * @throws \ReflectionException
      */
-    protected function persistAllExtbaseChildren(DomainObjectInterface $model) {
+    protected function persistAllExtbaseChildren(DomainObjectInterface $model)
+    {
         // set pid
         $model->setPid($this->input->getOption('pid'));
 
@@ -207,7 +202,7 @@ class ImportCommand  extends Command
                 }
 
                 $this->persistAllExtbaseChildren($propertyValue);
-            } else if (is_array($propertyValue)) {
+            } elseif (is_array($propertyValue)) {
                 /* @var $member ExtbaseModelTrait */
                 foreach ($propertyValue as $member) {
                     if ($member->_hasProperty($backlinkPropertyName)) {
@@ -222,7 +217,7 @@ class ImportCommand  extends Command
     /**
      * @return ObjectManager
      */
-    protected function getObjectManager() : ObjectManager
+    protected function getObjectManager(): ObjectManager
     {
         return GeneralUtility::makeInstance(ObjectManager::class);
     }

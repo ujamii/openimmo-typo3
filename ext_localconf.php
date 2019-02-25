@@ -25,5 +25,7 @@ call_user_func(
             [
             ]
         );
+
+        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['extbase']['commandControllers']['openimmo'] = Ujamii\OpenImmoTypo3\Command\ImportCommandController::class;
     }
 );

@@ -11,21 +11,28 @@
  ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'openimmo',
-    'description' => 'Display OpenImmo data on a website',
-    'category' => 'plugin',
-    'author' => 'Michael',
-    'author_email' => 'mg@ujamii.com',
-    'state' => 'stable',
-    'uploadfolder' => 1,
-    'createDirs' => '',
+    'title'            => 'openimmo',
+    'description'      => 'Display OpenImmo data on a website',
+    'category'         => 'plugin',
+    'author'           => 'Michael',
+    'author_email'     => 'mg@ujamii.com',
+    'state'            => 'stable',
+    'uploadfolder'     => 1,
+    'createDirs'       => '',
     'clearCacheOnLoad' => 0,
-    'version' => '1.0.0',
-    'constraints' => [
-        'depends' => [
-            'typo3' => '9.5.0-9.5.99',
+    'version'          => '1.0.0',
+    'constraints'      => [
+        'depends'   => [
+            'typo3' => '7.6.0-7.6.99',
         ],
         'conflicts' => [],
-        'suggests' => [],
+        'suggests'  => [],
     ],
+    'autoload'         =>
+        [
+            'psr-4' =>
+                [
+                    'Ujamii\\OpenImmoTypo3\\' => 'Classes'
+                ]
+        ]
 ];
