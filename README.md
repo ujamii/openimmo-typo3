@@ -14,7 +14,7 @@ This TYPO3 extension uses the [openImmo API](https://github.com/ujamii/openimmo)
 ## TODOs
 
 - solve all TODOs in code
-- make this backwards compatible
+- ~make this backwards compatible~
 
 ## Installation
 
@@ -57,6 +57,10 @@ Also the `ext_tables.sql` file is generated as well as everything in `Configurat
 3. `composer dumpautoload` to update the autoloading.
 4. Clear all(!) the TYPO3 caches
 5. Done.
+
+## Compatibility hint
+
+There are 2 branches legacy/v7.6 and legacy/v7.6-nocomposer (this one also contains the vendor folder) for backwards compat, as I needed this myself. The extension is working from the frontend perspective, as well as the import command (although the command call looks a litte different: `php typo3/cli_dispatch.phpsh extbase import:executeImport`). But: The code generation command has **NOT been backportet, so this will not work there**!
 
 ## License and Contribution
 
