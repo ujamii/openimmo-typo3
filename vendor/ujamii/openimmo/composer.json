@@ -1,0 +1,29 @@
+{
+    "name": "ujamii/openimmo",
+    "description": "OpenImmo library for PHP7. Read and write OpenImmo xml format with JMS Serializer.",
+    "type": "library",
+    "license": "GPL-3.0-only",
+    "authors": [
+        {
+            "name": "Michael Grundkötter",
+            "email": "mg@ujamii.com",
+            "homepage": "https://www.ujamii.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "jms/serializer": "^2.1"
+    },
+    "require-dev": {
+        "goetas-webservices/xsd-reader": "^0.3",
+        "gossi/php-code-generator": "^0.5",
+        "phpunit/phpunit": "^7.5",
+        "mihaeu/test-generator": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ujamii\\OpenImmo\\": "src",
+            "Ujamii\\OpenImmo\\Tests\\": "tests"
+        }
+    }
+}
