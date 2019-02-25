@@ -16,6 +16,7 @@ CREATE TABLE tx_openimmotypo3_domain_model_anbieter (
 	impressum text DEFAULT '' NOT NULL,
 	impressum_strukt int(11) unsigned DEFAULT '0' NOT NULL,
 	lizenzkennung text DEFAULT '' NOT NULL,
+	openimmo int(11) unsigned DEFAULT '0' NOT NULL,
 	openimmo_anid text DEFAULT '' NOT NULL,
 	user_defined_anyfield int(11) unsigned DEFAULT '0' NOT NULL,
 	user_defined_extend int(11) unsigned DEFAULT '0' NOT NULL,
@@ -745,6 +746,13 @@ CREATE TABLE tx_openimmotypo3_domain_model_objektkategorie (
 	vermarktungsart int(11) unsigned DEFAULT '0' NOT NULL
 );
 
+CREATE TABLE tx_openimmotypo3_domain_model_openimmo (
+	anbieter int(11) unsigned DEFAULT '0' NOT NULL,
+	uebertragung int(11) unsigned DEFAULT '0' NOT NULL,
+	user_defined_anyfield int(11) unsigned DEFAULT '0' NOT NULL,
+	user_defined_simplefield int(11) unsigned DEFAULT '0' NOT NULL
+);
+
 CREATE TABLE tx_openimmotypo3_domain_model_parken (
 	objektart int(11) unsigned DEFAULT '0' NOT NULL,
 	parken_typ text DEFAULT '' NOT NULL
@@ -955,6 +963,7 @@ CREATE TABLE tx_openimmotypo3_domain_model_telsonstige (
 CREATE TABLE tx_openimmotypo3_domain_model_uebertragung (
 	art text DEFAULT '' NOT NULL,
 	modus text DEFAULT '' NOT NULL,
+	openimmo int(11) unsigned DEFAULT '0' NOT NULL,
 	regi_id text DEFAULT '' NOT NULL,
 	sendersoftware text DEFAULT '' NOT NULL,
 	senderversion text DEFAULT '' NOT NULL,
@@ -981,6 +990,7 @@ CREATE TABLE tx_openimmotypo3_domain_model_userdefinedanyfield (
 	infrastruktur int(11) unsigned DEFAULT '0' NOT NULL,
 	kontaktperson int(11) unsigned DEFAULT '0' NOT NULL,
 	objektkategorie int(11) unsigned DEFAULT '0' NOT NULL,
+	openimmo int(11) unsigned DEFAULT '0' NOT NULL,
 	preise int(11) unsigned DEFAULT '0' NOT NULL,
 	verwaltung_objekt int(11) unsigned DEFAULT '0' NOT NULL,
 	verwaltung_techn int(11) unsigned DEFAULT '0' NOT NULL,
@@ -1021,6 +1031,7 @@ CREATE TABLE tx_openimmotypo3_domain_model_userdefinedsimplefield (
 	infrastruktur int(11) unsigned DEFAULT '0' NOT NULL,
 	kontaktperson int(11) unsigned DEFAULT '0' NOT NULL,
 	objektkategorie int(11) unsigned DEFAULT '0' NOT NULL,
+	openimmo int(11) unsigned DEFAULT '0' NOT NULL,
 	preise int(11) unsigned DEFAULT '0' NOT NULL,
 	verwaltung_objekt int(11) unsigned DEFAULT '0' NOT NULL,
 	verwaltung_techn int(11) unsigned DEFAULT '0' NOT NULL,

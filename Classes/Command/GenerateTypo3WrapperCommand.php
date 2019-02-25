@@ -52,13 +52,6 @@ class GenerateTypo3WrapperCommand extends Command
     protected $classNamesInApiNamespace = [];
 
     /**
-     * @var array
-     */
-    protected $excludeClasses = [
-        'Openimmo'
-    ];
-
-    /**
      * This will be filled for "backlink" mm-fields during SQL generation process.
      *
      * @var array
@@ -104,10 +97,6 @@ class GenerateTypo3WrapperCommand extends Command
             // Store the namespace of each class in the namespace map
             if (substr($classname, 0, strlen($this->openImmoApiNamespace)) == $this->openImmoApiNamespace) {
                 $shortname = (new \ReflectionClass($classname))->getShortName();
-                // some classes can be excluded
-                if (in_array($shortname, $this->excludeClasses)) {
-                    continue;
-                }
                 $this->apiClasses[$classname]     = $file;
                 $this->classNamesInApiNamespace[] = $shortname;
             }

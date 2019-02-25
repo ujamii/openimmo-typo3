@@ -1,6 +1,7 @@
 <?php
 namespace Ujamii\OpenImmoTypo3\Domain\Model;
 
+use JMS\Serializer\Annotation\Exclude;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlList;
 use JMS\Serializer\Annotation\XmlRoot;
@@ -62,6 +63,14 @@ class Anbieter implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface,
 	 * @var string
 	 */
 	protected $lizenzkennung;
+
+	/**
+	 * Id of the parent object for backlink purpose in TYPO3.
+	 *
+	 * @Exclude() 
+	 * @var int
+	 */
+	protected $openimmo;
 
 	/**
 	 * @Type ("string") 
@@ -139,6 +148,13 @@ class Anbieter implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface,
 	 */
 	public function getLizenzkennung(): string {
 		return $this->lizenzkennung;
+	}
+
+	/**
+	 * @return int
+	 */
+	public function getOpenimmo(): int {
+		return $this->openimmo;
 	}
 
 	/**
@@ -235,6 +251,15 @@ class Anbieter implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface,
 	 */
 	public function setLizenzkennung(string $lizenzkennung): Anbieter {
 		$this->lizenzkennung = $lizenzkennung;
+		return $this;
+	}
+
+	/**
+	 * @param int $openimmo Setter for openimmo
+	 * @return Anbieter
+	 */
+	public function setOpenimmo(int $openimmo) {
+		$this->openimmo = $openimmo;
 		return $this;
 	}
 

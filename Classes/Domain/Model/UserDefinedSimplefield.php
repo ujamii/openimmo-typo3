@@ -124,6 +124,14 @@ class UserDefinedSimplefield implements \TYPO3\CMS\Extbase\DomainObject\DomainOb
 	 * @Exclude ()
 	 * @var int
 	 */
+	protected $openimmo;
+
+	/**
+	 * Id of the parent object for backlink purpose in TYPO3.
+	 *
+	 * @Exclude ()
+	 * @var int
+	 */
 	protected $preise;
 
 	/**
@@ -240,6 +248,13 @@ class UserDefinedSimplefield implements \TYPO3\CMS\Extbase\DomainObject\DomainOb
 	 */
 	public function getObjektkategorie(): int {
 		return $this->objektkategorie;
+	}
+
+	/**
+	 * @return int
+	 */
+	public function getOpenimmo(): int {
+		return $this->openimmo;
 	}
 
 	/**
@@ -382,6 +397,15 @@ class UserDefinedSimplefield implements \TYPO3\CMS\Extbase\DomainObject\DomainOb
 	 */
 	public function setObjektkategorie(int $objektkategorie): UserDefinedSimplefield {
 		$this->objektkategorie = $objektkategorie;
+		return $this;
+	}
+
+	/**
+	 * @param int $openimmo Setter for openimmo
+	 * @return UserDefinedSimplefield
+	 */
+	public function setOpenimmo(int $openimmo): UserDefinedSimplefield {
+		$this->openimmo = $openimmo;
 		return $this;
 	}
 

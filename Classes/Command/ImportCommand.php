@@ -5,6 +5,7 @@ namespace Ujamii\OpenImmoTypo3\Command;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Filesystem\Exception\FileNotFoundException;
 use TYPO3\CMS\Core\Core\Environment;
@@ -51,12 +52,12 @@ class ImportCommand  extends Command
     protected function configure()
     {
         $this->setDescription('Imports openimmo xml data into the local database.');
-        $this->addArgument('pid', InputArgument::REQUIRED, 'Target pid where the data shall be stored.');
-        $this->addArgument('sourceFolder', InputArgument::OPTIONAL, 'Source folder where the *.zip file will be searched in.', 'public/uploads/tx_openimmo/');
-        $this->addArgument('targetFolder', InputArgument::OPTIONAL, 'Target folder where data will be extrcated to.', 'public/uploads/tx_openimmo/');
-        $this->addArgument('truncateTables', InputArgument::OPTIONAL, 'Whether the openimmo db tables shall be truncated before the import.', true);
-        $this->addArgument('adjustAssetPaths', InputArgument::OPTIONAL, 'Whether the paths of the binary files shall be set.', true);
-        $this->addArgument('removeZipfile', InputArgument::OPTIONAL, 'Whether the zip file shall be deleted after the import.', true);
+        $this->addOption('pid', null, InputOption::VALUE_REQUIRED, 'Target pid where the data shall be stored.');
+        $this->addOption('sourceFolder', null, InputOption::VALUE_OPTIONAL, 'Source folder where the *.zip file will be searched in.', 'public/uploads/tx_openimmo/');
+        $this->addOption('targetFolder', null, InputOption::VALUE_OPTIONAL, 'Target folder where data will be extrcated to.', 'public/uploads/tx_openimmo/');
+        $this->addOption('truncateTables', 'truncate', InputOption::VALUE_OPTIONAL, 'Whether the openimmo db tables shall be truncated before the import.', true);
+        $this->addOption('adjustAssetPaths', 'paths', InputOption::VALUE_OPTIONAL, 'Whether the paths of the binary files shall be set.', true);
+        $this->addOption('removeZipfile', 'cleanup', InputOption::VALUE_OPTIONAL, 'Whether the zip file shall be deleted after the import.', true);
     }
 
     /**
@@ -73,13 +74,13 @@ class ImportCommand  extends Command
         $this->output = $output;
 
         // find and extract zip file
-        $sourceFolder = \TYPO3\CMS\Core\Core\Environment::getProjectPath() . DIRECTORY_SEPARATOR. $this->input->getArgument('sourceFolder');
+        $sourceFolder = \TYPO3\CMS\Core\Core\Environment::getProjectPath() . DIRECTORY_SEPARATOR. $this->input->getOption('sourceFolder');
         $zipFile = $this->getFileInFolder($sourceFolder, 'zip');
         if ($zipFile !== false) {
             $this->output->writeln('Found zipfile: ' . $zipFile);
 
             $filename = basename($zipFile, '.zip');
-            $targetFolder = \TYPO3\CMS\Core\Core\Environment::getProjectPath() . DIRECTORY_SEPARATOR. $this->input->getArgument('targetFolder') . $filename . DIRECTORY_SEPARATOR;
+            $targetFolder = \TYPO3\CMS\Core\Core\Environment::getProjectPath() . DIRECTORY_SEPARATOR. $this->input->getOption('targetFolder') . $filename . DIRECTORY_SEPARATOR;
 
             $this->prepareTargetFolder($targetFolder);
             $this->output->writeln('Extracting ' . $zipFile . ' to ' . $targetFolder);
@@ -96,7 +97,7 @@ class ImportCommand  extends Command
                     throw new FileNotFoundException($xmlFilename . ' could not be found.');
                 } else {
                     // truncate tables if set
-                    if ($this->input->getArgument('truncateTables')) {
+                    if ($this->input->getOption('truncateTables')) {
                         $this->truncateOpenImmoTables();
                     }
 
@@ -104,11 +105,11 @@ class ImportCommand  extends Command
                     $this->importFromXmlFile($xmlFilename);
 
                     // adjust the paths of the files
-                    if ($this->input->getArgument('adjustAssetPaths')) {
+                    if ($this->input->getOption('adjustAssetPaths')) {
                         $this->adjustAssetPaths($targetFolder);
                     }
                 }
-                if ($this->input->getArgument('removeZipfile')) {
+                if ($this->input->getOption('removeZipfile')) {
                     $this->output->writeln('Deleting ' . $zipFile);
                     unlink($zipFile);
                 }
@@ -189,7 +190,7 @@ class ImportCommand  extends Command
      */
     protected function persistAllExtbaseChildren(DomainObjectInterface $model) {
         // set pid
-        $model->setPid($this->input->getArgument('pid'));
+        $model->setPid($this->input->getOption('pid'));
 
         $this->persistenceManager->add($model);
         $this->persistenceManager->persistAll();
