@@ -12,6 +12,11 @@ use Ujamii\OpenImmoTypo3\Domain\Model\Preise;
  */
 trait ImmobilieRepositoryTrait {
 
+    /**
+     * @param RealEstateSearchDemand $filter
+     *
+     * @return array
+     */
     public function findAllByFilter(RealEstateSearchDemand $filter)
     {
         /* @var $pool ConnectionPool */
@@ -42,7 +47,6 @@ trait ImmobilieRepositoryTrait {
         if ($filter->getPriceMax() != 0) {
             $qb->andWhere($qb->expr()->lte('preise.warmmiete', $filter->getPriceMax()));
         }
-
         $qb->orderBy($filter->getSortBy());
 
         /* @var $dataMapper DataMapper */

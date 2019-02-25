@@ -1,0 +1,50 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+
+<f:section name="main">
+	<f:form action="list" method="post" object="{filterDemand}" name="filterDemand" noCache="1" pluginName="immobilien">
+		<fieldset>
+			<div class="form-row">
+				<div class="col">
+					<label for="field-rooms-min">Zimmer</label>
+				</div>
+				<div class="col">
+					<f:form.textfield property="numberOfRoomsMin" class="form-control" id="field-rooms-min"/>
+				</div>
+				<div class="col">-</div>
+				<div class="col">
+					<f:form.textfield property="numberOfRoomsMax" class="form-control" id="field-rooms-max"/>
+				</div>
+			</div>
+
+			<div class="form-row">
+				<div class="col">
+					<label for="field-livingarea-min">Wohnfläche</label>
+				</div>
+				<div class="col">
+					<f:form.textfield property="livingAreaMin" class="form-control" id="field-livingarea-min"/>
+				</div>
+				<div class="col">-</div>
+				<div class="col">
+					<f:form.textfield property="livingAreaMax" class="form-control" id="field-livingarea-max"/>
+				</div>
+			</div>
+
+			<div class="form-row">
+				<div class="col">
+					<label for="field-price-min">Warmmiete</label>
+				</div>
+				<div class="col">
+					<f:form.textfield property="priceMin" class="form-control" id="field-price-min"/>
+				</div>
+				<div class="col">-</div>
+				<div class="col">
+					<f:form.textfield property="priceMax" class="form-control" id="field-price-max"/>
+				</div>
+			</div>
+
+			<f:form.submit value="Suche starten" class="btn btn-primary"/>
+		</fieldset>
+	</f:form>
+</f:section>
+</html>

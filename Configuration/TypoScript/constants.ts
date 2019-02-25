@@ -13,3 +13,5 @@ plugin.tx_openimmotypo3_immobilien {
         storagePid = 1
     }
 }
+
+plugin.tx_openimmotypo3_suche < plugin.tx_openimmotypo3_immobilien

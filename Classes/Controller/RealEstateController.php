@@ -35,6 +35,7 @@ class RealEstateController extends ActionController {
      */
     public function listAction(?RealEstateSearchDemand $filterDemand = null)
     {
+        $filterDemand = $this->checkForSessionValue('immoFilter', $filterDemand);
         if (is_null($filterDemand)) {
             /* @var $filterDemand RealEstateSearchDemand */
             $filterDemand = $this->objectManager->get(RealEstateSearchDemand::class);
@@ -52,6 +53,44 @@ class RealEstateController extends ActionController {
         // TODO: providing the correct object type somehow throws an exception (https://wiki.typo3.org/Exception/CMS/1297759968)
         $immobilie = $this->immobilieRepository->findByUid($immobilie);
         $this->view->assign('immobilie', $immobilie);
+    }
+
+    /**
+     * Search action
+     */
+    public function searchAction()
+    {
+        $filterDemand = $this->checkForSessionValue('immoFilter');
+        if (is_null($filterDemand)) {
+            $filterDemand = $this->objectManager->get(RealEstateSearchDemand::class);
+        }
+        $this->view->assign('filterDemand', $filterDemand);
+    }
+
+    /**
+     * Checks whether there is a session value with a given key and returns it if the given
+     * parameter value is null. If it is not null, the given value is saved in the session.
+     *
+     * @param string $keyInSession The identifier in the user session für the given value.
+     * @param mixed $value
+     * @return mixed
+     */
+    protected function checkForSessionValue($keyInSession, $value = null)
+    {
+        try {
+            if (is_null($value)) {
+                $sessionData = $GLOBALS["TSFE"]->fe_user->getSessionData($keyInSession);
+                if (!is_null($sessionData)) {
+                    $value = $sessionData;
+                }
+            } else {
+                $GLOBALS["TSFE"]->fe_user->setAndSaveSessionData($keyInSession, $value);
+            }
+        } catch (\Exception $exception) {
+            // do nothing
+        }
+
+        return $value;
     }
 
 }

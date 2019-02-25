@@ -20,9 +20,11 @@ plugin.tx_openimmotypo3_immobilien {
         requireCHashArgumentForActionArguments = 1
     }
     mvc {
-        #callDefaultActionIfActionCantBeResolved = 1
+        callDefaultActionIfActionCantBeResolved = 1
     }
     settings {
 
     }
 }
+
+plugin.tx_openimmotypo3_suche < plugin.tx_openimmotypo3_immobilien

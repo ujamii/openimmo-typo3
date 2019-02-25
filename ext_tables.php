@@ -18,5 +18,13 @@ call_user_func(
             'EXT:openimmo/Resources/Public/Icons/user_plugin_immobilien.svg'
         );
         $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist']['openimmotypo3_immobilien'] = 'pages,recursive';
+
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+            'Ujamii.OpenImmoTypo3',
+            'Suche',
+            'Suche',
+            'EXT:openimmo/Resources/Public/Icons/user_plugin_immobilien.svg'
+        );
+        $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist']['openimmotypo3_suche'] = 'pages,recursive';
     }
 );
