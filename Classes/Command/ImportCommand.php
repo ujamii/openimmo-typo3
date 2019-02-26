@@ -28,8 +28,7 @@ class ImportCommand  extends Command
 {
 
     const ASSET_TABLE_NAME = 'tx_openimmotypo3_domain_model_daten';
-    // TODO: this has to be "pfad" later...
-    const ASSET_FIELD_NAME = 'anhanginhalt';
+    const ASSET_FIELD_NAME = 'pfad';
 
     /**
      * @var InputInterface
@@ -155,14 +154,13 @@ class ImportCommand  extends Command
         $this->output->writeln('Adjusting asset path to ' . $targetFolder);
         /* @var $pool ConnectionPool */
         $pool = $this->getObjectManager()->get(ConnectionPool::class);
-
-        $qb = $pool->getQueryBuilderForTable(self::ASSET_TABLE_NAME);
-        $qb
-            ->update(self::ASSET_TABLE_NAME)
-            // TODO: normally, we would just $qb->expr()->concat() here, but that doesn't work
-            ->set(self::ASSET_FIELD_NAME, $targetFolder)
-            ->execute()
-        ;
+        $sql = 'UPDATE %s SET `%s` = CONCAT("%s", `%s`)';
+        $pool->getConnectionForTable(self::ASSET_TABLE_NAME)->executeUpdate(vsprintf($sql, [
+            self::ASSET_TABLE_NAME,
+            self::ASSET_FIELD_NAME,
+            $targetFolder,
+            self::ASSET_FIELD_NAME
+        ]));
     }
 
     /**
