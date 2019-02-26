@@ -1,7 +1,7 @@
 <?php
 return [
     'ctrl' => [
-        'title' => 'Alter',
+        'title' => 'Check',
         'hideTable' => 1,
         'label' => 'uid',
         'tstamp' => 'tstamp',
@@ -17,14 +17,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'alter_attr, zustand_angaben',
+        'searchFields' => 'anhang, ctype, value',
         'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/information/information-typo3-version.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, alter_attr, zustand_angaben',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, anhang, ctype, value',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, alter_attr, zustand_angaben, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, anhang, ctype, value, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -55,8 +55,8 @@ return [
                 'items' => [
                     ['', 0],
                 ],
-                'foreign_table' => 'tx_openimmotypo3_domain_model_sqlsafealter',
-                'foreign_table_where' => 'AND {#tx_openimmotypo3_domain_model_sqlsafealter}.{#pid}=###CURRENT_PID### AND {#tx_openimmotypo3_domain_model_sqlsafealter}.{#sys_language_uid} IN (-1,0)',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_check',
+                'foreign_table_where' => 'AND {#tx_openimmotypo3_domain_model_check}.{#pid}=###CURRENT_PID### AND {#tx_openimmotypo3_domain_model_check}.{#sys_language_uid} IN (-1,0)',
             ],
         ],
         'l10n_diffsource' => [
@@ -116,25 +116,38 @@ return [
                 ]
             ],
         ],
-        'alter_attr' => [
+        'anhang' => [
             'exclude' => true,
-            'label' => 'AlterAttr',
+            'label' => 'Anhang',
+            'config' => [
+                'type' => 'passthrough',
+            ],
+        ],
+        'ctype' => [
+            'exclude' => true,
+            'label' => 'Ctype',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'default' => 0,
                 'items' => [
                     ['', 0],
-                    ['Altbau', 'ALTBAU'],
-                    ['Neubau', 'NEUBAU'],
+                    ['Datetime', 'DATETIME'],
+                    ['Etag', 'ETAG'],
+                    ['Md5', 'MD5'],
                 ],
             ],
         ],
-        'zustand_angaben' => [
+        'value' => [
             'exclude' => true,
-            'label' => 'ZustandAngaben',
+            'label' => 'Value',
             'config' => [
-                'type' => 'passthrough',
+                'dbType' => 'datetime',
+                'type' => 'input',
+                'renderType' => 'inputDateTime',
+                'size' => 12,
+                'eval' => 'datetime',
+                'default' => null,
             ],
         ],
     ],

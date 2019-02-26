@@ -249,7 +249,7 @@ class GenerateTypo3WrapperCommand extends Command
         }
 
         $sqlFieldname = self::getSqlName($property->getName());
-        $propertySql  = $sqlFieldname . ' ';
+        $propertySql  = '`' . $sqlFieldname . '` ';
 
         switch ($type) {
 
@@ -271,6 +271,7 @@ class GenerateTypo3WrapperCommand extends Command
 
             case 'datetime':
             case 'DateTime<\'Y-m-d\'>':
+            case 'DateTime<\'Y-m-d\TH:i:s\'>':
                 $propertySql .= 'datetime DEFAULT NULL';
                 break;
 
@@ -285,7 +286,7 @@ class GenerateTypo3WrapperCommand extends Command
                         $backlinkPropertyName = self::getSqlName($backlinkClass->getName());
                         if ($backlinkPropertyName != 'openimmo') {
                             $this->mmSqlCode[] = 'CREATE TABLE ' . self::getSqlTableName($property->getName()) . ' (';
-                            $this->mmSqlCode[] = '    ' . $backlinkPropertyName . ' int(11) unsigned DEFAULT \'0\' NOT NULL';
+                            $this->mmSqlCode[] = '    `' . $backlinkPropertyName . '` int(11) unsigned DEFAULT \'0\' NOT NULL';
                             $this->mmSqlCode[] = ');' . PHP_EOL;
                         }
                     }
@@ -306,13 +307,7 @@ class GenerateTypo3WrapperCommand extends Command
      */
     public static function getSqlName(string $phpName)
     {
-        $name = GeneralUtility::camelCaseToLowerCaseUnderscored($phpName);
-        if (ValidationService::isReservedMYSQLWord($name)) {
-            // TODO: add config for typo3, so the mapping with this prefix still works!
-            $name = 'sqlsafe_' . $name;
-        }
-
-        return $name;
+        return GeneralUtility::camelCaseToLowerCaseUnderscored($phpName);
     }
 
     /**

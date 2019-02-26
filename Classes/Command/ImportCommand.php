@@ -190,6 +190,7 @@ class ImportCommand  extends Command
      */
     protected function persistAllExtbaseChildren(DomainObjectInterface $model) {
         // set pid
+        // TODO: this does not work entirely, as TYPO3 sets this to the first reachable pid in the page tree in some entities for some reason
         $model->setPid($this->input->getOption('pid'));
 
         $this->persistenceManager->add($model);

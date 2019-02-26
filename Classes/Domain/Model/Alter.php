@@ -27,7 +27,7 @@ class Alter implements \TYPO3\CMS\Extbase\DomainObject\DomainObjectInterface, \T
 
 	/**
 	 */
-	const TABLE_NAME = 'tx_openimmotypo3_domain_model_sqlsafealter';
+	const TABLE_NAME = 'tx_openimmotypo3_domain_model_alter';
 
 	/**
 	 * optional

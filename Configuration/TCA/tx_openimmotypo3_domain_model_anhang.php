@@ -17,14 +17,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'anbieter, anhaenge, anhangtitel, sqlsafe_check, daten, format, gruppe, location',
+        'searchFields' => 'anbieter, anhaenge, anhangtitel, check, daten, format, gruppe, location',
         'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/information/information-typo3-version.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, anbieter, anhaenge, anhangtitel, sqlsafe_check, daten, format, gruppe, location',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, anbieter, anhaenge, anhangtitel, check, daten, format, gruppe, location',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, anbieter, anhaenge, anhangtitel, sqlsafe_check, daten, format, gruppe, location, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, anbieter, anhaenge, anhangtitel, check, daten, format, gruppe, location, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -140,12 +140,12 @@ return [
                 'eval' => 'trim',
             ],
         ],
-        'sqlsafe_check' => [
+        'check' => [
             'exclude' => true,
             'label' => 'Check',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_sqlsafecheck',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_check',
                 'maxitems' => 1,
                 'appearance' => [
                     'collapseAll' => 0,

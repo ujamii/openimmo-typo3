@@ -17,14 +17,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'sqlsafe_alter, altlasten, baujahr, bauzone, bebaubar_nach, energiepass, erschliessung, erschliessung_umfang, immobilie, letztemodernisierung, user_defined_anyfield, user_defined_extend, user_defined_simplefield, verkaufstatus, zustand',
+        'searchFields' => 'alter, altlasten, baujahr, bauzone, bebaubar_nach, energiepass, erschliessung, erschliessung_umfang, immobilie, letztemodernisierung, user_defined_anyfield, user_defined_extend, user_defined_simplefield, verkaufstatus, zustand',
         'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/information/information-typo3-version.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, sqlsafe_alter, altlasten, baujahr, bauzone, bebaubar_nach, energiepass, erschliessung, erschliessung_umfang, immobilie, letztemodernisierung, user_defined_anyfield, user_defined_extend, user_defined_simplefield, verkaufstatus, zustand',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, alter, altlasten, baujahr, bauzone, bebaubar_nach, energiepass, erschliessung, erschliessung_umfang, immobilie, letztemodernisierung, user_defined_anyfield, user_defined_extend, user_defined_simplefield, verkaufstatus, zustand',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, sqlsafe_alter, altlasten, baujahr, bauzone, bebaubar_nach, energiepass, erschliessung, erschliessung_umfang, immobilie, letztemodernisierung, user_defined_anyfield, user_defined_extend, user_defined_simplefield, verkaufstatus, zustand, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, alter, altlasten, baujahr, bauzone, bebaubar_nach, energiepass, erschliessung, erschliessung_umfang, immobilie, letztemodernisierung, user_defined_anyfield, user_defined_extend, user_defined_simplefield, verkaufstatus, zustand, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -116,12 +116,12 @@ return [
                 ]
             ],
         ],
-        'sqlsafe_alter' => [
+        'alter' => [
             'exclude' => true,
             'label' => 'Alter',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' => 'tx_openimmotypo3_domain_model_sqlsafealter',
+                'foreign_table' => 'tx_openimmotypo3_domain_model_alter',
                 'maxitems' => 1,
                 'appearance' => [
                     'collapseAll' => 0,
