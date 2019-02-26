@@ -36,6 +36,9 @@ class GenerateTypo3WrapperCommand extends Command
         'tx_openimmotypo3_domain_model_anbieter',
         'tx_openimmotypo3_domain_model_immobilie',
     ];
+    protected $modelClassFolder = 'Classes/Domain/Model/';
+    protected $repositoryClassFolder = 'Classes/Domain/Repository/';
+    protected $typo3ObjectStorageClass = '\TYPO3\CMS\Extbase\Persistence\ObjectStorage';
 
     /**
      * List of API classes incl. namespace.
@@ -135,9 +138,11 @@ class GenerateTypo3WrapperCommand extends Command
                     '\\' . DomainObjectInterface::class,
                     '\\' . ObjectMonitoringInterface::class
                 ])
-                ->setTraits(['ExtbaseModelTrait'])
+                ->addTrait('ExtbaseModelTrait')
                 ->setConstant('TABLE_NAME', self::getSqlTableName($modelClass->getName()))
             ;
+
+            $this->addPossibleTrait($modelClass, $this->modelClassFolder);
 
             // care for backlinks
             /* @var $property PhPProperty */
@@ -154,13 +159,13 @@ class GenerateTypo3WrapperCommand extends Command
                     $unnecessaryFullQualifiedType = '\\' . $this->typo3ModelNamespace . '\\' . $propType;
                     if ($propType != $property->getType()) {
                         // of course, also arrays are evil in TYPO3, so lets use something else...
-                        $typo3Type = '\TYPO3\CMS\Extbase\Persistence\ObjectStorage<' . $unnecessaryFullQualifiedType . '>';
+                        $typo3Type = $this->typo3ObjectStorageClass . '<' . $unnecessaryFullQualifiedType . '>';
                         // default return type of ObjectStorage would not work here, as the deserialization sets an array
                         $modelClass->getMethod('get' . ucfirst($property->getName()))
-                                   ->setType('\TYPO3\CMS\Extbase\Persistence\ObjectStorage')
+                                   ->setType($this->typo3ObjectStorageClass)
                                    ->setBody('return is_array($this->' . $property->getName() . ') ? self::arrayToObjectStorage($this->' . $property->getName() . ') : $this->' . $property->getName() . ';');
                         $modelClass->getMethod('set' . ucfirst($property->getName()))
-                                   ->getParameter($property->getName())->setType('\TYPO3\CMS\Extbase\Persistence\ObjectStorage');
+                                   ->getParameter($property->getName())->setType($this->typo3ObjectStorageClass);
                     } else {
                         $typo3Type = $unnecessaryFullQualifiedType;
                     }
@@ -168,7 +173,7 @@ class GenerateTypo3WrapperCommand extends Command
                 }
             }
 
-            $this->createPhpFile($modelClass, 'Classes/Domain/Model/');
+            $this->createPhpFile($modelClass, $this->modelClassFolder);
 
             // repositories
             $repoClass = new PhpClass($classname . 'Repository');
@@ -176,12 +181,8 @@ class GenerateTypo3WrapperCommand extends Command
                 ->setNamespace($this->typo3RepositoryNamespace)
                 ->setParentClassName('\\' . Repository::class);
 
-            // special case for filter demand
-            if ($repoClass->getName() == 'ImmobilieRepository') {
-                $repoClass->addTrait('ImmobilieRepositoryTrait');
-            }
-
-            $this->createPhpFile($repoClass, 'Classes/Domain/Repository/');
+            $this->addPossibleTrait($repoClass, $this->repositoryClassFolder);
+            $this->createPhpFile($repoClass, $this->repositoryClassFolder);
         }
 
         foreach ($backlinks as $backlinkConfig) {
@@ -190,13 +191,25 @@ class GenerateTypo3WrapperCommand extends Command
             $backlinkProperty->getDocblock()->appendTag(TagFactory::create('Exclude()'));
             $backlinkProperty->setLongDescription('Id of the parent object for backlink purpose in TYPO3.');
 
-            $modelClass = PhpClass::fromFile($this->getTargetForFile('Classes/Domain/Model/' . $backlinkConfig['childClass'] . '.php'));
+            $modelClass = PhpClass::fromFile($this->getTargetForFile($this->modelClassFolder . $backlinkConfig['childClass'] . '.php'));
             $modelClass->setProperty($backlinkProperty);
             $modelClass->addUseStatement('JMS\Serializer\Annotation\Exclude');
 
             ApiGenerator::generateGetterAndSetter($backlinkProperty, $modelClass);
 
-            $this->createPhpFile($modelClass, 'Classes/Domain/Model/');
+            $this->createPhpFile($modelClass, $this->modelClassFolder);
+        }
+    }
+
+    /**
+     * @param PhpClass $class
+     * @param string $folder
+     */
+    protected function addPossibleTrait(PhpClass $class, string $folder)
+    {
+        $traitname = $class->getName() . 'Trait';
+        if (is_file($this->getTargetForFile($folder . $traitname . '.php'))) {
+            $class->addTrait($traitname);
         }
     }
 
@@ -209,7 +222,7 @@ class GenerateTypo3WrapperCommand extends Command
         $this->mmSqlCode = [];
 
         foreach ($this->classNamesInApiNamespace as $file) {
-            $class = PhpClass::fromFile($this->getTargetForFile('Classes/Domain/Model/' . $file . '.php'));
+            $class = PhpClass::fromFile($this->getTargetForFile($this->modelClassFolder . $file . '.php'));
 
             if ($class->getProperties()->size() == 0) {
                 // if a class has NO properties, no table is needed
@@ -529,7 +542,7 @@ return [
             $switchTrigger = $this->getSingularObjectNameFromTypo3SpecialType($property->getType());
         }
 
-        $isPlural = substr($property->getType(), -2) == '[]' || stristr($property->getType(), '\TYPO3\CMS\Extbase\Persistence\ObjectStorage');
+        $isPlural = substr($property->getType(), -2) == '[]' || stristr($property->getType(), $this->typo3ObjectStorageClass);
 
         switch ($switchTrigger) {
 
@@ -638,7 +651,7 @@ return [
     protected function getSingularObjectNameFromTypo3SpecialType(string $variableType)
     {
         return str_replace([
-            '\TYPO3\CMS\Extbase\Persistence\ObjectStorage<',
+            $this->typo3ObjectStorageClass . '<',
             '>',
             '\\' . $this->typo3ModelNamespace . '\\'
         ], '', $variableType);
@@ -650,7 +663,7 @@ return [
     protected function generateTcaFiles(): void
     {
         foreach ($this->classNamesInApiNamespace as $class) {
-            $apiClass = PhpClass::fromFile($this->getTargetForFile('Classes/Domain/Model/' . $class . '.php'));
+            $apiClass = PhpClass::fromFile($this->getTargetForFile($this->modelClassFolder . $class . '.php'));
             GeneralUtility::writeFile($this->getTargetForFile('Configuration/TCA/' . self::getSqlTableNameForClass($apiClass) . '.php'),
                 $this->generateTcaCode($apiClass));
         }

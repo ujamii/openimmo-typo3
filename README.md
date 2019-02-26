@@ -13,10 +13,10 @@ This TYPO3 extension uses the [openImmo API](https://github.com/ujamii/openimmo)
 
 ## TODOs
 
-- solve all TODOs in code (6)
+- solve all TODOs in code (4)
 - ~make this backwards compatible~
 - exporting OpenImmo XML from TYPO3 database content
-- make model and repository classes automatically "use" traits if they match by name instead of hardcoded addition
+- ~make model and repository classes automatically "use" traits if they match by name instead of hardcoded addition~
 - currently, the extension is monolingual in many places, so make use of default TYPO3 translation features
 
 ## Installation
