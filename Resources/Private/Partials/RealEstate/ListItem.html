@@ -1,3 +1,5 @@
+{namespace immo = Ujamii\OpenImmoTypo3\ViewHelpers}
+
 <tr>
 	<td><f:link.action action="show" arguments="{immobilie: immobilie.uid}">{immobilie.freitexte.objekttitel}</f:link.action></td>
 	<td>Zimmer: {immobilie.flaechen.anzahlZimmer}</td>
@@ -5,10 +7,10 @@
 	<td>Adresse: {immobilie.geo.strasse} {immobilie.geo.hausnummer}, {immobilie.geo.plz} {immobilie.geo.ort}</td>
 	<td>Warmmiete: {immobilie.preise.warmmiete}</td>
 	<td>
-		<f:for each="{immobilie.anhaenge.anhang}" as="anhang">
-			<f:if condition="{anhang.gruppe} == 'BILD'">
-				<f:image src="{anhang.daten.anhanginhalt}{anhang.daten.pfad}" width="200"/>
+		<f:alias map="{mainImage: '{immo:mainImage(immobilie: immobilie)}'}">
+			<f:if condition="{mainImage}">
+				<f:image src="{mainImage.daten.anhanginhalt}{mainImage.daten.pfad}" width="200"/>
 			</f:if>
-		</f:for>
+		</f:alias>
 	</td>
 </tr>
