@@ -191,7 +191,7 @@ class ImportCommand extends Command
         $this->persistenceManager->persistAll();
 
         // set backlink property to parent uid (e.g. "anbieter" field in "Immobilie" object)
-        $backlinkPropertyName = strtolower((new \ReflectionClass($model))->getShortName());
+        $backlinkPropertyName = lcfirst((new \ReflectionClass($model))->getShortName());
 
         $props = $model->_getProperties();
         foreach ($props as $propertyName => $propertyValue) {
