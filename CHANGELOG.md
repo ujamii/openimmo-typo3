@@ -1,3 +1,16 @@
+## 0.4.0 (February 26, 2019)
+  - [BUGFIX] backlink property name was wrong for camelCased class names
+  - [FEATURE] added view helper for main image
+  - [DOC] Added legacy branch(es) hint
+  - [FEATURE] added search plugin
+  - [TASK] renamed dfault template section from content to main
+  - [BUGFIX] readded openimmo class for de-/serialization
+  - [TASK] all parameters are options now in the import command
+  - [FEATURE] added ImmobilieRepositoryTrait
+  - [FEATURE] added TABLE_NAME constants to model classes
+  - [FEATURE] added FilterDemand
+  - [FEATURE] added show action
+
 ## 0.3.0 (February 22, 2019)
   - [BUGFIX] removed unused fields
   - [TASK] added some output to generation command 
