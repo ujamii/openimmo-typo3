@@ -1,3 +1,11 @@
+## 0.5.0 (February 27, 2019)
+  - [FEATURE] code generation now adds traits automatically
+  - [TASK] some refactoring
+  - [BUGFIX] bulk update with mysql concat function works now
+  - [BUGFIX] fixed sqlsafe naming of fields
+  - [BUGFIX] fixed missing dateformat in Check value
+  - [DOC] updated TODO section
+
 ## 0.4.0 (February 26, 2019)
   - [BUGFIX] backlink property name was wrong for camelCased class names
   - [FEATURE] added view helper for main image
