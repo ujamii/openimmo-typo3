@@ -1,3 +1,7 @@
+## 0.5.1 (September 06, 2019)
+  - [TASK] updated ujamii/openimmo package
+  - [BUGFIX] handle empty request params for search DTO correctly
+
 ## 0.5.0 (February 27, 2019)
   - [FEATURE] code generation now adds traits automatically
   - [TASK] some refactoring
