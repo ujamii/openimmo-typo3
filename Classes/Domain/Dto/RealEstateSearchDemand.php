@@ -77,9 +77,9 @@ class RealEstateSearchDemand
     /**
      * @param int $numberOfRoomsMin
      */
-    public function setNumberOfRoomsMin(int $numberOfRoomsMin): void
+    public function setNumberOfRoomsMin(?int $numberOfRoomsMin): void
     {
-        $this->numberOfRoomsMin = $numberOfRoomsMin;
+        $this->numberOfRoomsMin = $numberOfRoomsMin ?? 0;
     }
 
     /**
@@ -93,9 +93,9 @@ class RealEstateSearchDemand
     /**
      * @param int $numberOfRoomsMax
      */
-    public function setNumberOfRoomsMax(int $numberOfRoomsMax): void
+    public function setNumberOfRoomsMax(?int $numberOfRoomsMax): void
     {
-        $this->numberOfRoomsMax = $numberOfRoomsMax;
+        $this->numberOfRoomsMax = $numberOfRoomsMax ?? 0;
     }
 
     /**
@@ -109,9 +109,9 @@ class RealEstateSearchDemand
     /**
      * @param int $livingAreaMin
      */
-    public function setLivingAreaMin(int $livingAreaMin): void
+    public function setLivingAreaMin(?int $livingAreaMin): void
     {
-        $this->livingAreaMin = $livingAreaMin;
+        $this->livingAreaMin = $livingAreaMin ?? 0;
     }
 
     /**
@@ -125,9 +125,9 @@ class RealEstateSearchDemand
     /**
      * @param int $livingAreaMax
      */
-    public function setLivingAreaMax(int $livingAreaMax): void
+    public function setLivingAreaMax(?int $livingAreaMax): void
     {
-        $this->livingAreaMax = $livingAreaMax;
+        $this->livingAreaMax = $livingAreaMax ?? 0;
     }
 
     /**
@@ -141,9 +141,9 @@ class RealEstateSearchDemand
     /**
      * @param int $priceMin
      */
-    public function setPriceMin(int $priceMin): void
+    public function setPriceMin(?int $priceMin): void
     {
-        $this->priceMin = $priceMin;
+        $this->priceMin = $priceMin ?? 0;
     }
 
     /**
@@ -157,9 +157,9 @@ class RealEstateSearchDemand
     /**
      * @param int $priceMax
      */
-    public function setPriceMax(int $priceMax): void
+    public function setPriceMax(?int $priceMax): void
     {
-        $this->priceMax = $priceMax;
+        $this->priceMax = $priceMax ?? 0;
     }
 
     /**
