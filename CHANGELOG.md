@@ -1,3 +1,6 @@
+## 0.5.2 (December 07, 2020)
+  - [BUGFIX] fixed composer v2 compat warning
+
 ## 0.5.1 (September 06, 2019)
   - [TASK] updated ujamii/openimmo package
   - [BUGFIX] handle empty request params for search DTO correctly
